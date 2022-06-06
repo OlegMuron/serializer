@@ -17,7 +17,7 @@ use Symfony\Component\ExpressionLanguage\ExpressionFunction;
 use Symfony\Component\ExpressionLanguage\ExpressionLanguage;
 use Symfony\Component\Filesystem\Filesystem;
 
-class SerializerBuilderTest extends \PHPUnit_Framework_TestCase
+class SerializerBuilderTest extends \PHPUnit\Framework\TestCase
 {
     /** @var SerializerBuilder */
     private $builder;
@@ -251,7 +251,7 @@ class SerializerBuilderTest extends \PHPUnit_Framework_TestCase
         $this->assertEquals("bar", $person->name);
     }
 
-    protected function setUp()
+    protected function setUp(): void
     {
         $this->builder = SerializerBuilder::create();
         $this->fs = new Filesystem();
@@ -261,7 +261,7 @@ class SerializerBuilderTest extends \PHPUnit_Framework_TestCase
         clearstatcache();
     }
 
-    protected function tearDown()
+    protected function tearDown(): void
     {
         $this->fs->remove($this->tmpDir);
     }

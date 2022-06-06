@@ -16,11 +16,11 @@ use JMS\Serializer\Serializer;
 use Metadata\MetadataFactory;
 use PhpCollection\Map;
 
-class SerializationContextFactoryTest extends \PHPUnit_Framework_TestCase
+class SerializationContextFactoryTest extends \PHPUnit\Framework\TestCase
 {
     protected $serializer;
 
-    public function setUp()
+    public function setUp(): void
     {
         parent::setUp();
 

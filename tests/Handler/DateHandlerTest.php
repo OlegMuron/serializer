@@ -7,7 +7,7 @@ use JMS\Serializer\JsonDeserializationVisitor;
 use JMS\Serializer\SerializationContext;
 use JMS\Serializer\VisitorInterface;
 
-class DateHandlerTest extends \PHPUnit_Framework_TestCase
+class DateHandlerTest extends \PHPUnit\Framework\TestCase
 {
     /**
      * @var DateHandler
@@ -18,7 +18,7 @@ class DateHandlerTest extends \PHPUnit_Framework_TestCase
      */
     private $timezone;
 
-    public function setUp()
+    public function setUp(): void
     {
         $this->handler = new DateHandler();
         $this->timezone = new \DateTimeZone('UTC');

@@ -2,7 +2,7 @@
 
 namespace JMS\Serializer\EventDispatcher\Subscriber;
 
-use Doctrine\Common\Persistence\Proxy;
+use Doctrine\Persistence\Proxy;
 use Doctrine\ODM\MongoDB\PersistentCollection as MongoDBPersistentCollection;
 use Doctrine\ODM\PHPCR\PersistentCollection as PHPCRPersistentCollection;
 use Doctrine\ORM\PersistentCollection;

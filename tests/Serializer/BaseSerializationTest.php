@@ -112,7 +112,7 @@ use Symfony\Component\Translation\MessageSelector;
 use Symfony\Component\Validator\ConstraintViolation;
 use Symfony\Component\Validator\ConstraintViolationList;
 
-abstract class BaseSerializationTest extends \PHPUnit_Framework_TestCase
+abstract class BaseSerializationTest extends \PHPUnit\Framework\TestCase
 {
     protected $factory;
 
@@ -1449,7 +1449,7 @@ abstract class BaseSerializationTest extends \PHPUnit_Framework_TestCase
         return $this->serializer->deserialize($content, $type, $this->getFormat(), $context);
     }
 
-    protected function setUp()
+    protected function setUp(): void
     {
         $this->factory = new MetadataFactory(new AnnotationDriver(new AnnotationReader()));
 

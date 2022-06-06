@@ -4,12 +4,12 @@ namespace JMS\Serializer\Tests\Handler;
 
 use JMS\Serializer\SerializerBuilder;
 
-class PropelCollectionHandlerTest extends \PHPUnit_Framework_TestCase
+class PropelCollectionHandlerTest extends \PHPUnit\Framework\TestCase
 {
     /** @var  $serializer \JMS\Serializer\Serializer */
     private $serializer;
 
-    public function setUp()
+    public function setUp(): void
     {
         $this->serializer = SerializerBuilder::create()
             ->addDefaultHandlers()//load PropelCollectionHandler

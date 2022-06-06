@@ -18,11 +18,11 @@ use JMS\Serializer\Tests\Fixtures\Price;
 use Metadata\MetadataFactory;
 use PhpCollection\Map;
 
-class ArrayTest extends \PHPUnit_Framework_TestCase
+class ArrayTest extends \PHPUnit\Framework\TestCase
 {
     protected $serializer;
 
-    public function setUp()
+    public function setUp(): void
     {
         $namingStrategy = new SerializedNameAnnotationStrategy(new CamelCaseNamingStrategy());
 
@@ -55,7 +55,8 @@ class ArrayTest extends \PHPUnit_Framework_TestCase
      */
     public function testToArrayWithScalar($input)
     {
-        $this->setExpectedException('JMS\Serializer\Exception\RuntimeException', sprintf(
+        $this->expectException('JMS\Serializer\Exception\RuntimeException');
+        $this->expectExceptionMessage(sprintf(
             'The input data of type "%s" did not convert to an array, but got a result of type "%s".',
             gettype($input),
             gettype($input)

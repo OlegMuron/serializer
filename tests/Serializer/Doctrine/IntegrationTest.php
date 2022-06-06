@@ -4,8 +4,8 @@ namespace JMS\Serializer\Tests\Serializer\Doctrine;
 
 use Doctrine\Common\Annotations\AnnotationReader;
 use Doctrine\Common\Annotations\Reader;
-use Doctrine\Common\Persistence\AbstractManagerRegistry;
-use Doctrine\Common\Persistence\ManagerRegistry;
+use Doctrine\Persistence\AbstractManagerRegistry;
+use Doctrine\Persistence\ManagerRegistry;
 use Doctrine\DBAL\Connection;
 use Doctrine\DBAL\DriverManager;
 use Doctrine\ORM\Configuration;
@@ -26,7 +26,7 @@ use JMS\Serializer\Tests\Fixtures\Doctrine\SingleTableInheritance\School;
 use JMS\Serializer\Tests\Fixtures\Doctrine\SingleTableInheritance\Student;
 use JMS\Serializer\Tests\Fixtures\Doctrine\SingleTableInheritance\Teacher;
 
-class IntegrationTest extends \PHPUnit_Framework_TestCase
+class IntegrationTest extends \PHPUnit\Framework\TestCase
 {
     /** @var ManagerRegistry */
     private $registry;
@@ -78,7 +78,7 @@ class IntegrationTest extends \PHPUnit_Framework_TestCase
         $this->assertEquals('{"id":1,"teacher":{"id":1,"type":"teacher"},"students":[{"id":2,"type":"student"},{"id":3,"type":"student"}]}', $json);
     }
 
-    protected function setUp()
+    protected function setUp(): void
     {
         $connection = $this->createConnection();
         $entityManager = $this->createEntityManager($connection);
@@ -151,7 +151,7 @@ class SimpleManagerRegistry extends AbstractManagerRegistry
     private $services = array();
     private $serviceCreator;
 
-    public function __construct($serviceCreator, $name = 'anonymous', array $connections = array('default' => 'default_connection'), array $managers = array('default' => 'default_manager'), $defaultConnection = null, $defaultManager = null, $proxyInterface = 'Doctrine\Common\Persistence\Proxy')
+    public function __construct($serviceCreator, $name = 'anonymous', array $connections = array('default' => 'default_connection'), array $managers = array('default' => 'default_manager'), $defaultConnection = null, $defaultManager = null, $proxyInterface = 'Doctrine\Persistence\Proxy')
     {
         if (null === $defaultConnection) {
             $defaultConnection = key($connections);

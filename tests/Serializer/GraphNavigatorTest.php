@@ -11,7 +11,7 @@ use JMS\Serializer\Handler\SubscribingHandlerInterface;
 use JMS\Serializer\Metadata\Driver\AnnotationDriver;
 use Metadata\MetadataFactory;
 
-class GraphNavigatorTest extends \PHPUnit_Framework_TestCase
+class GraphNavigatorTest extends \PHPUnit\Framework\TestCase
 {
     private $metadataFactory;
     private $handlerRegistry;
@@ -130,7 +130,7 @@ class GraphNavigatorTest extends \PHPUnit_Framework_TestCase
         $this->navigator->accept($object, null, $this->context);
     }
 
-    protected function setUp()
+    protected function setUp(): void
     {
         $this->context = $this->getMockBuilder('JMS\Serializer\Context')->getMock();
         $this->dispatcher = new EventDispatcher();

@@ -4,7 +4,7 @@ namespace JMS\Serializer\Tests\Serializer;
 
 use JMS\Serializer\TypeParser;
 
-class TypeParserTest extends \PHPUnit_Framework_TestCase
+class TypeParserTest extends \PHPUnit\Framework\TestCase
 {
     private $parser;
 
@@ -76,7 +76,7 @@ class TypeParserTest extends \PHPUnit_Framework_TestCase
         $this->parser->parse('Foo<\Bar>');
     }
 
-    protected function setUp()
+    protected function setUp(): void
     {
         $this->parser = new TypeParser();
     }
