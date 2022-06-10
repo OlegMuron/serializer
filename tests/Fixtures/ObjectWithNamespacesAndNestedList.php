@@ -1,15 +1,15 @@
 <?php
 
-namespace JMS\Serializer\Tests\Fixtures;
+namespace Signnow\Serializer\Tests\Fixtures;
 
-use JMS\Serializer\Annotation as Serializer;
-use JMS\Serializer\Annotation\SerializedName;
-use JMS\Serializer\Annotation\Type;
-use JMS\Serializer\Annotation\XmlElement;
-use JMS\Serializer\Annotation\XmlList;
-use JMS\Serializer\Annotation\XmlMap;
-use JMS\Serializer\Annotation\XmlNamespace;
-use JMS\Serializer\Annotation\XmlRoot;
+use Signnow\Serializer\Annotation as Serializer;
+use Signnow\Serializer\Annotation\SerializedName;
+use Signnow\Serializer\Annotation\Type;
+use Signnow\Serializer\Annotation\XmlElement;
+use Signnow\Serializer\Annotation\XmlList;
+use Signnow\Serializer\Annotation\XmlMap;
+use Signnow\Serializer\Annotation\XmlNamespace;
+use Signnow\Serializer\Annotation\XmlRoot;
 
 /**
  * @XmlRoot("ObjectWithNamespacesAndNestedList", namespace="http://example.com/namespace")
@@ -19,7 +19,7 @@ use JMS\Serializer\Annotation\XmlRoot;
 class ObjectWithNamespacesAndNestedList
 {
     /**
-     * @Type("JMS\Serializer\Tests\Fixtures\PersonCollection")
+     * @Type("Signnow\Serializer\Tests\Fixtures\PersonCollection")
      * @SerializedName("person_collection")
      */
     public $personCollection;

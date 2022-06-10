@@ -1,13 +1,13 @@
 <?php
 
-namespace JMS\Serializer\Tests\Serializer\EventDispatcher\Subscriber;
+namespace Signnow\Serializer\Tests\Serializer\EventDispatcher\Subscriber;
 
-use JMS\Serializer\DeserializationContext;
-use JMS\Serializer\EventDispatcher\EventDispatcher;
-use JMS\Serializer\EventDispatcher\ObjectEvent;
-use JMS\Serializer\EventDispatcher\Subscriber\SymfonyValidatorSubscriber;
-use JMS\Serializer\EventDispatcher\Subscriber\SymfonyValidatorValidatorSubscriber;
-use JMS\Serializer\SerializerBuilder;
+use Signnow\Serializer\DeserializationContext;
+use Signnow\Serializer\EventDispatcher\EventDispatcher;
+use Signnow\Serializer\EventDispatcher\ObjectEvent;
+use Signnow\Serializer\EventDispatcher\Subscriber\SymfonyValidatorSubscriber;
+use Signnow\Serializer\EventDispatcher\Subscriber\SymfonyValidatorValidatorSubscriber;
+use Signnow\Serializer\SerializerBuilder;
 use Symfony\Component\Validator\ConstraintViolation;
 use Symfony\Component\Validator\ConstraintViolationList;
 
@@ -33,7 +33,7 @@ class SymfonyValidatorValidatorSubscriberTest extends \PHPUnit\Framework\TestCas
     }
 
     /**
-     * @expectedException \JMS\Serializer\Exception\ValidationFailedException
+     * @expectedException \Signnow\Serializer\Exception\ValidationFailedException
      * @expectedExceptionMessage Validation failed with 1 error(s).
      */
     public function testValidateThrowsExceptionWhenListIsNotEmpty()
@@ -62,7 +62,7 @@ class SymfonyValidatorValidatorSubscriberTest extends \PHPUnit\Framework\TestCas
     {
         $this->validator->expects($this->once())
             ->method('validate')
-            ->with($this->isInstanceOf('JMS\Serializer\Tests\Fixtures\AuthorList'), null, array('Foo'))
+            ->with($this->isInstanceOf('Signnow\Serializer\Tests\Fixtures\AuthorList'), null, array('Foo'))
             ->will($this->returnValue(new ConstraintViolationList()));
 
         $subscriber = $this->subscriber;
@@ -73,7 +73,7 @@ class SymfonyValidatorValidatorSubscriberTest extends \PHPUnit\Framework\TestCas
             ->build()
             ->deserialize(
                 '{"authors":[{"full_name":"foo"},{"full_name":"bar"}]}',
-                'JMS\Serializer\Tests\Fixtures\AuthorList',
+                'Signnow\Serializer\Tests\Fixtures\AuthorList',
                 'json',
                 DeserializationContext::create()->setAttribute('validation_groups', array('Foo'))
             );

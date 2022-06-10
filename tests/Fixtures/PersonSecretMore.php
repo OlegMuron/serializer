@@ -1,8 +1,8 @@
 <?php
 
-namespace JMS\Serializer\Tests\Fixtures;
+namespace Signnow\Serializer\Tests\Fixtures;
 
-use JMS\Serializer\Annotation as Serializer;
+use Signnow\Serializer\Annotation as Serializer;
 
 /**
  * @Serializer\ExclusionPolicy("ALL")

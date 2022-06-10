@@ -1,9 +1,9 @@
 <?php
 
-namespace JMS\Serializer\Tests\Handler;
+namespace Signnow\Serializer\Tests\Handler;
 
-use JMS\Serializer\GraphNavigator;
-use JMS\Serializer\Handler\HandlerRegistry;
+use Signnow\Serializer\GraphNavigator;
+use Signnow\Serializer\Handler\HandlerRegistry;
 
 class HandlerRegistryTest extends \PHPUnit\Framework\TestCase
 {

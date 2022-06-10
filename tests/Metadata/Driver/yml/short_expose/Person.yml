@@ -1,4 +1,4 @@
-JMS\Serializer\Tests\Fixtures\Person:
+Signnow\Serializer\Tests\Fixtures\Person:
     exclusion_policy: ALL
     properties:
         name: ~

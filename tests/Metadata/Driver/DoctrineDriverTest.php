@@ -1,19 +1,19 @@
 <?php
 
-namespace JMS\Serializer\Tests\Metadata\Driver;
+namespace Signnow\Serializer\Tests\Metadata\Driver;
 
 use Doctrine\Common\Annotations\AnnotationReader;
 use Doctrine\ORM\Configuration;
 use Doctrine\ORM\EntityManager;
 use Doctrine\ORM\Mapping\Driver\AnnotationDriver as DoctrineDriver;
-use JMS\Serializer\Metadata\Driver\AnnotationDriver;
-use JMS\Serializer\Metadata\Driver\DoctrineTypeDriver;
+use Signnow\Serializer\Metadata\Driver\AnnotationDriver;
+use Signnow\Serializer\Metadata\Driver\DoctrineTypeDriver;
 
 class DoctrineDriverTest extends \PHPUnit\Framework\TestCase
 {
     public function getMetadata()
     {
-        $refClass = new \ReflectionClass('JMS\Serializer\Tests\Fixtures\Doctrine\BlogPost');
+        $refClass = new \ReflectionClass('Signnow\Serializer\Tests\Fixtures\Doctrine\BlogPost');
         $metadata = $this->getDoctrineDriver()->loadMetadataForClass($refClass);
 
         return $metadata;
@@ -33,7 +33,7 @@ class DoctrineDriverTest extends \PHPUnit\Framework\TestCase
     {
         $metadata = $this->getMetadata();
         $this->assertEquals(
-            array('name' => 'JMS\Serializer\Tests\Fixtures\Doctrine\Author', 'params' => array()),
+            array('name' => 'Signnow\Serializer\Tests\Fixtures\Doctrine\Author', 'params' => array()),
             $metadata->propertyMetadata['author']->type
         );
     }
@@ -44,7 +44,7 @@ class DoctrineDriverTest extends \PHPUnit\Framework\TestCase
 
         $this->assertEquals(
             array('name' => 'ArrayCollection', 'params' => array(
-                array('name' => 'JMS\Serializer\Tests\Fixtures\Doctrine\Comment', 'params' => array()))
+                array('name' => 'Signnow\Serializer\Tests\Fixtures\Doctrine\Comment', 'params' => array()))
             ),
             $metadata->propertyMetadata['comments']->type
         );
@@ -71,7 +71,7 @@ class DoctrineDriverTest extends \PHPUnit\Framework\TestCase
     {
         // Note: Using regular BlogPost fixture here instead of Doctrine fixture
         // because it has no Doctrine metadata.
-        $refClass = new \ReflectionClass('JMS\Serializer\Tests\Fixtures\BlogPost');
+        $refClass = new \ReflectionClass('Signnow\Serializer\Tests\Fixtures\BlogPost');
 
         $plainMetadata = $this->getAnnotationDriver()->loadMetadataForClass($refClass);
         $doctrineMetadata = $this->getDoctrineDriver()->loadMetadataForClass($refClass);
@@ -87,7 +87,7 @@ class DoctrineDriverTest extends \PHPUnit\Framework\TestCase
     public function testExcludePropertyNoPublicAccessorException()
     {
         $first = $this->getAnnotationDriver()
-            ->loadMetadataForClass(new \ReflectionClass('JMS\Serializer\Tests\Fixtures\ExcludePublicAccessor'));
+            ->loadMetadataForClass(new \ReflectionClass('Signnow\Serializer\Tests\Fixtures\ExcludePublicAccessor'));
 
         $this->assertArrayHasKey('id', $first->propertyMetadata);
         $this->assertArrayNotHasKey('iShallNotBeAccessed', $first->propertyMetadata);
@@ -113,7 +113,7 @@ class DoctrineDriverTest extends \PHPUnit\Framework\TestCase
     {
         $config = new Configuration();
         $config->setProxyDir(sys_get_temp_dir() . '/JMSDoctrineTestProxies');
-        $config->setProxyNamespace('JMS\Tests\Proxies');
+        $config->setProxyNamespace('Signnow\Tests\Proxies');
         $config->setMetadataDriverImpl(
             new DoctrineDriver(new AnnotationReader(), __DIR__ . '/../../Fixtures/Doctrine')
         );

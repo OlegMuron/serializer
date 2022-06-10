@@ -1,10 +1,10 @@
 <?php
 
-use JMS\Serializer\Metadata\ClassMetadata;
+use Signnow\Serializer\Metadata\ClassMetadata;
 
-$metadata = new ClassMetadata('JMS\Serializer\Tests\Fixtures\Discriminator\ObjectWithXmlNamespaceDiscriminatorParent');
+$metadata = new ClassMetadata('Signnow\Serializer\Tests\Fixtures\Discriminator\ObjectWithXmlNamespaceDiscriminatorParent');
 $metadata->setDiscriminator('type', array(
-    'child' => 'JMS\Serializer\Tests\Fixtures\Discriminator\ObjectWithXmlNamespaceDiscriminatorChild'
+    'child' => 'Signnow\Serializer\Tests\Fixtures\Discriminator\ObjectWithXmlNamespaceDiscriminatorChild'
 ));
 $metadata->xmlDiscriminatorNamespace = 'http://example.com/';
 

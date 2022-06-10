@@ -1,12 +1,12 @@
 <?php
 
-namespace JMS\Serializer\Tests\Fixtures;
+namespace Signnow\Serializer\Tests\Fixtures;
 
-use JMS\Serializer\Annotation\Accessor;
-use JMS\Serializer\Annotation\ReadOnlyProperty;
-use JMS\Serializer\Annotation\SerializedName;
-use JMS\Serializer\Annotation\Type;
-use JMS\Serializer\Annotation\XmlRoot;
+use Signnow\Serializer\Annotation\Accessor;
+use Signnow\Serializer\Annotation\ReadOnlyProperty;
+use Signnow\Serializer\Annotation\SerializedName;
+use Signnow\Serializer\Annotation\Type;
+use Signnow\Serializer\Annotation\XmlRoot;
 
 /**
  * @XmlRoot("author")

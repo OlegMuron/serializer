@@ -1,11 +1,11 @@
 <?php
 
-namespace JMS\Serializer\Tests\Fixtures\ExclusionStrategy;
+namespace Signnow\Serializer\Tests\Fixtures\ExclusionStrategy;
 
-use JMS\Serializer\Context;
-use JMS\Serializer\Exclusion\ExclusionStrategyInterface;
-use JMS\Serializer\Metadata\ClassMetadata;
-use JMS\Serializer\Metadata\PropertyMetadata;
+use Signnow\Serializer\Context;
+use Signnow\Serializer\Exclusion\ExclusionStrategyInterface;
+use Signnow\Serializer\Metadata\ClassMetadata;
+use Signnow\Serializer\Metadata\PropertyMetadata;
 
 class AlwaysExcludeExclusionStrategy implements ExclusionStrategyInterface
 {

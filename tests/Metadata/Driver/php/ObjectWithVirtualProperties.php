@@ -1,10 +1,10 @@
 <?php
 
-use JMS\Serializer\Metadata\ClassMetadata;
-use JMS\Serializer\Metadata\PropertyMetadata;
-use JMS\Serializer\Metadata\VirtualPropertyMetadata;
+use Signnow\Serializer\Metadata\ClassMetadata;
+use Signnow\Serializer\Metadata\PropertyMetadata;
+use Signnow\Serializer\Metadata\VirtualPropertyMetadata;
 
-$className = 'JMS\Serializer\Tests\Fixtures\ObjectWithVirtualProperties';
+$className = 'Signnow\Serializer\Tests\Fixtures\ObjectWithVirtualProperties';
 
 $metadata = new ClassMetadata($className);
 

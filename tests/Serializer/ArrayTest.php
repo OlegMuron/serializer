@@ -1,20 +1,20 @@
 <?php
 
-namespace JMS\Serializer\Tests\Serializer;
+namespace Signnow\Serializer\Tests\Serializer;
 
 use Doctrine\Common\Annotations\AnnotationReader;
-use JMS\Serializer\Construction\UnserializeObjectConstructor;
-use JMS\Serializer\Handler\HandlerRegistry;
-use JMS\Serializer\JsonDeserializationVisitor;
-use JMS\Serializer\JsonSerializationVisitor;
-use JMS\Serializer\Metadata\Driver\AnnotationDriver;
-use JMS\Serializer\Naming\CamelCaseNamingStrategy;
-use JMS\Serializer\Naming\SerializedNameAnnotationStrategy;
-use JMS\Serializer\Serializer;
-use JMS\Serializer\Tests\Fixtures\Author;
-use JMS\Serializer\Tests\Fixtures\AuthorList;
-use JMS\Serializer\Tests\Fixtures\Order;
-use JMS\Serializer\Tests\Fixtures\Price;
+use Signnow\Serializer\Construction\UnserializeObjectConstructor;
+use Signnow\Serializer\Handler\HandlerRegistry;
+use Signnow\Serializer\JsonDeserializationVisitor;
+use Signnow\Serializer\JsonSerializationVisitor;
+use Signnow\Serializer\Metadata\Driver\AnnotationDriver;
+use Signnow\Serializer\Naming\CamelCaseNamingStrategy;
+use Signnow\Serializer\Naming\SerializedNameAnnotationStrategy;
+use Signnow\Serializer\Serializer;
+use Signnow\Serializer\Tests\Fixtures\Author;
+use Signnow\Serializer\Tests\Fixtures\AuthorList;
+use Signnow\Serializer\Tests\Fixtures\Order;
+use Signnow\Serializer\Tests\Fixtures\Price;
 use Metadata\MetadataFactory;
 use PhpCollection\Map;
 
@@ -55,7 +55,7 @@ class ArrayTest extends \PHPUnit\Framework\TestCase
      */
     public function testToArrayWithScalar($input)
     {
-        $this->expectException('JMS\Serializer\Exception\RuntimeException');
+        $this->expectException('Signnow\Serializer\Exception\RuntimeException');
         $this->expectExceptionMessage(sprintf(
             'The input data of type "%s" did not convert to an array, but got a result of type "%s".',
             gettype($input),
@@ -85,7 +85,7 @@ class ArrayTest extends \PHPUnit\Framework\TestCase
         );
 
         $expected = new Order(new Price(2.5));
-        $result = $this->serializer->fromArray($data, 'JMS\Serializer\Tests\Fixtures\Order');
+        $result = $this->serializer->fromArray($data, 'Signnow\Serializer\Tests\Fixtures\Order');
 
         $this->assertEquals($expected, $result);
     }

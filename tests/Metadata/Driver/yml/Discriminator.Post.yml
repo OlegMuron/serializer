@@ -1,9 +1,9 @@
-JMS\Serializer\Tests\Fixtures\Discriminator\Post:
+Signnow\Serializer\Tests\Fixtures\Discriminator\Post:
     discriminator:
         field_name: type
         map:
-            post: JMS\Serializer\Tests\Fixtures\Discriminator\Post
-            image_post: JMS\Serializer\Tests\Fixtures\Discriminator\ImagePost
+            post: Signnow\Serializer\Tests\Fixtures\Discriminator\Post
+            image_post: Signnow\Serializer\Tests\Fixtures\Discriminator\ImagePost
 
     properties:
         title:

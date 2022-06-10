@@ -1,8 +1,8 @@
 <?php
 
-namespace JMS\Serializer\Tests\Serializer;
+namespace Signnow\Serializer\Tests\Serializer;
 
-use JMS\Serializer\TypeParser;
+use Signnow\Serializer\TypeParser;
 
 class TypeParserTest extends \PHPUnit\Framework\TestCase
 {

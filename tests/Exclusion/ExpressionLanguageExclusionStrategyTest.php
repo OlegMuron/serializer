@@ -1,11 +1,11 @@
 <?php
 
-namespace JMS\Serializer\Tests\Exclusion;
+namespace Signnow\Serializer\Tests\Exclusion;
 
-use JMS\Serializer\Exclusion\ExpressionLanguageExclusionStrategy;
-use JMS\Serializer\Expression\ExpressionEvaluator;
-use JMS\Serializer\Metadata\StaticPropertyMetadata;
-use JMS\Serializer\SerializationContext;
+use Signnow\Serializer\Exclusion\ExpressionLanguageExclusionStrategy;
+use Signnow\Serializer\Expression\ExpressionEvaluator;
+use Signnow\Serializer\Metadata\StaticPropertyMetadata;
+use Signnow\Serializer\SerializationContext;
 
 /**
  * @author Asmir Mustafic <goetas@gmail.com>

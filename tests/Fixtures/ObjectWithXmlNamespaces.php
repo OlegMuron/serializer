@@ -1,12 +1,12 @@
 <?php
 
-namespace JMS\Serializer\Tests\Fixtures;
+namespace Signnow\Serializer\Tests\Fixtures;
 
-use JMS\Serializer\Annotation\Type;
-use JMS\Serializer\Annotation\XmlAttribute;
-use JMS\Serializer\Annotation\XmlElement;
-use JMS\Serializer\Annotation\XmlNamespace;
-use JMS\Serializer\Annotation\XmlRoot;
+use Signnow\Serializer\Annotation\Type;
+use Signnow\Serializer\Annotation\XmlAttribute;
+use Signnow\Serializer\Annotation\XmlElement;
+use Signnow\Serializer\Annotation\XmlNamespace;
+use Signnow\Serializer\Annotation\XmlRoot;
 
 /**
  * @XmlRoot("test-object", namespace="http://example.com/namespace")

@@ -1,6 +1,6 @@
 <?php
 
-namespace JMS\Serializer\Tests\Fixtures\DoctrinePHPCR;
+namespace Signnow\Serializer\Tests\Fixtures\DoctrinePHPCR;
 
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ODM\PHPCR\Mapping\Annotations as PHPCRODM;

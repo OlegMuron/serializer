@@ -1,17 +1,17 @@
 <?php
 
-namespace JMS\Serializer\Tests\Fixtures;
+namespace Signnow\Serializer\Tests\Fixtures;
 
 use Doctrine\Common\Collections\ArrayCollection;
-use JMS\Serializer\Annotation\Groups;
-use JMS\Serializer\Annotation\SerializedName;
-use JMS\Serializer\Annotation\Type;
-use JMS\Serializer\Annotation\XmlAttribute;
-use JMS\Serializer\Annotation\XmlElement;
-use JMS\Serializer\Annotation\XmlList;
-use JMS\Serializer\Annotation\XmlMap;
-use JMS\Serializer\Annotation\XmlNamespace;
-use JMS\Serializer\Annotation\XmlRoot;
+use Signnow\Serializer\Annotation\Groups;
+use Signnow\Serializer\Annotation\SerializedName;
+use Signnow\Serializer\Annotation\Type;
+use Signnow\Serializer\Annotation\XmlAttribute;
+use Signnow\Serializer\Annotation\XmlElement;
+use Signnow\Serializer\Annotation\XmlList;
+use Signnow\Serializer\Annotation\XmlMap;
+use Signnow\Serializer\Annotation\XmlNamespace;
+use Signnow\Serializer\Annotation\XmlRoot;
 use PhpCollection\Map;
 use PhpCollection\Sequence;
 
@@ -68,14 +68,14 @@ class BlogPost
     private $etag;
 
     /**
-     * @Type("ArrayCollection<JMS\Serializer\Tests\Fixtures\Comment>")
+     * @Type("ArrayCollection<Signnow\Serializer\Tests\Fixtures\Comment>")
      * @XmlList(inline=true, entry="comment")
      * @Groups({"comments"})
      */
     private $comments;
 
     /**
-     * @Type("PhpCollection\Sequence<JMS\Serializer\Tests\Fixtures\Comment>")
+     * @Type("PhpCollection\Sequence<Signnow\Serializer\Tests\Fixtures\Comment>")
      * @XmlList(inline=true, entry="comment2")
      * @Groups({"comments"})
      */
@@ -88,19 +88,19 @@ class BlogPost
     private $metadata;
 
     /**
-     * @Type("JMS\Serializer\Tests\Fixtures\Author")
+     * @Type("Signnow\Serializer\Tests\Fixtures\Author")
      * @Groups({"post"})
      * @XmlElement(namespace="http://www.w3.org/2005/Atom")
      */
     private $author;
 
     /**
-     * @Type("JMS\Serializer\Tests\Fixtures\Publisher")
+     * @Type("Signnow\Serializer\Tests\Fixtures\Publisher")
      */
     private $publisher;
 
     /**
-     * @Type("array<JMS\Serializer\Tests\Fixtures\Tag>")
+     * @Type("array<Signnow\Serializer\Tests\Fixtures\Tag>")
      * @XmlList(inline=true, entry="tag", namespace="http://purl.org/dc/elements/1.1/");
      */
     private $tag;

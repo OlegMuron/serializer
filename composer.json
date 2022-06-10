@@ -50,13 +50,13 @@
         "phpunit/phpunit": "^8.0"
     },
     "autoload": {
-        "psr-0": {
-            "JMS\\Serializer": "src/"
+        "psr-4": {
+            "Signnow\\Serializer\\": "src/"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "JMS\\Serializer\\Tests\\": "tests/"
+            "Signnow\\Serializer\\Tests\\": "tests/"
         }
     },
     "extra": {

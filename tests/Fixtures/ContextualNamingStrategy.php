@@ -1,11 +1,11 @@
 <?php
 
-namespace JMS\Serializer\Tests\Fixtures;
+namespace Signnow\Serializer\Tests\Fixtures;
 
-use JMS\Serializer\Context;
-use JMS\Serializer\GraphNavigator;
-use JMS\Serializer\Metadata\PropertyMetadata;
-use JMS\Serializer\Naming\AdvancedNamingStrategyInterface;
+use Signnow\Serializer\Context;
+use Signnow\Serializer\GraphNavigator;
+use Signnow\Serializer\Metadata\PropertyMetadata;
+use Signnow\Serializer\Naming\AdvancedNamingStrategyInterface;
 
 /**
  * Class ContextualNamingStrategy

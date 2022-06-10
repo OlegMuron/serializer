@@ -1,9 +1,9 @@
 <?php
 
-namespace JMS\Serializer\Tests\Metadata\Driver;
+namespace Signnow\Serializer\Tests\Metadata\Driver;
 
 use Doctrine\Common\Annotations\AnnotationReader;
-use JMS\Serializer\Metadata\Driver\AnnotationDriver;
+use Signnow\Serializer\Metadata\Driver\AnnotationDriver;
 
 class AnnotationDriverTest extends BaseDriverTest
 {

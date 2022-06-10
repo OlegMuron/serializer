@@ -1,8 +1,8 @@
 <?php
 
-namespace JMS\Serializer\Tests\Serializer\EventDispatcher;
+namespace Signnow\Serializer\Tests\Serializer\EventDispatcher;
 
-use JMS\Serializer\EventDispatcher\LazyEventDispatcher;
+use Signnow\Serializer\EventDispatcher\LazyEventDispatcher;
 
 abstract class LazyEventDispatcherTest extends EventDispatcherTest
 {

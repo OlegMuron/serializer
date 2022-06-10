@@ -1,15 +1,15 @@
 <?php
 
-namespace JMS\Serializer\Tests\Fixtures\DoctrinePHPCR;
+namespace Signnow\Serializer\Tests\Fixtures\DoctrinePHPCR;
 
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ODM\PHPCR\Mapping\Annotations as PHPCRODM;
-use JMS\Serializer\Annotation\Groups;
-use JMS\Serializer\Annotation\SerializedName;
-use JMS\Serializer\Annotation\Type;
-use JMS\Serializer\Annotation\XmlAttribute;
-use JMS\Serializer\Annotation\XmlList;
-use JMS\Serializer\Annotation\XmlRoot;
+use Signnow\Serializer\Annotation\Groups;
+use Signnow\Serializer\Annotation\SerializedName;
+use Signnow\Serializer\Annotation\Type;
+use Signnow\Serializer\Annotation\XmlAttribute;
+use Signnow\Serializer\Annotation\XmlList;
+use Signnow\Serializer\Annotation\XmlRoot;
 
 /**
  * @PHPCRODM\Document

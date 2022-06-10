@@ -1,13 +1,13 @@
 <?php
 
-namespace JMS\Serializer\Tests\Fixtures;
+namespace Signnow\Serializer\Tests\Fixtures;
 
-use JMS\Serializer\Annotation\Type;
+use Signnow\Serializer\Annotation\Type;
 
 class VehicleInterfaceGarage
 {
     /**
-     * @Type("array<JMS\Serializer\Tests\Fixtures\Discriminator\VehicleInterface>")
+     * @Type("array<Signnow\Serializer\Tests\Fixtures\Discriminator\VehicleInterface>")
      */
     public $vehicles;
 

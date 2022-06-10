@@ -1,4 +1,4 @@
-JMS\Serializer\Tests\Fixtures\ExcludePublicAccessor:
+Signnow\Serializer\Tests\Fixtures\ExcludePublicAccessor:
     access_type: public_method
     read_only: false
     properties:

@@ -1,9 +1,9 @@
 <?php
 
-namespace JMS\Serializer\Tests\Fixtures;
+namespace Signnow\Serializer\Tests\Fixtures;
 
-use JMS\Serializer\Annotation\ExclusionPolicy;
-use JMS\Serializer\Annotation\Expose;
+use Signnow\Serializer\Annotation\ExclusionPolicy;
+use Signnow\Serializer\Annotation\Expose;
 
 /**
  * @ExclusionPolicy("all")

@@ -31,16 +31,16 @@ function createCollection()
 
 function createObject()
 {
-    $p = new \JMS\Serializer\Tests\Fixtures\Publisher('bar');
-    $post = new \JMS\Serializer\Tests\Fixtures\BlogPost('FooooooooooooooooooooooBAR', new \JMS\Serializer\Tests\Fixtures\Author('Foo'), new \DateTime, $p);
+    $p = new \Signnow\Serializer\Tests\Fixtures\Publisher('bar');
+    $post = new \Signnow\Serializer\Tests\Fixtures\BlogPost('FooooooooooooooooooooooBAR', new \Signnow\Serializer\Tests\Fixtures\Author('Foo'), new \DateTime, $p);
     for ($i = 0; $i < 100; $i++) {
-        $post->addComment(new \JMS\Serializer\Tests\Fixtures\Comment(new \JMS\Serializer\Tests\Fixtures\Author('foo'), 'foobar'));
+        $post->addComment(new \Signnow\Serializer\Tests\Fixtures\Comment(new \Signnow\Serializer\Tests\Fixtures\Author('foo'), 'foobar'));
     }
 
     return $post;
 }
 
-$serializer = \JMS\Serializer\SerializerBuilder::create()->build();
+$serializer = \Signnow\Serializer\SerializerBuilder::create()->build();
 $collection = createCollection();
 $metrics = array();
 $f = function () use ($serializer, $collection, $format) {

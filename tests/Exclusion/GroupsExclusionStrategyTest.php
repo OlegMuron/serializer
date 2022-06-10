@@ -1,10 +1,10 @@
 <?php
 
-namespace JMS\Serializer\Tests\Exclusion;
+namespace Signnow\Serializer\Tests\Exclusion;
 
-use JMS\Serializer\Exclusion\GroupsExclusionStrategy;
-use JMS\Serializer\Metadata\StaticPropertyMetadata;
-use JMS\Serializer\SerializationContext;
+use Signnow\Serializer\Exclusion\GroupsExclusionStrategy;
+use Signnow\Serializer\Metadata\StaticPropertyMetadata;
+use Signnow\Serializer\SerializationContext;
 
 class GroupsExclusionStrategyTest extends \PHPUnit\Framework\TestCase
 {

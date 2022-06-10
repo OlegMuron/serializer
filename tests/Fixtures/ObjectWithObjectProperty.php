@@ -1,8 +1,8 @@
 <?php
 
-namespace JMS\Serializer\Tests\Fixtures;
+namespace Signnow\Serializer\Tests\Fixtures;
 
-use JMS\Serializer\Annotation\Type;
+use Signnow\Serializer\Annotation\Type;
 
 
 class ObjectWithObjectProperty
@@ -13,7 +13,7 @@ class ObjectWithObjectProperty
     private $foo;
 
     /**
-     * @Type("JMS\Serializer\Tests\Fixtures\Author")
+     * @Type("Signnow\Serializer\Tests\Fixtures\Author")
      */
     private $author;
 
@@ -26,7 +26,7 @@ class ObjectWithObjectProperty
     }
 
     /**
-     * @return \JMS\Serializer\Tests\Fixtures\Author
+     * @return \Signnow\Serializer\Tests\Fixtures\Author
      */
     public function getAuthor()
     {

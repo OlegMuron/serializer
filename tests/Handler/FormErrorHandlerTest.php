@@ -1,11 +1,11 @@
 <?php
 
-namespace JMS\Serializer\Tests\Handler;
+namespace Signnow\Serializer\Tests\Handler;
 
-use JMS\Serializer\Handler\FormErrorHandler;
-use JMS\Serializer\JsonSerializationVisitor;
-use JMS\Serializer\Naming\CamelCaseNamingStrategy;
-use JMS\Serializer\Naming\SerializedNameAnnotationStrategy;
+use Signnow\Serializer\Handler\FormErrorHandler;
+use Signnow\Serializer\JsonSerializationVisitor;
+use Signnow\Serializer\Naming\CamelCaseNamingStrategy;
+use Signnow\Serializer\Naming\SerializedNameAnnotationStrategy;
 use Symfony\Component\EventDispatcher\EventDispatcher;
 use Symfony\Component\EventDispatcher\EventDispatcherInterface;
 use Symfony\Component\Form\FormBuilder;
@@ -16,12 +16,12 @@ use Symfony\Component\Translation\Translator;
 class FormErrorHandlerTest extends \PHPUnit\Framework\TestCase
 {
     /**
-     * @var \JMS\Serializer\Handler\FormErrorHandler
+     * @var \Signnow\Serializer\Handler\FormErrorHandler
      */
     protected $handler;
 
     /**
-     * @var \JMS\Serializer\VisitorInterface
+     * @var \Signnow\Serializer\VisitorInterface
      */
     protected $visitor;
 

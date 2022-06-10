@@ -1,11 +1,11 @@
 <?php
 
-namespace JMS\Serializer\Tests\Handler;
+namespace Signnow\Serializer\Tests\Handler;
 
-use JMS\Serializer\Handler\DateHandler;
-use JMS\Serializer\JsonDeserializationVisitor;
-use JMS\Serializer\SerializationContext;
-use JMS\Serializer\VisitorInterface;
+use Signnow\Serializer\Handler\DateHandler;
+use Signnow\Serializer\JsonDeserializationVisitor;
+use Signnow\Serializer\SerializationContext;
+use Signnow\Serializer\VisitorInterface;
 
 class DateHandlerTest extends \PHPUnit\Framework\TestCase
 {

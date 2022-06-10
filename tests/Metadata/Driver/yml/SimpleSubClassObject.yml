@@ -1,4 +1,4 @@
-JMS\Serializer\Tests\Fixtures\SimpleSubClassObject:
+Signnow\Serializer\Tests\Fixtures\SimpleSubClassObject:
     xml_namespaces:
         foo: http://better.foo.example.org
         old_foo: http://foo.example.org

@@ -1,19 +1,19 @@
 <?php
 
-namespace JMS\Serializer\Tests\Serializer;
+namespace Signnow\Serializer\Tests\Serializer;
 
-use JMS\Serializer\Context;
-use JMS\Serializer\EventDispatcher\Event;
-use JMS\Serializer\EventDispatcher\EventSubscriberInterface;
-use JMS\Serializer\Exception\RuntimeException;
-use JMS\Serializer\GraphNavigator;
-use JMS\Serializer\SerializationContext;
-use JMS\Serializer\Tests\Fixtures\Author;
-use JMS\Serializer\Tests\Fixtures\AuthorList;
-use JMS\Serializer\Tests\Fixtures\ObjectWithEmptyArrayAndHash;
-use JMS\Serializer\Tests\Fixtures\ObjectWithInlineArray;
-use JMS\Serializer\Tests\Fixtures\Tag;
-use JMS\Serializer\VisitorInterface;
+use Signnow\Serializer\Context;
+use Signnow\Serializer\EventDispatcher\Event;
+use Signnow\Serializer\EventDispatcher\EventSubscriberInterface;
+use Signnow\Serializer\Exception\RuntimeException;
+use Signnow\Serializer\GraphNavigator;
+use Signnow\Serializer\SerializationContext;
+use Signnow\Serializer\Tests\Fixtures\Author;
+use Signnow\Serializer\Tests\Fixtures\AuthorList;
+use Signnow\Serializer\Tests\Fixtures\ObjectWithEmptyArrayAndHash;
+use Signnow\Serializer\Tests\Fixtures\ObjectWithInlineArray;
+use Signnow\Serializer\Tests\Fixtures\Tag;
+use Signnow\Serializer\VisitorInterface;
 
 class JsonSerializationTest extends BaseSerializationTest
 {
@@ -124,15 +124,15 @@ class JsonSerializationTest extends BaseSerializationTest
     {
         $this->dispatcher->addListener('serializer.post_serialize', function (Event $event) {
             $this->assertFalse($event->getVisitor()->hasData('_links'));
-        }, 'JMS\Serializer\Tests\Fixtures\Author', 'json');
+        }, 'Signnow\Serializer\Tests\Fixtures\Author', 'json');
 
         $this->dispatcher->addSubscriber(new LinkAddingSubscriber());
 
         $this->dispatcher->addListener('serializer.post_serialize', function (Event $event) {
             $this->assertTrue($event->getVisitor()->hasData('_links'));
-        }, 'JMS\Serializer\Tests\Fixtures\Author', 'json');
+        }, 'Signnow\Serializer\Tests\Fixtures\Author', 'json');
 
-        $this->handlerRegistry->registerHandler(GraphNavigator::DIRECTION_SERIALIZATION, 'JMS\Serializer\Tests\Fixtures\AuthorList', 'json',
+        $this->handlerRegistry->registerHandler(GraphNavigator::DIRECTION_SERIALIZATION, 'Signnow\Serializer\Tests\Fixtures\AuthorList', 'json',
             function (VisitorInterface $visitor, AuthorList $data, array $type, Context $context) {
                 return $visitor->visitArray(iterator_to_array($data), $type, $context);
             }
@@ -148,7 +148,7 @@ class JsonSerializationTest extends BaseSerializationTest
     public function testReplaceNameInOutput()
     {
         $this->dispatcher->addSubscriber(new ReplaceNameSubscriber());
-        $this->handlerRegistry->registerHandler(GraphNavigator::DIRECTION_SERIALIZATION, 'JMS\Serializer\Tests\Fixtures\AuthorList', 'json',
+        $this->handlerRegistry->registerHandler(GraphNavigator::DIRECTION_SERIALIZATION, 'Signnow\Serializer\Tests\Fixtures\AuthorList', 'json',
             function (VisitorInterface $visitor, AuthorList $data, array $type, Context $context) {
                 return $visitor->visitArray(iterator_to_array($data), $type, $context);
             }
@@ -163,22 +163,22 @@ class JsonSerializationTest extends BaseSerializationTest
 
     /**
      * @expectedException RuntimeException
-     * @expectedExceptionMessage Invalid data "baz"(string), expected "JMS\Serializer\Tests\Fixtures\Author".
+     * @expectedExceptionMessage Invalid data "baz"(string), expected "Signnow\Serializer\Tests\Fixtures\Author".
      */
     public function testDeserializingObjectWithObjectPropertyWithNoArrayToObject()
     {
         $content = $this->getContent('object_with_object_property_no_array_to_author');
-        $object = $this->deserialize($content, 'JMS\Serializer\Tests\Fixtures\ObjectWithObjectProperty');
+        $object = $this->deserialize($content, 'Signnow\Serializer\Tests\Fixtures\ObjectWithObjectProperty');
         $this->assertEquals('bar', $object->getFoo());
-        $this->assertInstanceOf('JMS\Serializer\Tests\Fixtures\Author', $object->getAuthor());
+        $this->assertInstanceOf('Signnow\Serializer\Tests\Fixtures\Author', $object->getAuthor());
     }
 
     public function testDeserializingObjectWithObjectProperty()
     {
         $content = $this->getContent('object_with_object_property');
-        $object = $this->deserialize($content, 'JMS\Serializer\Tests\Fixtures\ObjectWithObjectProperty');
+        $object = $this->deserialize($content, 'Signnow\Serializer\Tests\Fixtures\ObjectWithObjectProperty');
         $this->assertEquals('bar', $object->getFoo());
-        $this->assertInstanceOf('JMS\Serializer\Tests\Fixtures\Author', $object->getAuthor());
+        $this->assertInstanceOf('Signnow\Serializer\Tests\Fixtures\Author', $object->getAuthor());
         $this->assertEquals('baz', $object->getAuthor()->getName());
     }
 
@@ -227,7 +227,7 @@ class JsonSerializationTest extends BaseSerializationTest
     {
         $visitor = $this->serializationVisitors->get('json')->get();
         $functionToCall = 'visit' . ucfirst($primitiveType);
-        $result = $visitor->$functionToCall($data, array(), $this->getMockBuilder('JMS\Serializer\Context')->getMock());
+        $result = $visitor->$functionToCall($data, array(), $this->getMockBuilder('Signnow\Serializer\Context')->getMock());
         if ($primitiveType == 'double') {
             $primitiveType = 'float';
         }
@@ -287,16 +287,16 @@ class JsonSerializationTest extends BaseSerializationTest
         );
 
         $this->assertEquals('{"jim":{"full_name":"Jim"},"mark":{"full_name":"Mark"}}', $this->serializer->serialize($data, $this->getFormat(), SerializationContext::create()->setInitialType('array')));
-        $this->assertEquals('[{"full_name":"Jim"},{"full_name":"Mark"}]', $this->serializer->serialize($data, $this->getFormat(), SerializationContext::create()->setInitialType('array<JMS\Serializer\Tests\Fixtures\Author>')));
-        $this->assertEquals('{"jim":{"full_name":"Jim"},"mark":{"full_name":"Mark"}}', $this->serializer->serialize($data, $this->getFormat(), SerializationContext::create()->setInitialType('array<string,JMS\Serializer\Tests\Fixtures\Author>')));
+        $this->assertEquals('[{"full_name":"Jim"},{"full_name":"Mark"}]', $this->serializer->serialize($data, $this->getFormat(), SerializationContext::create()->setInitialType('array<Signnow\Serializer\Tests\Fixtures\Author>')));
+        $this->assertEquals('{"jim":{"full_name":"Jim"},"mark":{"full_name":"Mark"}}', $this->serializer->serialize($data, $this->getFormat(), SerializationContext::create()->setInitialType('array<string,Signnow\Serializer\Tests\Fixtures\Author>')));
 
         $data = array(
             $author1,
             $author2,
         );
         $this->assertEquals('[{"full_name":"Jim"},{"full_name":"Mark"}]', $this->serializer->serialize($data, $this->getFormat(), SerializationContext::create()->setInitialType('array')));
-        $this->assertEquals('{"0":{"full_name":"Jim"},"1":{"full_name":"Mark"}}', $this->serializer->serialize($data, $this->getFormat(), SerializationContext::create()->setInitialType('array<int,JMS\Serializer\Tests\Fixtures\Author>')));
-        $this->assertEquals('{"0":{"full_name":"Jim"},"1":{"full_name":"Mark"}}', $this->serializer->serialize($data, $this->getFormat(), SerializationContext::create()->setInitialType('array<string,JMS\Serializer\Tests\Fixtures\Author>')));
+        $this->assertEquals('{"0":{"full_name":"Jim"},"1":{"full_name":"Mark"}}', $this->serializer->serialize($data, $this->getFormat(), SerializationContext::create()->setInitialType('array<int,Signnow\Serializer\Tests\Fixtures\Author>')));
+        $this->assertEquals('{"0":{"full_name":"Jim"},"1":{"full_name":"Mark"}}', $this->serializer->serialize($data, $this->getFormat(), SerializationContext::create()->setInitialType('array<string,Signnow\Serializer\Tests\Fixtures\Author>')));
     }
 
     public function getTypeHintedArrays()
@@ -360,7 +360,7 @@ class JsonSerializationTest extends BaseSerializationTest
 
             [[$c2], '[{"foo":"bar"}]', SerializationContext::create()->setInitialType('array<stdClass>')],
 
-            [[$tag], '[{"name":"tag"}]', SerializationContext::create()->setInitialType('array<JMS\Serializer\Tests\Fixtures\Tag>')],
+            [[$tag], '[{"name":"tag"}]', SerializationContext::create()->setInitialType('array<Signnow\Serializer\Tests\Fixtures\Tag>')],
 
             [[$c1], '{"0":{}}', SerializationContext::create()->setInitialType('array<integer,stdClass>')],
             [[$c2], '{"0":{"foo":"bar"}}', SerializationContext::create()->setInitialType('array<integer,stdClass>')],
@@ -368,7 +368,7 @@ class JsonSerializationTest extends BaseSerializationTest
             [[$c3], '{"0":{"foo":{"name":"tag"}}}', SerializationContext::create()->setInitialType('array<integer,stdClass>')],
             [[$c3], '[{"foo":{"name":"tag"}}]', SerializationContext::create()->setInitialType('array<stdClass>')],
 
-            [[$tag], '{"0":{"name":"tag"}}', SerializationContext::create()->setInitialType('array<integer,JMS\Serializer\Tests\Fixtures\Tag>')],
+            [[$tag], '{"0":{"name":"tag"}}', SerializationContext::create()->setInitialType('array<integer,Signnow\Serializer\Tests\Fixtures\Tag>')],
         ];
     }
 
@@ -404,7 +404,7 @@ class LinkAddingSubscriber implements EventSubscriberInterface
     public static function getSubscribedEvents()
     {
         return array(
-            array('event' => 'serializer.post_serialize', 'method' => 'onPostSerialize', 'format' => 'json', 'class' => 'JMS\Serializer\Tests\Fixtures\Author'),
+            array('event' => 'serializer.post_serialize', 'method' => 'onPostSerialize', 'format' => 'json', 'class' => 'Signnow\Serializer\Tests\Fixtures\Author'),
         );
     }
 }
@@ -419,7 +419,7 @@ class ReplaceNameSubscriber implements EventSubscriberInterface
     public static function getSubscribedEvents()
     {
         return array(
-            array('event' => 'serializer.post_serialize', 'method' => 'onPostSerialize', 'format' => 'json', 'class' => 'JMS\Serializer\Tests\Fixtures\Author'),
+            array('event' => 'serializer.post_serialize', 'method' => 'onPostSerialize', 'format' => 'json', 'class' => 'Signnow\Serializer\Tests\Fixtures\Author'),
         );
     }
 }

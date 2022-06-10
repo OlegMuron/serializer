@@ -1,55 +1,55 @@
 <?php
 
-namespace JMS\Serializer\Tests\Serializer;
+namespace Signnow\Serializer\Tests\Serializer;
 
-use JMS\Serializer\Construction\UnserializeObjectConstructor;
-use JMS\Serializer\Context;
-use JMS\Serializer\Exception\InvalidArgumentException;
-use JMS\Serializer\GraphNavigator;
-use JMS\Serializer\Handler\DateHandler;
-use JMS\Serializer\Handler\HandlerRegistry;
-use JMS\Serializer\Metadata\StaticPropertyMetadata;
-use JMS\Serializer\Naming\CamelCaseNamingStrategy;
-use JMS\Serializer\Naming\PropertyNamingStrategyInterface;
-use JMS\Serializer\Naming\SerializedNameAnnotationStrategy;
-use JMS\Serializer\SerializationContext;
-use JMS\Serializer\Serializer;
-use JMS\Serializer\Tests\Fixtures\Discriminator\ObjectWithXmlAttributeDiscriminatorChild;
-use JMS\Serializer\Tests\Fixtures\Discriminator\ObjectWithXmlAttributeDiscriminatorParent;
-use JMS\Serializer\Tests\Fixtures\Discriminator\ObjectWithXmlNamespaceAttributeDiscriminatorChild;
-use JMS\Serializer\Tests\Fixtures\Discriminator\ObjectWithXmlNamespaceAttributeDiscriminatorParent;
-use JMS\Serializer\Tests\Fixtures\Discriminator\ObjectWithXmlNamespaceDiscriminatorChild;
-use JMS\Serializer\Tests\Fixtures\Discriminator\ObjectWithXmlNamespaceDiscriminatorParent;
-use JMS\Serializer\Tests\Fixtures\Discriminator\ObjectWithXmlNotCDataDiscriminatorChild;
-use JMS\Serializer\Tests\Fixtures\Discriminator\ObjectWithXmlNotCDataDiscriminatorParent;
-use JMS\Serializer\Tests\Fixtures\Input;
-use JMS\Serializer\Tests\Fixtures\InvalidUsageOfXmlValue;
-use JMS\Serializer\Tests\Fixtures\ObjectWithNamespacesAndList;
-use JMS\Serializer\Tests\Fixtures\ObjectWithNamespacesAndNestedList;
-use JMS\Serializer\Tests\Fixtures\ObjectWithToString;
-use JMS\Serializer\Tests\Fixtures\ObjectWithVirtualXmlProperties;
-use JMS\Serializer\Tests\Fixtures\ObjectWithXmlKeyValuePairs;
-use JMS\Serializer\Tests\Fixtures\ObjectWithXmlKeyValuePairsWithObjectType;
-use JMS\Serializer\Tests\Fixtures\ObjectWithXmlKeyValuePairsWithType;
-use JMS\Serializer\Tests\Fixtures\ObjectWithXmlNamespaces;
-use JMS\Serializer\Tests\Fixtures\ObjectWithXmlNamespacesAndObjectProperty;
-use JMS\Serializer\Tests\Fixtures\ObjectWithXmlNamespacesAndObjectPropertyAuthor;
-use JMS\Serializer\Tests\Fixtures\ObjectWithXmlNamespacesAndObjectPropertyVirtual;
-use JMS\Serializer\Tests\Fixtures\ObjectWithXmlRootNamespace;
-use JMS\Serializer\Tests\Fixtures\Person;
-use JMS\Serializer\Tests\Fixtures\PersonCollection;
-use JMS\Serializer\Tests\Fixtures\PersonLocation;
-use JMS\Serializer\Tests\Fixtures\SimpleClassObject;
-use JMS\Serializer\Tests\Fixtures\SimpleObject;
-use JMS\Serializer\Tests\Fixtures\SimpleSubClassObject;
-use JMS\Serializer\XmlDeserializationVisitor;
-use JMS\Serializer\XmlSerializationVisitor;
+use Signnow\Serializer\Construction\UnserializeObjectConstructor;
+use Signnow\Serializer\Context;
+use Signnow\Serializer\Exception\InvalidArgumentException;
+use Signnow\Serializer\GraphNavigator;
+use Signnow\Serializer\Handler\DateHandler;
+use Signnow\Serializer\Handler\HandlerRegistry;
+use Signnow\Serializer\Metadata\StaticPropertyMetadata;
+use Signnow\Serializer\Naming\CamelCaseNamingStrategy;
+use Signnow\Serializer\Naming\PropertyNamingStrategyInterface;
+use Signnow\Serializer\Naming\SerializedNameAnnotationStrategy;
+use Signnow\Serializer\SerializationContext;
+use Signnow\Serializer\Serializer;
+use Signnow\Serializer\Tests\Fixtures\Discriminator\ObjectWithXmlAttributeDiscriminatorChild;
+use Signnow\Serializer\Tests\Fixtures\Discriminator\ObjectWithXmlAttributeDiscriminatorParent;
+use Signnow\Serializer\Tests\Fixtures\Discriminator\ObjectWithXmlNamespaceAttributeDiscriminatorChild;
+use Signnow\Serializer\Tests\Fixtures\Discriminator\ObjectWithXmlNamespaceAttributeDiscriminatorParent;
+use Signnow\Serializer\Tests\Fixtures\Discriminator\ObjectWithXmlNamespaceDiscriminatorChild;
+use Signnow\Serializer\Tests\Fixtures\Discriminator\ObjectWithXmlNamespaceDiscriminatorParent;
+use Signnow\Serializer\Tests\Fixtures\Discriminator\ObjectWithXmlNotCDataDiscriminatorChild;
+use Signnow\Serializer\Tests\Fixtures\Discriminator\ObjectWithXmlNotCDataDiscriminatorParent;
+use Signnow\Serializer\Tests\Fixtures\Input;
+use Signnow\Serializer\Tests\Fixtures\InvalidUsageOfXmlValue;
+use Signnow\Serializer\Tests\Fixtures\ObjectWithNamespacesAndList;
+use Signnow\Serializer\Tests\Fixtures\ObjectWithNamespacesAndNestedList;
+use Signnow\Serializer\Tests\Fixtures\ObjectWithToString;
+use Signnow\Serializer\Tests\Fixtures\ObjectWithVirtualXmlProperties;
+use Signnow\Serializer\Tests\Fixtures\ObjectWithXmlKeyValuePairs;
+use Signnow\Serializer\Tests\Fixtures\ObjectWithXmlKeyValuePairsWithObjectType;
+use Signnow\Serializer\Tests\Fixtures\ObjectWithXmlKeyValuePairsWithType;
+use Signnow\Serializer\Tests\Fixtures\ObjectWithXmlNamespaces;
+use Signnow\Serializer\Tests\Fixtures\ObjectWithXmlNamespacesAndObjectProperty;
+use Signnow\Serializer\Tests\Fixtures\ObjectWithXmlNamespacesAndObjectPropertyAuthor;
+use Signnow\Serializer\Tests\Fixtures\ObjectWithXmlNamespacesAndObjectPropertyVirtual;
+use Signnow\Serializer\Tests\Fixtures\ObjectWithXmlRootNamespace;
+use Signnow\Serializer\Tests\Fixtures\Person;
+use Signnow\Serializer\Tests\Fixtures\PersonCollection;
+use Signnow\Serializer\Tests\Fixtures\PersonLocation;
+use Signnow\Serializer\Tests\Fixtures\SimpleClassObject;
+use Signnow\Serializer\Tests\Fixtures\SimpleObject;
+use Signnow\Serializer\Tests\Fixtures\SimpleSubClassObject;
+use Signnow\Serializer\XmlDeserializationVisitor;
+use Signnow\Serializer\XmlSerializationVisitor;
 use PhpCollection\Map;
 
 class XmlSerializationTest extends BaseSerializationTest
 {
     /**
-     * @expectedException JMS\Serializer\Exception\RuntimeException
+     * @expectedException Signnow\Serializer\Exception\RuntimeException
      */
     public function testInvalidUsageOfXmlValue()
     {
@@ -75,7 +75,7 @@ class XmlSerializationTest extends BaseSerializationTest
 
     public function testAccessorSetterDeserialization()
     {
-        /** @var \JMS\Serializer\Tests\Fixtures\AccessorSetter $object */
+        /** @var \Signnow\Serializer\Tests\Fixtures\AccessorSetter $object */
         $object = $this->deserialize('<?xml version="1.0"?>
             <AccessorSetter>
                 <element attribute="attribute">element</element>
@@ -83,11 +83,11 @@ class XmlSerializationTest extends BaseSerializationTest
                     <entry>collectionEntry</entry>
                 </collection>
             </AccessorSetter>',
-            'JMS\Serializer\Tests\Fixtures\AccessorSetter'
+            'Signnow\Serializer\Tests\Fixtures\AccessorSetter'
         );
 
         $this->assertInstanceOf('stdClass', $object->getElement());
-        $this->assertInstanceOf('JMS\Serializer\Tests\Fixtures\AccessorSetterElement', $object->getElement()->element);
+        $this->assertInstanceOf('Signnow\Serializer\Tests\Fixtures\AccessorSetterElement', $object->getElement()->element);
         $this->assertEquals('attribute-different', $object->getElement()->element->getAttribute());
         $this->assertEquals('element-different', $object->getElement()->element->getElement());
         $this->assertEquals(['collectionEntry' => 'collectionEntry'], $object->getCollection());
@@ -118,7 +118,7 @@ class XmlSerializationTest extends BaseSerializationTest
     }
 
     /**
-     * @expectedException JMS\Serializer\Exception\InvalidArgumentException
+     * @expectedException Signnow\Serializer\Exception\InvalidArgumentException
      * @expectedExceptionMessage The document type "<!DOCTYPE author [<!ENTITY foo SYSTEM "php://filter/read=convert.base64-encode/resource=XmlSerializationTest.php">]>" is not allowed. If it is safe, you may add it to the whitelist configuration.
      */
     public function testExternalEntitiesAreDisabledByDefault()
@@ -133,7 +133,7 @@ class XmlSerializationTest extends BaseSerializationTest
     }
 
     /**
-     * @expectedException JMS\Serializer\Exception\InvalidArgumentException
+     * @expectedException Signnow\Serializer\Exception\InvalidArgumentException
      * @expectedExceptionMessage The document type "<!DOCTYPE foo>" is not allowed. If it is safe, you may add it to the whitelist configuration.
      */
     public function testDocumentTypesAreNotAllowed()
@@ -193,7 +193,7 @@ class XmlSerializationTest extends BaseSerializationTest
     public function testUnserializeMissingArray()
     {
         $xml = '<result></result>';
-        $object = $this->serializer->deserialize($xml, 'JMS\Serializer\Tests\Fixtures\ObjectWithAbsentXmlListNode', 'xml');
+        $object = $this->serializer->deserialize($xml, 'Signnow\Serializer\Tests\Fixtures\ObjectWithAbsentXmlListNode', 'xml');
         $this->assertEquals($object->absentAndNs, array());
 
         $xml = '<result xmlns:x="http://www.example.com">
@@ -201,7 +201,7 @@ class XmlSerializationTest extends BaseSerializationTest
                         <x:entry>foo</x:entry>
                     </absent_and_ns>
                   </result>';
-        $object = $this->serializer->deserialize($xml, 'JMS\Serializer\Tests\Fixtures\ObjectWithAbsentXmlListNode', 'xml');
+        $object = $this->serializer->deserialize($xml, 'Signnow\Serializer\Tests\Fixtures\ObjectWithAbsentXmlListNode', 'xml');
         $this->assertEquals($object->absentAndNs, array("foo"));
     }
 
@@ -320,7 +320,7 @@ class XmlSerializationTest extends BaseSerializationTest
     }
 
     /**
-     * @expectedException JMS\Serializer\Exception\RuntimeException
+     * @expectedException Signnow\Serializer\Exception\RuntimeException
      * @expectedExceptionMessage Unsupported value type for XML attribute map. Expected array but got object
      */
     public function testXmlAttributeMapWithoutArray()
@@ -537,7 +537,7 @@ class XmlSerializationTest extends BaseSerializationTest
     }
 
     /**
-     * @expectedException \JMS\Serializer\Exception\XmlErrorException
+     * @expectedException \Signnow\Serializer\Exception\XmlErrorException
      */
     public function testDeserializeEmptyString()
     {

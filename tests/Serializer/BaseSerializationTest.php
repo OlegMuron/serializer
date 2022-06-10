@@ -1,103 +1,103 @@
 <?php
 
-namespace JMS\Serializer\Tests\Serializer;
+namespace Signnow\Serializer\Tests\Serializer;
 
 use Doctrine\Common\Annotations\AnnotationReader;
 use Doctrine\Common\Collections\ArrayCollection;
-use JMS\Serializer\Accessor\DefaultAccessorStrategy;
-use JMS\Serializer\Accessor\ExpressionAccessorStrategy;
-use JMS\Serializer\Construction\UnserializeObjectConstructor;
-use JMS\Serializer\Context;
-use JMS\Serializer\DeserializationContext;
-use JMS\Serializer\EventDispatcher\EventDispatcher;
-use JMS\Serializer\EventDispatcher\Subscriber\DoctrineProxySubscriber;
-use JMS\Serializer\Exclusion\DepthExclusionStrategy;
-use JMS\Serializer\Exclusion\GroupsExclusionStrategy;
-use JMS\Serializer\Expression\ExpressionEvaluator;
-use JMS\Serializer\GraphNavigator;
-use JMS\Serializer\Handler\ArrayCollectionHandler;
-use JMS\Serializer\Handler\ConstraintViolationHandler;
-use JMS\Serializer\Handler\DateHandler;
-use JMS\Serializer\Handler\FormErrorHandler;
-use JMS\Serializer\Handler\HandlerRegistry;
-use JMS\Serializer\Handler\PhpCollectionHandler;
-use JMS\Serializer\Handler\StdClassHandler;
-use JMS\Serializer\JsonDeserializationVisitor;
-use JMS\Serializer\JsonSerializationVisitor;
-use JMS\Serializer\Metadata\Driver\AnnotationDriver;
-use JMS\Serializer\Metadata\Driver\YamlDriver;
-use JMS\Serializer\Naming\CamelCaseNamingStrategy;
-use JMS\Serializer\Naming\SerializedNameAnnotationStrategy;
-use JMS\Serializer\SerializationContext;
-use JMS\Serializer\Serializer;
-use JMS\Serializer\Tests\Fixtures\AccessorOrderChild;
-use JMS\Serializer\Tests\Fixtures\AccessorOrderMethod;
-use JMS\Serializer\Tests\Fixtures\AccessorOrderParent;
-use JMS\Serializer\Tests\Fixtures\Article;
-use JMS\Serializer\Tests\Fixtures\Author;
-use JMS\Serializer\Tests\Fixtures\AuthorExpressionAccess;
-use JMS\Serializer\Tests\Fixtures\AuthorList;
-use JMS\Serializer\Tests\Fixtures\AuthorReadOnly;
-use JMS\Serializer\Tests\Fixtures\AuthorReadOnlyPerClass;
-use JMS\Serializer\Tests\Fixtures\BlogPost;
-use JMS\Serializer\Tests\Fixtures\CircularReferenceParent;
-use JMS\Serializer\Tests\Fixtures\Comment;
-use JMS\Serializer\Tests\Fixtures\CurrencyAwareOrder;
-use JMS\Serializer\Tests\Fixtures\CurrencyAwarePrice;
-use JMS\Serializer\Tests\Fixtures\CustomDeserializationObject;
-use JMS\Serializer\Tests\Fixtures\DateTimeArraysObject;
-use JMS\Serializer\Tests\Fixtures\Discriminator\Car;
-use JMS\Serializer\Tests\Fixtures\Discriminator\ImagePost;
-use JMS\Serializer\Tests\Fixtures\Discriminator\Moped;
-use JMS\Serializer\Tests\Fixtures\Discriminator\Post;
-use JMS\Serializer\Tests\Fixtures\Garage;
-use JMS\Serializer\Tests\Fixtures\GetSetObject;
-use JMS\Serializer\Tests\Fixtures\GroupsObject;
-use JMS\Serializer\Tests\Fixtures\GroupsUser;
-use JMS\Serializer\Tests\Fixtures\IndexedCommentsBlogPost;
-use JMS\Serializer\Tests\Fixtures\InitializedBlogPostConstructor;
-use JMS\Serializer\Tests\Fixtures\InitializedObjectConstructor;
-use JMS\Serializer\Tests\Fixtures\InlineChild;
-use JMS\Serializer\Tests\Fixtures\InlineChildEmpty;
-use JMS\Serializer\Tests\Fixtures\InlineChildWithGroups;
-use JMS\Serializer\Tests\Fixtures\InlineParent;
-use JMS\Serializer\Tests\Fixtures\Input;
-use JMS\Serializer\Tests\Fixtures\InvalidGroupsObject;
-use JMS\Serializer\Tests\Fixtures\Log;
-use JMS\Serializer\Tests\Fixtures\MaxDepth\Gh236Foo;
-use JMS\Serializer\Tests\Fixtures\NamedDateTimeArraysObject;
-use JMS\Serializer\Tests\Fixtures\NamedDateTimeImmutableArraysObject;
-use JMS\Serializer\Tests\Fixtures\Node;
-use JMS\Serializer\Tests\Fixtures\ObjectUsingTypeCasting;
-use JMS\Serializer\Tests\Fixtures\ObjectWithEmptyHash;
-use JMS\Serializer\Tests\Fixtures\ObjectWithEmptyNullableAndEmptyArrays;
-use JMS\Serializer\Tests\Fixtures\ObjectWithIntListAndIntMap;
-use JMS\Serializer\Tests\Fixtures\ObjectWithLifecycleCallbacks;
-use JMS\Serializer\Tests\Fixtures\ObjectWithNullProperty;
-use JMS\Serializer\Tests\Fixtures\ObjectWithToString;
-use JMS\Serializer\Tests\Fixtures\ObjectWithVersionedVirtualProperties;
-use JMS\Serializer\Tests\Fixtures\ObjectWithVirtualProperties;
-use JMS\Serializer\Tests\Fixtures\Order;
-use JMS\Serializer\Tests\Fixtures\ParentDoNotSkipWithEmptyChild;
-use JMS\Serializer\Tests\Fixtures\ParentSkipWithEmptyChild;
-use JMS\Serializer\Tests\Fixtures\PersonSecret;
-use JMS\Serializer\Tests\Fixtures\PersonSecretMore;
-use JMS\Serializer\Tests\Fixtures\PersonSecretMoreVirtual;
-use JMS\Serializer\Tests\Fixtures\PersonSecretVirtual;
-use JMS\Serializer\Tests\Fixtures\Price;
-use JMS\Serializer\Tests\Fixtures\Publisher;
-use JMS\Serializer\Tests\Fixtures\SimpleInternalObject;
-use JMS\Serializer\Tests\Fixtures\SimpleObject;
-use JMS\Serializer\Tests\Fixtures\SimpleObjectProxy;
-use JMS\Serializer\Tests\Fixtures\SimpleObjectWithStaticProp;
-use JMS\Serializer\Tests\Fixtures\Tag;
-use JMS\Serializer\Tests\Fixtures\Timestamp;
-use JMS\Serializer\Tests\Fixtures\Tree;
-use JMS\Serializer\Tests\Fixtures\VehicleInterfaceGarage;
-use JMS\Serializer\VisitorInterface;
-use JMS\Serializer\XmlDeserializationVisitor;
-use JMS\Serializer\XmlSerializationVisitor;
-use JMS\Serializer\YamlSerializationVisitor;
+use Signnow\Serializer\Accessor\DefaultAccessorStrategy;
+use Signnow\Serializer\Accessor\ExpressionAccessorStrategy;
+use Signnow\Serializer\Construction\UnserializeObjectConstructor;
+use Signnow\Serializer\Context;
+use Signnow\Serializer\DeserializationContext;
+use Signnow\Serializer\EventDispatcher\EventDispatcher;
+use Signnow\Serializer\EventDispatcher\Subscriber\DoctrineProxySubscriber;
+use Signnow\Serializer\Exclusion\DepthExclusionStrategy;
+use Signnow\Serializer\Exclusion\GroupsExclusionStrategy;
+use Signnow\Serializer\Expression\ExpressionEvaluator;
+use Signnow\Serializer\GraphNavigator;
+use Signnow\Serializer\Handler\ArrayCollectionHandler;
+use Signnow\Serializer\Handler\ConstraintViolationHandler;
+use Signnow\Serializer\Handler\DateHandler;
+use Signnow\Serializer\Handler\FormErrorHandler;
+use Signnow\Serializer\Handler\HandlerRegistry;
+use Signnow\Serializer\Handler\PhpCollectionHandler;
+use Signnow\Serializer\Handler\StdClassHandler;
+use Signnow\Serializer\JsonDeserializationVisitor;
+use Signnow\Serializer\JsonSerializationVisitor;
+use Signnow\Serializer\Metadata\Driver\AnnotationDriver;
+use Signnow\Serializer\Metadata\Driver\YamlDriver;
+use Signnow\Serializer\Naming\CamelCaseNamingStrategy;
+use Signnow\Serializer\Naming\SerializedNameAnnotationStrategy;
+use Signnow\Serializer\SerializationContext;
+use Signnow\Serializer\Serializer;
+use Signnow\Serializer\Tests\Fixtures\AccessorOrderChild;
+use Signnow\Serializer\Tests\Fixtures\AccessorOrderMethod;
+use Signnow\Serializer\Tests\Fixtures\AccessorOrderParent;
+use Signnow\Serializer\Tests\Fixtures\Article;
+use Signnow\Serializer\Tests\Fixtures\Author;
+use Signnow\Serializer\Tests\Fixtures\AuthorExpressionAccess;
+use Signnow\Serializer\Tests\Fixtures\AuthorList;
+use Signnow\Serializer\Tests\Fixtures\AuthorReadOnly;
+use Signnow\Serializer\Tests\Fixtures\AuthorReadOnlyPerClass;
+use Signnow\Serializer\Tests\Fixtures\BlogPost;
+use Signnow\Serializer\Tests\Fixtures\CircularReferenceParent;
+use Signnow\Serializer\Tests\Fixtures\Comment;
+use Signnow\Serializer\Tests\Fixtures\CurrencyAwareOrder;
+use Signnow\Serializer\Tests\Fixtures\CurrencyAwarePrice;
+use Signnow\Serializer\Tests\Fixtures\CustomDeserializationObject;
+use Signnow\Serializer\Tests\Fixtures\DateTimeArraysObject;
+use Signnow\Serializer\Tests\Fixtures\Discriminator\Car;
+use Signnow\Serializer\Tests\Fixtures\Discriminator\ImagePost;
+use Signnow\Serializer\Tests\Fixtures\Discriminator\Moped;
+use Signnow\Serializer\Tests\Fixtures\Discriminator\Post;
+use Signnow\Serializer\Tests\Fixtures\Garage;
+use Signnow\Serializer\Tests\Fixtures\GetSetObject;
+use Signnow\Serializer\Tests\Fixtures\GroupsObject;
+use Signnow\Serializer\Tests\Fixtures\GroupsUser;
+use Signnow\Serializer\Tests\Fixtures\IndexedCommentsBlogPost;
+use Signnow\Serializer\Tests\Fixtures\InitializedBlogPostConstructor;
+use Signnow\Serializer\Tests\Fixtures\InitializedObjectConstructor;
+use Signnow\Serializer\Tests\Fixtures\InlineChild;
+use Signnow\Serializer\Tests\Fixtures\InlineChildEmpty;
+use Signnow\Serializer\Tests\Fixtures\InlineChildWithGroups;
+use Signnow\Serializer\Tests\Fixtures\InlineParent;
+use Signnow\Serializer\Tests\Fixtures\Input;
+use Signnow\Serializer\Tests\Fixtures\InvalidGroupsObject;
+use Signnow\Serializer\Tests\Fixtures\Log;
+use Signnow\Serializer\Tests\Fixtures\MaxDepth\Gh236Foo;
+use Signnow\Serializer\Tests\Fixtures\NamedDateTimeArraysObject;
+use Signnow\Serializer\Tests\Fixtures\NamedDateTimeImmutableArraysObject;
+use Signnow\Serializer\Tests\Fixtures\Node;
+use Signnow\Serializer\Tests\Fixtures\ObjectUsingTypeCasting;
+use Signnow\Serializer\Tests\Fixtures\ObjectWithEmptyHash;
+use Signnow\Serializer\Tests\Fixtures\ObjectWithEmptyNullableAndEmptyArrays;
+use Signnow\Serializer\Tests\Fixtures\ObjectWithIntListAndIntMap;
+use Signnow\Serializer\Tests\Fixtures\ObjectWithLifecycleCallbacks;
+use Signnow\Serializer\Tests\Fixtures\ObjectWithNullProperty;
+use Signnow\Serializer\Tests\Fixtures\ObjectWithToString;
+use Signnow\Serializer\Tests\Fixtures\ObjectWithVersionedVirtualProperties;
+use Signnow\Serializer\Tests\Fixtures\ObjectWithVirtualProperties;
+use Signnow\Serializer\Tests\Fixtures\Order;
+use Signnow\Serializer\Tests\Fixtures\ParentDoNotSkipWithEmptyChild;
+use Signnow\Serializer\Tests\Fixtures\ParentSkipWithEmptyChild;
+use Signnow\Serializer\Tests\Fixtures\PersonSecret;
+use Signnow\Serializer\Tests\Fixtures\PersonSecretMore;
+use Signnow\Serializer\Tests\Fixtures\PersonSecretMoreVirtual;
+use Signnow\Serializer\Tests\Fixtures\PersonSecretVirtual;
+use Signnow\Serializer\Tests\Fixtures\Price;
+use Signnow\Serializer\Tests\Fixtures\Publisher;
+use Signnow\Serializer\Tests\Fixtures\SimpleInternalObject;
+use Signnow\Serializer\Tests\Fixtures\SimpleObject;
+use Signnow\Serializer\Tests\Fixtures\SimpleObjectProxy;
+use Signnow\Serializer\Tests\Fixtures\SimpleObjectWithStaticProp;
+use Signnow\Serializer\Tests\Fixtures\Tag;
+use Signnow\Serializer\Tests\Fixtures\Timestamp;
+use Signnow\Serializer\Tests\Fixtures\Tree;
+use Signnow\Serializer\Tests\Fixtures\VehicleInterfaceGarage;
+use Signnow\Serializer\VisitorInterface;
+use Signnow\Serializer\XmlDeserializationVisitor;
+use Signnow\Serializer\XmlSerializationVisitor;
+use Signnow\Serializer\YamlSerializationVisitor;
 use Metadata\Driver\FileLocator;
 use Metadata\MetadataFactory;
 use PhpCollection\Map;
@@ -222,8 +222,8 @@ abstract class BaseSerializationTest extends \PHPUnit\Framework\TestCase
     }
 
     /**
-     * @expectedException \JMS\Serializer\Exception\ExpressionLanguageRequiredException
-     * @expectedExceptionMessage To use conditional exclude/expose in JMS\Serializer\Tests\Fixtures\PersonSecret you must configure the expression language.
+     * @expectedException \Signnow\Serializer\Exception\ExpressionLanguageRequiredException
+     * @expectedExceptionMessage To use conditional exclude/expose in Signnow\Serializer\Tests\Fixtures\PersonSecret you must configure the expression language.
      */
     public function testExpressionExclusionNotConfigured()
     {
@@ -384,7 +384,7 @@ abstract class BaseSerializationTest extends \PHPUnit\Framework\TestCase
     public function testSimpleInternalObject()
     {
         $this->factory = new MetadataFactory(new YamlDriver(new FileLocator([
-           'JMS\Serializer\Tests\Fixtures' => __DIR__ .'/metadata/SimpleInternalObject',
+           'Signnow\Serializer\Tests\Fixtures' => __DIR__ .'/metadata/SimpleInternalObject',
             '' => __DIR__ .'/metadata/SimpleInternalObject'
         ])));
         $this->serializer = new Serializer($this->factory, $this->handlerRegistry, $this->objectConstructor, $this->serializationVisitors, $this->deserializationVisitors, $this->dispatcher);
@@ -476,7 +476,7 @@ abstract class BaseSerializationTest extends \PHPUnit\Framework\TestCase
         $this->assertEquals($this->getContent('array_objects'), $this->serialize($data));
 
         if ($this->hasDeserializer()) {
-            $this->assertEquals($data, $this->deserialize($this->getContent('array_objects'), 'array<JMS\Serializer\Tests\Fixtures\SimpleObject>'));
+            $this->assertEquals($data, $this->deserialize($this->getContent('array_objects'), 'array<Signnow\Serializer\Tests\Fixtures\SimpleObject>'));
         }
     }
 
@@ -502,7 +502,7 @@ abstract class BaseSerializationTest extends \PHPUnit\Framework\TestCase
 
         if ($this->hasDeserializer()) {
             /** @var DateTimeArraysObject $deserializedObject */
-            $deserializedObject = $this->deserialize($this->getContent('array_datetimes_object'), 'Jms\Serializer\Tests\Fixtures\DateTimeArraysObject');
+            $deserializedObject = $this->deserialize($this->getContent('array_datetimes_object'), 'Signnow\Serializer\Tests\Fixtures\DateTimeArraysObject');
 
             /** deserialized object has a default timezone set depending on user's timezone settings. That's why we manually set the UTC timezone on the DateTime objects. */
             foreach ($deserializedObject->getArrayWithDefaultDateTime() as $dateTime) {
@@ -537,7 +537,7 @@ abstract class BaseSerializationTest extends \PHPUnit\Framework\TestCase
             }
 
             /** @var NamedDateTimeArraysObject $deserializedObject */
-            $deserializedObject = $this->deserialize($this->getContent('array_named_datetimes_object'), 'Jms\Serializer\Tests\Fixtures\NamedDateTimeArraysObject');
+            $deserializedObject = $this->deserialize($this->getContent('array_named_datetimes_object'), 'Signnow\Serializer\Tests\Fixtures\NamedDateTimeArraysObject');
 
             /** deserialized object has a default timezone set depending on user's timezone settings. That's why we manually set the UTC timezone on the DateTime objects. */
             foreach ($deserializedObject->getNamedArrayWithFormattedDate() as $dateTime) {
@@ -569,7 +569,7 @@ abstract class BaseSerializationTest extends \PHPUnit\Framework\TestCase
                 $this->markTestSkipped("XML deserialization does not support key-val pairs mode");
             }
             /** @var NamedDateTimeArraysObject $deserializedObject */
-            $deserializedObject = $this->deserialize($this->getContent('array_named_datetimeimmutables_object'), 'Jms\Serializer\Tests\Fixtures\NamedDateTimeImmutableArraysObject');
+            $deserializedObject = $this->deserialize($this->getContent('array_named_datetimeimmutables_object'), 'Signnow\Serializer\Tests\Fixtures\NamedDateTimeImmutableArraysObject');
 
             /** deserialized object has a default timezone set depending on user's timezone settings. That's why we manually set the UTC timezone on the DateTime objects. */
             foreach ($deserializedObject->getNamedArrayWithFormattedDate() as $dateTime) {
@@ -731,8 +731,8 @@ abstract class BaseSerializationTest extends \PHPUnit\Framework\TestCase
     }
 
     /**
-     * @expectedException \JMS\Serializer\Exception\ExpressionLanguageRequiredException
-     * @expectedExceptionMessage The property firstName on JMS\Serializer\Tests\Fixtures\AuthorExpressionAccess requires the expression accessor strategy to be enabled.
+     * @expectedException \Signnow\Serializer\Exception\ExpressionLanguageRequiredException
+     * @expectedExceptionMessage The property firstName on Signnow\Serializer\Tests\Fixtures\AuthorExpressionAccess requires the expression accessor strategy to be enabled.
      */
     public function testExpressionAccessorStrategNotEnabled()
     {
@@ -818,7 +818,7 @@ abstract class BaseSerializationTest extends \PHPUnit\Framework\TestCase
         $this->assertEquals($this->getContent('article'), $result);
 
         if ($this->hasDeserializer()) {
-            $this->assertEquals($article, $this->deserialize($result, 'JMS\Serializer\Tests\Fixtures\Article'));
+            $this->assertEquals($article, $this->deserialize($result, 'Signnow\Serializer\Tests\Fixtures\Article'));
         }
     }
 
@@ -1042,7 +1042,7 @@ abstract class BaseSerializationTest extends \PHPUnit\Framework\TestCase
         $this->assertEquals($this->getContent('mixed_access_types'), $this->serialize($object));
 
         if ($this->hasDeserializer()) {
-            $object = $this->deserialize($this->getContent('mixed_access_types'), 'JMS\Serializer\Tests\Fixtures\GetSetObject');
+            $object = $this->deserialize($this->getContent('mixed_access_types'), 'Signnow\Serializer\Tests\Fixtures\GetSetObject');
             $this->assertAttributeEquals(1, 'id', $object);
             $this->assertAttributeEquals('Johannes', 'name', $object);
             $this->assertAttributeEquals(42, 'readOnlyProperty', $object);
@@ -1140,8 +1140,8 @@ abstract class BaseSerializationTest extends \PHPUnit\Framework\TestCase
     }
 
     /**
-     * @expectedException JMS\Serializer\Exception\InvalidArgumentException
-     * @expectedExceptionMessage Invalid group name "foo, bar" on "JMS\Serializer\Tests\Fixtures\InvalidGroupsObject->foo", did you mean to create multiple groups?
+     * @expectedException Signnow\Serializer\Exception\InvalidArgumentException
+     * @expectedExceptionMessage Invalid group name "foo, bar" on "Signnow\Serializer\Tests\Fixtures\InvalidGroupsObject->foo", did you mean to create multiple groups?
      */
     public function testInvalidGroupName()
     {
@@ -1226,7 +1226,7 @@ abstract class BaseSerializationTest extends \PHPUnit\Framework\TestCase
 
         $this->assertEquals(
             $this->getContent('car'),
-            $this->serialize(new \JMS\Serializer\Tests\Fixtures\DiscriminatorGroup\Car(5), $context)
+            $this->serialize(new \Signnow\Serializer\Tests\Fixtures\DiscriminatorGroup\Car(5), $context)
         );
     }
 
@@ -1253,7 +1253,7 @@ abstract class BaseSerializationTest extends \PHPUnit\Framework\TestCase
                 new Car(5),
                 $this->deserialize(
                     $this->getContent('car'),
-                    'JMS\Serializer\Tests\Fixtures\Discriminator\Car'
+                    'Signnow\Serializer\Tests\Fixtures\Discriminator\Car'
                 ),
                 'Class is resolved correctly when concrete sub-class is used.'
             );
@@ -1262,7 +1262,7 @@ abstract class BaseSerializationTest extends \PHPUnit\Framework\TestCase
                 new Car(5),
                 $this->deserialize(
                     $this->getContent('car'),
-                    'JMS\Serializer\Tests\Fixtures\Discriminator\Vehicle'
+                    'Signnow\Serializer\Tests\Fixtures\Discriminator\Vehicle'
                 ),
                 'Class is resolved correctly when least supertype is used.'
             );
@@ -1271,7 +1271,7 @@ abstract class BaseSerializationTest extends \PHPUnit\Framework\TestCase
                 new Car(5),
                 $this->deserialize(
                     $this->getContent('car_without_type'),
-                    'JMS\Serializer\Tests\Fixtures\Discriminator\Car'
+                    'Signnow\Serializer\Tests\Fixtures\Discriminator\Car'
                 ),
                 'Class is resolved correctly when concrete sub-class is used and no type is defined.'
             );
@@ -1280,7 +1280,7 @@ abstract class BaseSerializationTest extends \PHPUnit\Framework\TestCase
                 new Post('Post Title'),
                 $this->deserialize(
                     $this->getContent('post'),
-                    'JMS\Serializer\Tests\Fixtures\Discriminator\Post'
+                    'Signnow\Serializer\Tests\Fixtures\Discriminator\Post'
                 ),
                 'Class is resolved correctly when parent class is used and type is set.'
             );
@@ -1289,7 +1289,7 @@ abstract class BaseSerializationTest extends \PHPUnit\Framework\TestCase
                 new ImagePost('Image Post Title'),
                 $this->deserialize(
                     $this->getContent('image_post'),
-                    'JMS\Serializer\Tests\Fixtures\Discriminator\Post'
+                    'Signnow\Serializer\Tests\Fixtures\Discriminator\Post'
                 ),
                 'Class is resolved correctly when least supertype is used.'
             );
@@ -1298,7 +1298,7 @@ abstract class BaseSerializationTest extends \PHPUnit\Framework\TestCase
                 new ImagePost('Image Post Title'),
                 $this->deserialize(
                     $this->getContent('image_post'),
-                    'JMS\Serializer\Tests\Fixtures\Discriminator\ImagePost'
+                    'Signnow\Serializer\Tests\Fixtures\Discriminator\ImagePost'
                 ),
                 'Class is resolved correctly when concrete sub-class is used and no type is defined.'
             );
@@ -1321,7 +1321,7 @@ abstract class BaseSerializationTest extends \PHPUnit\Framework\TestCase
                 $garage,
                 $this->deserialize(
                     $this->getContent('garage'),
-                    'JMS\Serializer\Tests\Fixtures\Garage'
+                    'Signnow\Serializer\Tests\Fixtures\Garage'
                 )
             );
         }
@@ -1343,7 +1343,7 @@ abstract class BaseSerializationTest extends \PHPUnit\Framework\TestCase
                 $garage,
                 $this->deserialize(
                     $this->getContent('garage'),
-                    'JMS\Serializer\Tests\Fixtures\VehicleInterfaceGarage'
+                    'Signnow\Serializer\Tests\Fixtures\VehicleInterfaceGarage'
                 )
             );
         }
@@ -1361,7 +1361,7 @@ abstract class BaseSerializationTest extends \PHPUnit\Framework\TestCase
 
         $this->deserialize(
             $this->getContent('car_without_type'),
-            'JMS\Serializer\Tests\Fixtures\Discriminator\Vehicle'
+            'Signnow\Serializer\Tests\Fixtures\Discriminator\Vehicle'
         );
     }
 
@@ -1421,7 +1421,7 @@ abstract class BaseSerializationTest extends \PHPUnit\Framework\TestCase
 
         $this->assertSame($order, $deseralizedOrder);
         $this->assertEquals(new Order(new Price(12.34)), $deseralizedOrder);
-        $this->assertAttributeInstanceOf('JMS\Serializer\Tests\Fixtures\Price', 'cost', $deseralizedOrder);
+        $this->assertAttributeInstanceOf('Signnow\Serializer\Tests\Fixtures\Price', 'cost', $deseralizedOrder);
     }
 
     public function testObjectWithNullableArrays()
@@ -1471,7 +1471,7 @@ abstract class BaseSerializationTest extends \PHPUnit\Framework\TestCase
                     'name' => 'array',
                     'params' => array(
                         array('name' => 'integer', 'params' => array()),
-                        array('name' => 'JMS\Serializer\Tests\Fixtures\Author', 'params' => array()),
+                        array('name' => 'Signnow\Serializer\Tests\Fixtures\Author', 'params' => array()),
                     ),
                 );
 

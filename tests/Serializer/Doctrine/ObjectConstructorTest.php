@@ -1,6 +1,6 @@
 <?php
 
-namespace JMS\Serializer\Tests\Serializer\Doctrine;
+namespace Signnow\Serializer\Tests\Serializer\Doctrine;
 
 use Doctrine\Common\Annotations\AnnotationReader;
 use Doctrine\Common\Annotations\Reader;
@@ -14,20 +14,20 @@ use Doctrine\ORM\Mapping\Driver\AnnotationDriver;
 use Doctrine\ORM\ORMException;
 use Doctrine\ORM\Tools\SchemaTool;
 use Doctrine\ORM\UnitOfWork;
-use JMS\Serializer\Builder\CallbackDriverFactory;
-use JMS\Serializer\Builder\DefaultDriverFactory;
-use JMS\Serializer\Construction\DoctrineObjectConstructor;
-use JMS\Serializer\Construction\ObjectConstructorInterface;
-use JMS\Serializer\Construction\UnserializeObjectConstructor;
-use JMS\Serializer\DeserializationContext;
-use JMS\Serializer\Metadata\ClassMetadata;
-use JMS\Serializer\Metadata\Driver\DoctrineTypeDriver;
-use JMS\Serializer\Serializer;
-use JMS\Serializer\SerializerBuilder;
-use JMS\Serializer\Tests\Fixtures\Doctrine\Author;
-use JMS\Serializer\Tests\Fixtures\Doctrine\IdentityFields\Server;
-use JMS\Serializer\Tests\Fixtures\Doctrine\SingleTableInheritance\Excursion;
-use JMS\Serializer\VisitorInterface;
+use Signnow\Serializer\Builder\CallbackDriverFactory;
+use Signnow\Serializer\Builder\DefaultDriverFactory;
+use Signnow\Serializer\Construction\DoctrineObjectConstructor;
+use Signnow\Serializer\Construction\ObjectConstructorInterface;
+use Signnow\Serializer\Construction\UnserializeObjectConstructor;
+use Signnow\Serializer\DeserializationContext;
+use Signnow\Serializer\Metadata\ClassMetadata;
+use Signnow\Serializer\Metadata\Driver\DoctrineTypeDriver;
+use Signnow\Serializer\Serializer;
+use Signnow\Serializer\SerializerBuilder;
+use Signnow\Serializer\Tests\Fixtures\Doctrine\Author;
+use Signnow\Serializer\Tests\Fixtures\Doctrine\IdentityFields\Server;
+use Signnow\Serializer\Tests\Fixtures\Doctrine\SingleTableInheritance\Excursion;
+use Signnow\Serializer\VisitorInterface;
 
 class ObjectConstructorTest extends \PHPUnit\Framework\TestCase
 {
@@ -111,7 +111,7 @@ class ObjectConstructorTest extends \PHPUnit\Framework\TestCase
 
     public function testMissingNotManaged()
     {
-        $author = new \JMS\Serializer\Tests\Fixtures\DoctrinePHPCR\Author('foo');
+        $author = new \Signnow\Serializer\Tests\Fixtures\DoctrinePHPCR\Author('foo');
 
         $fallback = $this->getMockBuilder(ObjectConstructorInterface::class)->getMock();
         $fallback->expects($this->once())->method('construct')->willReturn($author);
@@ -143,7 +143,7 @@ class ObjectConstructorTest extends \PHPUnit\Framework\TestCase
     }
 
     /**
-     * @expectedException \JMS\Serializer\Exception\ObjectConstructionException
+     * @expectedException \Signnow\Serializer\Exception\ObjectConstructionException
      */
     public function testMissingAuthorException()
     {
@@ -157,7 +157,7 @@ class ObjectConstructorTest extends \PHPUnit\Framework\TestCase
     }
 
     /**
-     * @expectedException \JMS\Serializer\Exception\InvalidArgumentException
+     * @expectedException \Signnow\Serializer\Exception\InvalidArgumentException
      */
     public function testInvalidArg()
     {
@@ -208,8 +208,8 @@ class ObjectConstructorTest extends \PHPUnit\Framework\TestCase
 
     protected function setUp(): void
     {
-        $this->visitor = $this->getMockBuilder('JMS\Serializer\VisitorInterface')->getMock();
-        $this->context = $this->getMockBuilder('JMS\Serializer\DeserializationContext')->getMock();
+        $this->visitor = $this->getMockBuilder('Signnow\Serializer\VisitorInterface')->getMock();
+        $this->context = $this->getMockBuilder('Signnow\Serializer\DeserializationContext')->getMock();
 
         $connection = $this->createConnection();
         $entityManager = $this->createEntityManager($connection);
@@ -268,7 +268,7 @@ class ObjectConstructorTest extends \PHPUnit\Framework\TestCase
             __DIR__ . '/../../Fixtures/Doctrine',
         )));
         $cfg->setAutoGenerateProxyClasses(true);
-        $cfg->setProxyNamespace('JMS\Serializer\DoctrineProxy');
+        $cfg->setProxyNamespace('Signnow\Serializer\DoctrineProxy');
         $cfg->setProxyDir(sys_get_temp_dir() . '/serializer-test-proxies');
 
         $em = EntityManager::create($con, $cfg);
@@ -277,7 +277,7 @@ class ObjectConstructorTest extends \PHPUnit\Framework\TestCase
     }
 
     /**
-     * @return \JMS\Serializer\SerializerInterface
+     * @return \Signnow\Serializer\SerializerInterface
      */
     private function createSerializerWithDoctrineObjectConstructor()
     {

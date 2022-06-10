@@ -1,9 +1,9 @@
 <?php
 
-use JMS\Serializer\Metadata\ClassMetadata;
-use JMS\Serializer\Metadata\PropertyMetadata;
+use Signnow\Serializer\Metadata\ClassMetadata;
+use Signnow\Serializer\Metadata\PropertyMetadata;
 
-$metadata = new ClassMetadata('JMS\Serializer\Tests\Fixtures\ParentSkipWithEmptyChild');
+$metadata = new ClassMetadata('Signnow\Serializer\Tests\Fixtures\ParentSkipWithEmptyChild');
 
 $pMeta = new PropertyMetadata($metadata->name, 'c');
 $metadata->addPropertyMetadata($pMeta);

@@ -1,9 +1,9 @@
 <?php
 
-namespace JMS\Serializer\Tests\Fixtures;
+namespace Signnow\Serializer\Tests\Fixtures;
 
-use JMS\Serializer\Annotation\SerializedName;
-use JMS\Serializer\Annotation\Type;
+use Signnow\Serializer\Annotation\SerializedName;
+use Signnow\Serializer\Annotation\Type;
 
 class SimpleObjectWithStaticProp
 {

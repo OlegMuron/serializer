@@ -1,9 +1,9 @@
 <?php
 
-namespace JMS\Serializer\Tests\Metadata;
+namespace Signnow\Serializer\Tests\Metadata;
 
-use JMS\Serializer\Metadata\PropertyMetadata;
-use JMS\Serializer\Tests\Fixtures\SimpleObject;
+use Signnow\Serializer\Metadata\PropertyMetadata;
+use Signnow\Serializer\Tests\Fixtures\SimpleObject;
 
 class PropertyMetadataTest extends AbstractPropertyMetadataTest
 {

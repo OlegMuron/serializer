@@ -1,8 +1,8 @@
 <?php
 
-namespace JMS\Serializer\Tests\Fixtures;
+namespace Signnow\Serializer\Tests\Fixtures;
 
-use JMS\Serializer\Annotation\XmlValue;
+use Signnow\Serializer\Annotation\XmlValue;
 
 /** Dummy */
 class InvalidUsageOfXmlValue

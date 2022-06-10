@@ -1,10 +1,10 @@
 <?php
 
-namespace JMS\Serializer\Tests\Fixtures;
+namespace Signnow\Serializer\Tests\Fixtures;
 
-use JMS\Serializer\Annotation\Type;
-use JMS\Serializer\Annotation\XmlRoot;
-use JMS\Serializer\Annotation\XmlValue;
+use Signnow\Serializer\Annotation\Type;
+use Signnow\Serializer\Annotation\XmlRoot;
+use Signnow\Serializer\Annotation\XmlValue;
 
 /**
  * @XmlRoot("price")

@@ -1,6 +1,6 @@
 <?php
 
-namespace JMS\Serializer\Tests\Metadata;
+namespace Signnow\Serializer\Tests\Metadata;
 
 abstract class AbstractPropertyMetadataTest extends \PHPUnit\Framework\TestCase
 {

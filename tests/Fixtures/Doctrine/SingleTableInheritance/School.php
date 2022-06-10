@@ -1,6 +1,6 @@
 <?php
 
-namespace JMS\Serializer\Tests\Fixtures\Doctrine\SingleTableInheritance;
+namespace Signnow\Serializer\Tests\Fixtures\Doctrine\SingleTableInheritance;
 
 use Doctrine\ORM\Mapping as ORM;
 

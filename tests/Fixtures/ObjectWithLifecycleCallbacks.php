@@ -1,12 +1,12 @@
 <?php
 
-namespace JMS\Serializer\Tests\Fixtures;
+namespace Signnow\Serializer\Tests\Fixtures;
 
-use JMS\Serializer\Annotation\Exclude;
-use JMS\Serializer\Annotation\PostDeserialize;
-use JMS\Serializer\Annotation\PostSerialize;
-use JMS\Serializer\Annotation\PreSerialize;
-use JMS\Serializer\Annotation\Type;
+use Signnow\Serializer\Annotation\Exclude;
+use Signnow\Serializer\Annotation\PostDeserialize;
+use Signnow\Serializer\Annotation\PostSerialize;
+use Signnow\Serializer\Annotation\PreSerialize;
+use Signnow\Serializer\Annotation\Type;
 
 class ObjectWithLifecycleCallbacks
 {

@@ -1,12 +1,12 @@
 <?php
 
-namespace JMS\Serializer\Tests\Fixtures\DiscriminatorGroup;
+namespace Signnow\Serializer\Tests\Fixtures\DiscriminatorGroup;
 
-use JMS\Serializer\Annotation as Serializer;
+use Signnow\Serializer\Annotation as Serializer;
 
 /**
  * @Serializer\Discriminator(field = "type", groups={"foo"}, map = {
- *    "car": "JMS\Serializer\Tests\Fixtures\DiscriminatorGroup\Car"
+ *    "car": "Signnow\Serializer\Tests\Fixtures\DiscriminatorGroup\Car"
  * })
  */
 abstract class Vehicle

@@ -1,15 +1,15 @@
 <?php
 
-namespace JMS\Serializer\Tests\Metadata\Driver;
+namespace Signnow\Serializer\Tests\Metadata\Driver;
 
-use JMS\Serializer\Metadata\Driver\XmlDriver;
-use JMS\Serializer\Metadata\PropertyMetadata;
+use Signnow\Serializer\Metadata\Driver\XmlDriver;
+use Signnow\Serializer\Metadata\PropertyMetadata;
 use Metadata\Driver\FileLocator;
 
 class XmlDriverTest extends BaseDriverTest
 {
     /**
-     * @expectedException JMS\Serializer\Exception\XmlErrorException
+     * @expectedException Signnow\Serializer\Exception\XmlErrorException
      * @expectedExceptionMessage [FATAL] Start tag expected, '<' not found
      */
     public function testInvalidXml()
@@ -23,7 +23,7 @@ class XmlDriverTest extends BaseDriverTest
 
     public function testBlogPostExcludeAllStrategy()
     {
-        $m = $this->getDriver('exclude_all')->loadMetadataForClass(new \ReflectionClass('JMS\Serializer\Tests\Fixtures\BlogPost'));
+        $m = $this->getDriver('exclude_all')->loadMetadataForClass(new \ReflectionClass('Signnow\Serializer\Tests\Fixtures\BlogPost'));
 
         $this->assertArrayHasKey('title', $m->propertyMetadata);
 
@@ -35,7 +35,7 @@ class XmlDriverTest extends BaseDriverTest
 
     public function testBlogPostExcludeNoneStrategy()
     {
-        $m = $this->getDriver('exclude_none')->loadMetadataForClass(new \ReflectionClass('JMS\Serializer\Tests\Fixtures\BlogPost'));
+        $m = $this->getDriver('exclude_none')->loadMetadataForClass(new \ReflectionClass('Signnow\Serializer\Tests\Fixtures\BlogPost'));
 
         $this->assertArrayNotHasKey('title', $m->propertyMetadata);
 
@@ -47,7 +47,7 @@ class XmlDriverTest extends BaseDriverTest
 
     public function testBlogPostCaseInsensitive()
     {
-        $m = $this->getDriver('case')->loadMetadataForClass(new \ReflectionClass('JMS\Serializer\Tests\Fixtures\BlogPost'));
+        $m = $this->getDriver('case')->loadMetadataForClass(new \ReflectionClass('Signnow\Serializer\Tests\Fixtures\BlogPost'));
 
         $p = new PropertyMetadata($m->name, 'title');
         $p->type = array('name' => 'string', 'params' => array());
@@ -56,7 +56,7 @@ class XmlDriverTest extends BaseDriverTest
 
     public function testAccessorAttributes()
     {
-        $m = $this->getDriver()->loadMetadataForClass(new \ReflectionClass('JMS\Serializer\Tests\Fixtures\GetSetObject'));
+        $m = $this->getDriver()->loadMetadataForClass(new \ReflectionClass('Signnow\Serializer\Tests\Fixtures\GetSetObject'));
 
         $p = new PropertyMetadata($m->name, 'name');
         $p->type = array('name' => 'string', 'params' => array());
@@ -68,7 +68,7 @@ class XmlDriverTest extends BaseDriverTest
 
     public function testGroupsTrim()
     {
-        $first = $this->getDriver()->loadMetadataForClass(new \ReflectionClass('JMS\Serializer\Tests\Fixtures\GroupsTrim'));
+        $first = $this->getDriver()->loadMetadataForClass(new \ReflectionClass('Signnow\Serializer\Tests\Fixtures\GroupsTrim'));
 
         $this->assertArrayHasKey('amount', $first->propertyMetadata);
         $this->assertArraySubset(['first.test.group', 'second.test.group'], $first->propertyMetadata['currency']->groups);
@@ -76,7 +76,7 @@ class XmlDriverTest extends BaseDriverTest
 
     public function testMultilineGroups()
     {
-        $first = $this->getDriver()->loadMetadataForClass(new \ReflectionClass('JMS\Serializer\Tests\Fixtures\MultilineGroupsFormat'));
+        $first = $this->getDriver()->loadMetadataForClass(new \ReflectionClass('Signnow\Serializer\Tests\Fixtures\MultilineGroupsFormat'));
 
         $this->assertArrayHasKey('amount', $first->propertyMetadata);
         $this->assertArraySubset(['first.test.group', 'second.test.group'], $first->propertyMetadata['currency']->groups);
@@ -90,7 +90,7 @@ class XmlDriverTest extends BaseDriverTest
         }
 
         return new XmlDriver(new FileLocator(array(
-            'JMS\Serializer\Tests\Fixtures' => __DIR__ . '/xml' . $append,
+            'Signnow\Serializer\Tests\Fixtures' => __DIR__ . '/xml' . $append,
         )));
     }
 }

@@ -1,4 +1,4 @@
-JMS\Serializer\Tests\Fixtures\SimpleInternalObject:
+Signnow\Serializer\Tests\Fixtures\SimpleInternalObject:
     properties:
         bar:
             type: string

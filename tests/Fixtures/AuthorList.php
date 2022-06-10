@@ -1,8 +1,8 @@
 <?php
 
-namespace JMS\Serializer\Tests\Fixtures;
+namespace Signnow\Serializer\Tests\Fixtures;
 
-use JMS\Serializer\Annotation as Serializer;
+use Signnow\Serializer\Annotation as Serializer;
 
 /**
  * An array-acting object that holds many author instances.
@@ -10,7 +10,7 @@ use JMS\Serializer\Annotation as Serializer;
 class AuthorList implements \IteratorAggregate, \Countable, \ArrayAccess
 {
     /**
-     * @Serializer\Type("array<JMS\Serializer\Tests\Fixtures\Author>")
+     * @Serializer\Type("array<Signnow\Serializer\Tests\Fixtures\Author>")
      * @var array
      */
     protected $authors = array();

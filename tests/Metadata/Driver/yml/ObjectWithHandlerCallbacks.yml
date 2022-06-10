@@ -1,4 +1,4 @@
-JMS\Serializer\Tests\Fixtures\ObjectWithHandlerCallbacks:
+Signnow\Serializer\Tests\Fixtures\ObjectWithHandlerCallbacks:
     properties:
         name:
             type: string

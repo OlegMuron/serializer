@@ -37,7 +37,7 @@
 **Fixed bugs:**
 
 - Accessing static property as non static [\#960](https://github.com/schmittjoh/serializer/issues/960)
-- creating JMS\Serializer\Metadata-\>closureAccessor on internal class failed [\#959](https://github.com/schmittjoh/serializer/issues/959)
+- creating Signnow\Serializer\Metadata-\>closureAccessor on internal class failed [\#959](https://github.com/schmittjoh/serializer/issues/959)
 
 ## [1.12.0](https://github.com/schmittjoh/serializer/tree/1.12.0) (2018-05-25)
 
@@ -424,7 +424,7 @@
 - Add support for array format [\#374](https://github.com/schmittjoh/serializer/issues/374)
 - Obtain VirtualProperty value using a service [\#359](https://github.com/schmittjoh/serializer/issues/359)
 - make deserialisation of non existing id's configurable [\#333](https://github.com/schmittjoh/serializer/issues/333)
-- HHVM compatibility issue with undefined property JMS\Serializer\Metadata\ClassMetadata::$inline  [\#312](https://github.com/schmittjoh/serializer/issues/312)
+- HHVM compatibility issue with undefined property Signnow\Serializer\Metadata\ClassMetadata::$inline  [\#312](https://github.com/schmittjoh/serializer/issues/312)
 - resources serialization [\#275](https://github.com/schmittjoh/serializer/issues/275)
 - I'm receiving "Class ArrayCollection does not exist" when serializing \(temporarily solved with a workaround\) [\#274](https://github.com/schmittjoh/serializer/issues/274)
 - Can't use handlers on strings \(and other simple types\) [\#194](https://github.com/schmittjoh/serializer/issues/194)
@@ -483,7 +483,7 @@
 
 **Fixed bugs:**
 
-- Warning: JMS\Serializer\XmlDeserializationVisitor::visitArray\(\): Node no longer exists [\#674](https://github.com/schmittjoh/serializer/issues/674)
+- Warning: Signnow\Serializer\XmlDeserializationVisitor::visitArray\(\): Node no longer exists [\#674](https://github.com/schmittjoh/serializer/issues/674)
 - Fixed xml arrays with namespaced entry triggers error [\#675](https://github.com/schmittjoh/serializer/pull/675) ([goetas](https://github.com/goetas))
 
 **Closed issues:**

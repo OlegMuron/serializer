@@ -1,12 +1,12 @@
 <?php
 
-namespace JMS\Serializer\Tests\Serializer\EventDispatcher;
+namespace Signnow\Serializer\Tests\Serializer\EventDispatcher;
 
-use JMS\Serializer\EventDispatcher\Event;
-use JMS\Serializer\EventDispatcher\EventDispatcher;
-use JMS\Serializer\EventDispatcher\EventDispatcherInterface;
-use JMS\Serializer\EventDispatcher\EventSubscriberInterface;
-use JMS\Serializer\EventDispatcher\ObjectEvent;
+use Signnow\Serializer\EventDispatcher\Event;
+use Signnow\Serializer\EventDispatcher\EventDispatcher;
+use Signnow\Serializer\EventDispatcher\EventDispatcherInterface;
+use Signnow\Serializer\EventDispatcher\EventSubscriberInterface;
+use Signnow\Serializer\EventDispatcher\ObjectEvent;
 
 class EventDispatcherTest extends \PHPUnit\Framework\TestCase
 {
@@ -143,7 +143,7 @@ class EventDispatcherTest extends \PHPUnit\Framework\TestCase
     protected function setUp(): void
     {
         $this->dispatcher = $this->createEventDispatcher();
-        $this->event = new ObjectEvent($this->getMockBuilder('JMS\Serializer\Context')->getMock(), new \stdClass(), array('name' => 'foo', 'params' => array()));
+        $this->event = new ObjectEvent($this->getMockBuilder('Signnow\Serializer\Context')->getMock(), new \stdClass(), array('name' => 'foo', 'params' => array()));
     }
 
     protected function createEventDispatcher()

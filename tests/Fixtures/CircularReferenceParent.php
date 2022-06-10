@@ -1,18 +1,18 @@
 <?php
 
-namespace JMS\Serializer\Tests\Fixtures;
+namespace Signnow\Serializer\Tests\Fixtures;
 
 use Doctrine\Common\Collections\ArrayCollection;
-use JMS\Serializer\Annotation\PostDeserialize;
-use JMS\Serializer\Annotation\Type;
+use Signnow\Serializer\Annotation\PostDeserialize;
+use Signnow\Serializer\Annotation\Type;
 
 /** No annotation */
 class CircularReferenceParent
 {
-    /** @Type("array<JMS\Serializer\Tests\Fixtures\CircularReferenceChild>") */
+    /** @Type("array<Signnow\Serializer\Tests\Fixtures\CircularReferenceChild>") */
     protected $collection = array();
 
-    /** @Type("ArrayCollection<JMS\Serializer\Tests\Fixtures\CircularReferenceChild>") */
+    /** @Type("ArrayCollection<Signnow\Serializer\Tests\Fixtures\CircularReferenceChild>") */
     private $anotherCollection;
 
     public function __construct()

@@ -1,11 +1,11 @@
 <?php
 
-use JMS\Serializer\Metadata\ClassMetadata;
-use JMS\Serializer\Metadata\PropertyMetadata;
+use Signnow\Serializer\Metadata\ClassMetadata;
+use Signnow\Serializer\Metadata\PropertyMetadata;
 
-$metadata = new ClassMetadata('JMS\Serializer\Tests\Fixtures\Node');
+$metadata = new ClassMetadata('Signnow\Serializer\Tests\Fixtures\Node');
 
-$pMetadata = new PropertyMetadata('JMS\Serializer\Tests\Fixtures\Node', 'children');
+$pMetadata = new PropertyMetadata('Signnow\Serializer\Tests\Fixtures\Node', 'children');
 $pMetadata->maxDepth = 2;
 $metadata->addPropertyMetadata($pMetadata);
 

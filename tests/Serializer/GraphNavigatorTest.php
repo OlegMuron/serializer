@@ -1,14 +1,14 @@
 <?php
 
-namespace JMS\Serializer\Tests\Serializer;
+namespace Signnow\Serializer\Tests\Serializer;
 
 use Doctrine\Common\Annotations\AnnotationReader;
-use JMS\Serializer\Construction\UnserializeObjectConstructor;
-use JMS\Serializer\EventDispatcher\EventDispatcher;
-use JMS\Serializer\GraphNavigator;
-use JMS\Serializer\Handler\HandlerRegistry;
-use JMS\Serializer\Handler\SubscribingHandlerInterface;
-use JMS\Serializer\Metadata\Driver\AnnotationDriver;
+use Signnow\Serializer\Construction\UnserializeObjectConstructor;
+use Signnow\Serializer\EventDispatcher\EventDispatcher;
+use Signnow\Serializer\GraphNavigator;
+use Signnow\Serializer\Handler\HandlerRegistry;
+use Signnow\Serializer\Handler\SubscribingHandlerInterface;
+use Signnow\Serializer\Metadata\Driver\AnnotationDriver;
 use Metadata\MetadataFactory;
 
 class GraphNavigatorTest extends \PHPUnit\Framework\TestCase
@@ -21,7 +21,7 @@ class GraphNavigatorTest extends \PHPUnit\Framework\TestCase
     private $context;
 
     /**
-     * @expectedException JMS\Serializer\Exception\RuntimeException
+     * @expectedException Signnow\Serializer\Exception\RuntimeException
      * @expectedExceptionMessage Resources are not supported in serialized data.
      */
     public function testResourceThrowsException()
@@ -40,7 +40,7 @@ class GraphNavigatorTest extends \PHPUnit\Framework\TestCase
 
         $self = $this;
         $context = $this->context;
-        $exclusionStrategy = $this->getMockBuilder('JMS\Serializer\Exclusion\ExclusionStrategyInterface')->getMock();
+        $exclusionStrategy = $this->getMockBuilder('Signnow\Serializer\Exclusion\ExclusionStrategyInterface')->getMock();
         $exclusionStrategy->expects($this->once())
             ->method('shouldSkipClass')
             ->will($this->returnCallback(function ($passedMetadata, $passedContext) use ($metadata, $context, $self) {
@@ -64,7 +64,7 @@ class GraphNavigatorTest extends \PHPUnit\Framework\TestCase
 
         $this->context->expects($this->any())
             ->method('getVisitor')
-            ->will($this->returnValue($this->getMockBuilder('JMS\Serializer\VisitorInterface')->getMock()));
+            ->will($this->returnValue($this->getMockBuilder('Signnow\Serializer\VisitorInterface')->getMock()));
 
         $this->navigator = new GraphNavigator($this->metadataFactory, $this->handlerRegistry, $this->objectConstructor, $this->dispatcher);
         $this->navigator->accept($object, null, $this->context);
@@ -76,7 +76,7 @@ class GraphNavigatorTest extends \PHPUnit\Framework\TestCase
         $metadata = $this->metadataFactory->getMetadataForClass($class);
 
         $context = $this->context;
-        $exclusionStrategy = $this->getMockBuilder('JMS\Serializer\Exclusion\ExclusionStrategyInterface')->getMock();
+        $exclusionStrategy = $this->getMockBuilder('Signnow\Serializer\Exclusion\ExclusionStrategyInterface')->getMock();
         $exclusionStrategy->expects($this->once())
             ->method('shouldSkipClass')
             ->with($metadata, $this->callback(function ($navigatorContext) use ($context) {
@@ -99,7 +99,7 @@ class GraphNavigatorTest extends \PHPUnit\Framework\TestCase
 
         $this->context->expects($this->any())
             ->method('getVisitor')
-            ->will($this->returnValue($this->getMockBuilder('JMS\Serializer\VisitorInterface')->getMock()));
+            ->will($this->returnValue($this->getMockBuilder('Signnow\Serializer\VisitorInterface')->getMock()));
 
         $this->navigator = new GraphNavigator($this->metadataFactory, $this->handlerRegistry, $this->objectConstructor, $this->dispatcher);
         $this->navigator->accept('random', array('name' => $class, 'params' => array()), $this->context);
@@ -124,7 +124,7 @@ class GraphNavigatorTest extends \PHPUnit\Framework\TestCase
 
         $this->context->expects($this->any())
             ->method('getVisitor')
-            ->will($this->returnValue($this->getMockBuilder('JMS\Serializer\VisitorInterface')->getMock()));
+            ->will($this->returnValue($this->getMockBuilder('Signnow\Serializer\VisitorInterface')->getMock()));
 
         $this->navigator = new GraphNavigator($this->metadataFactory, $this->handlerRegistry, $this->objectConstructor, $this->dispatcher);
         $this->navigator->accept($object, null, $this->context);
@@ -132,7 +132,7 @@ class GraphNavigatorTest extends \PHPUnit\Framework\TestCase
 
     protected function setUp(): void
     {
-        $this->context = $this->getMockBuilder('JMS\Serializer\Context')->getMock();
+        $this->context = $this->getMockBuilder('Signnow\Serializer\Context')->getMock();
         $this->dispatcher = new EventDispatcher();
         $this->handlerRegistry = new HandlerRegistry();
         $this->objectConstructor = new UnserializeObjectConstructor();

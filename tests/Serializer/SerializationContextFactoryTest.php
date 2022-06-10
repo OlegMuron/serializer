@@ -1,18 +1,18 @@
 <?php
 
-namespace JMS\Serializer\Tests\Serializer;
+namespace Signnow\Serializer\Tests\Serializer;
 
 use Doctrine\Common\Annotations\AnnotationReader;
-use JMS\Serializer\Construction\UnserializeObjectConstructor;
-use JMS\Serializer\DeserializationContext;
-use JMS\Serializer\Handler\HandlerRegistry;
-use JMS\Serializer\JsonDeserializationVisitor;
-use JMS\Serializer\JsonSerializationVisitor;
-use JMS\Serializer\Metadata\Driver\AnnotationDriver;
-use JMS\Serializer\Naming\CamelCaseNamingStrategy;
-use JMS\Serializer\Naming\SerializedNameAnnotationStrategy;
-use JMS\Serializer\SerializationContext;
-use JMS\Serializer\Serializer;
+use Signnow\Serializer\Construction\UnserializeObjectConstructor;
+use Signnow\Serializer\DeserializationContext;
+use Signnow\Serializer\Handler\HandlerRegistry;
+use Signnow\Serializer\JsonDeserializationVisitor;
+use Signnow\Serializer\JsonSerializationVisitor;
+use Signnow\Serializer\Metadata\Driver\AnnotationDriver;
+use Signnow\Serializer\Naming\CamelCaseNamingStrategy;
+use Signnow\Serializer\Naming\SerializedNameAnnotationStrategy;
+use Signnow\Serializer\SerializationContext;
+use Signnow\Serializer\Serializer;
 use Metadata\MetadataFactory;
 use PhpCollection\Map;
 
@@ -37,7 +37,7 @@ class SerializationContextFactoryTest extends \PHPUnit\Framework\TestCase
 
     public function testSerializeUseProvidedSerializationContext()
     {
-        $contextFactoryMock = $this->getMockForAbstractClass('JMS\\Serializer\\ContextFactory\\SerializationContextFactoryInterface');
+        $contextFactoryMock = $this->getMockForAbstractClass('Signnow\\Serializer\\ContextFactory\\SerializationContextFactoryInterface');
         $context = new SerializationContext();
         $context->setSerializeNull(true);
 
@@ -55,7 +55,7 @@ class SerializationContextFactoryTest extends \PHPUnit\Framework\TestCase
 
     public function testDeserializeUseProvidedDeserializationContext()
     {
-        $contextFactoryMock = $this->getMockForAbstractClass('JMS\\Serializer\\ContextFactory\\DeserializationContextFactoryInterface');
+        $contextFactoryMock = $this->getMockForAbstractClass('Signnow\\Serializer\\ContextFactory\\DeserializationContextFactoryInterface');
         $context = new DeserializationContext();
 
         $contextFactoryMock
@@ -72,7 +72,7 @@ class SerializationContextFactoryTest extends \PHPUnit\Framework\TestCase
 
     public function testToArrayUseProvidedSerializationContext()
     {
-        $contextFactoryMock = $this->getMockForAbstractClass('JMS\\Serializer\\ContextFactory\\SerializationContextFactoryInterface');
+        $contextFactoryMock = $this->getMockForAbstractClass('Signnow\\Serializer\\ContextFactory\\SerializationContextFactoryInterface');
         $context = new SerializationContext();
         $context->setSerializeNull(true);
 
@@ -90,7 +90,7 @@ class SerializationContextFactoryTest extends \PHPUnit\Framework\TestCase
 
     public function testFromArrayUseProvidedDeserializationContext()
     {
-        $contextFactoryMock = $this->getMockForAbstractClass('JMS\\Serializer\\ContextFactory\\DeserializationContextFactoryInterface');
+        $contextFactoryMock = $this->getMockForAbstractClass('Signnow\\Serializer\\ContextFactory\\DeserializationContextFactoryInterface');
         $context = new DeserializationContext();
 
         $contextFactoryMock

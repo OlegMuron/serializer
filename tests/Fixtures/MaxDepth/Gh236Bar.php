@@ -1,8 +1,8 @@
 <?php
 
-namespace JMS\Serializer\Tests\Fixtures\MaxDepth;
+namespace Signnow\Serializer\Tests\Fixtures\MaxDepth;
 
-use JMS\Serializer\Annotation as Serializer;
+use Signnow\Serializer\Annotation as Serializer;
 
 class Gh236Bar
 {

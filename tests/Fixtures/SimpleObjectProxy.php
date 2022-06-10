@@ -1,6 +1,6 @@
 <?php
 
-namespace JMS\Serializer\Tests\Fixtures;
+namespace Signnow\Serializer\Tests\Fixtures;
 
 use Doctrine\Persistence\Proxy;
 

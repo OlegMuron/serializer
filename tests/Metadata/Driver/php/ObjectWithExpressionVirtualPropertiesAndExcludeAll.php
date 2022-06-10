@@ -1,9 +1,9 @@
 <?php
 
-use JMS\Serializer\Metadata\ClassMetadata;
-use JMS\Serializer\Metadata\ExpressionPropertyMetadata;
+use Signnow\Serializer\Metadata\ClassMetadata;
+use Signnow\Serializer\Metadata\ExpressionPropertyMetadata;
 
-$className = 'JMS\Serializer\Tests\Fixtures\ObjectWithExpressionVirtualPropertiesAndExcludeAll';
+$className = 'Signnow\Serializer\Tests\Fixtures\ObjectWithExpressionVirtualPropertiesAndExcludeAll';
 
 $metadata = new ClassMetadata($className);
 

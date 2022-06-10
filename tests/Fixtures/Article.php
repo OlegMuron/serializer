@@ -1,14 +1,14 @@
 <?php
 
-namespace JMS\Serializer\Tests\Fixtures;
+namespace Signnow\Serializer\Tests\Fixtures;
 
-use JMS\Serializer\Annotation\HandlerCallback;
-use JMS\Serializer\Context;
-use JMS\Serializer\JsonDeserializationVisitor;
-use JMS\Serializer\JsonSerializationVisitor;
-use JMS\Serializer\XmlDeserializationVisitor;
-use JMS\Serializer\XmlSerializationVisitor;
-use JMS\Serializer\YamlSerializationVisitor;
+use Signnow\Serializer\Annotation\HandlerCallback;
+use Signnow\Serializer\Context;
+use Signnow\Serializer\JsonDeserializationVisitor;
+use Signnow\Serializer\JsonSerializationVisitor;
+use Signnow\Serializer\XmlDeserializationVisitor;
+use Signnow\Serializer\XmlSerializationVisitor;
+use Signnow\Serializer\YamlSerializationVisitor;
 use Symfony\Component\Yaml\Inline;
 
 class Article

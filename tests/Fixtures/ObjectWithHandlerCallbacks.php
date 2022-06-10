@@ -1,9 +1,9 @@
 <?php
 
-namespace JMS\Serializer\Tests\Fixtures;
+namespace Signnow\Serializer\Tests\Fixtures;
 
-use JMS\Serializer\Annotation\HandlerCallback;
-use JMS\Serializer\Annotation\Type;
+use Signnow\Serializer\Annotation\HandlerCallback;
+use Signnow\Serializer\Annotation\Type;
 
 class ObjectWithHandlerCallbacks
 {

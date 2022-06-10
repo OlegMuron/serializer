@@ -1,14 +1,14 @@
 <?php
 
-namespace JMS\Serializer\Tests\Fixtures;
+namespace Signnow\Serializer\Tests\Fixtures;
 
-use JMS\Serializer\Annotation\Type;
-use JMS\Serializer\Annotation\XmlRoot;
+use Signnow\Serializer\Annotation\Type;
+use Signnow\Serializer\Annotation\XmlRoot;
 
 /** @XmlRoot("order") */
 class Order
 {
-    /** @Type("JMS\Serializer\Tests\Fixtures\Price") */
+    /** @Type("Signnow\Serializer\Tests\Fixtures\Price") */
     private $cost;
 
     public function __construct(Price $price = null)

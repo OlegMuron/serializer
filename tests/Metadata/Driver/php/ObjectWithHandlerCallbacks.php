@@ -1,12 +1,12 @@
 <?php
 
-use JMS\Serializer\GraphNavigator;
-use JMS\Serializer\Metadata\ClassMetadata;
-use JMS\Serializer\Metadata\PropertyMetadata;
+use Signnow\Serializer\GraphNavigator;
+use Signnow\Serializer\Metadata\ClassMetadata;
+use Signnow\Serializer\Metadata\PropertyMetadata;
 
-$metadata = new ClassMetadata('JMS\Serializer\Tests\Fixtures\ObjectWithHandlerCallbacks');
+$metadata = new ClassMetadata('Signnow\Serializer\Tests\Fixtures\ObjectWithHandlerCallbacks');
 
-$pMetadata = new PropertyMetadata('JMS\Serializer\Tests\Fixtures\ObjectWithHandlerCallbacks', 'name');
+$pMetadata = new PropertyMetadata('Signnow\Serializer\Tests\Fixtures\ObjectWithHandlerCallbacks', 'name');
 $pMetadata->type = 'string';
 $metadata->addPropertyMetadata($pMetadata);
 

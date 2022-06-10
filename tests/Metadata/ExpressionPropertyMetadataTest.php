@@ -1,8 +1,8 @@
 <?php
 
-namespace JMS\Serializer\Tests\Metadata;
+namespace Signnow\Serializer\Tests\Metadata;
 
-use JMS\Serializer\Metadata\ExpressionPropertyMetadata;
+use Signnow\Serializer\Metadata\ExpressionPropertyMetadata;
 
 class ExpressionPropertyMetadataTest extends AbstractPropertyMetadataTest
 {

@@ -1,6 +1,6 @@
 <?php
 
-namespace JMS\Serializer\Tests\Handler;
+namespace Signnow\Serializer\Tests\Handler;
 
 use Psr\Container\ContainerInterface;
 

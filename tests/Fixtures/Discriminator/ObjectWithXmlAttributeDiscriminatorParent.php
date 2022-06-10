@@ -1,12 +1,12 @@
 <?php
 
-namespace JMS\Serializer\Tests\Fixtures\Discriminator;
+namespace Signnow\Serializer\Tests\Fixtures\Discriminator;
 
-use JMS\Serializer\Annotation as Serializer;
+use Signnow\Serializer\Annotation as Serializer;
 
 /**
  * @Serializer\Discriminator(field = "type", map = {
- *    "child": "JMS\Serializer\Tests\Fixtures\Discriminator\ObjectWithXmlAttributeDiscriminatorChild"
+ *    "child": "Signnow\Serializer\Tests\Fixtures\Discriminator\ObjectWithXmlAttributeDiscriminatorChild"
  * })
  * @Serializer\XmlDiscriminator(attribute=true, cdata=false)
  */

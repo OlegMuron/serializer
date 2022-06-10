@@ -1,12 +1,12 @@
 <?php
 
-namespace JMS\Serializer\Tests\Fixtures;
+namespace Signnow\Serializer\Tests\Fixtures;
 
-use JMS\Serializer\Annotation\Accessor;
-use JMS\Serializer\Annotation\XmlAttribute;
-use JMS\Serializer\Annotation\XmlList;
-use JMS\Serializer\Annotation\XmlMap;
-use JMS\Serializer\Annotation\XmlRoot;
+use Signnow\Serializer\Annotation\Accessor;
+use Signnow\Serializer\Annotation\XmlAttribute;
+use Signnow\Serializer\Annotation\XmlList;
+use Signnow\Serializer\Annotation\XmlMap;
+use Signnow\Serializer\Annotation\XmlRoot;
 
 /** @XmlRoot("post") */
 class IndexedCommentsBlogPost

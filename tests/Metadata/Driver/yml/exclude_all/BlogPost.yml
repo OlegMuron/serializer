@@ -1,4 +1,4 @@
-JMS\Serializer\Tests\Fixtures\BlogPost:
+Signnow\Serializer\Tests\Fixtures\BlogPost:
     xml_root_name: blog-post
     exclusion_policy: ALL
     properties:

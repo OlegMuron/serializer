@@ -1,8 +1,8 @@
 <?php
 
-namespace JMS\Serializer\Tests\Serializer\Naming;
+namespace Signnow\Serializer\Tests\Serializer\Naming;
 
-use JMS\Serializer\Naming\IdenticalPropertyNamingStrategy;
+use Signnow\Serializer\Naming\IdenticalPropertyNamingStrategy;
 
 class IdenticalPropertyNamingStrategyTest extends \PHPUnit\Framework\TestCase
 {
@@ -20,7 +20,7 @@ class IdenticalPropertyNamingStrategyTest extends \PHPUnit\Framework\TestCase
      */
     public function testTranslateName($propertyName)
     {
-        $mockProperty = $this->getMockBuilder('JMS\Serializer\Metadata\PropertyMetadata')->disableOriginalConstructor()->getMock();
+        $mockProperty = $this->getMockBuilder('Signnow\Serializer\Metadata\PropertyMetadata')->disableOriginalConstructor()->getMock();
         $mockProperty->name = $propertyName;
 
         $strategy = new IdenticalPropertyNamingStrategy();

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <serializer>
-    <class name="JMS\Serializer\Tests\Fixtures\BlogPost" xml-root-name="blog-post">
+    <class name="Signnow\Serializer\Tests\Fixtures\BlogPost" xml-root-name="blog-post">
         <xml-namespace uri="http://example.com/namespace"/>
         <xml-namespace prefix="gd" uri="http://schemas.google.com/g/2005"/>
         <xml-namespace prefix="atom" uri="http://www.w3.org/2005/Atom"/>
@@ -17,10 +17,10 @@
             <xml-element namespace="http://schemas.google.com/g/2005"/>
         </property>
         <property name="comments" groups="comments">
-            <type><![CDATA[ArrayCollection<JMS\Serializer\Tests\Fixtures\Comment>]]></type>
+            <type><![CDATA[ArrayCollection<Signnow\Serializer\Tests\Fixtures\Comment>]]></type>
             <xml-list inline="true" entry-name="comment" />
         </property>
-        <property name="author" groups="post" type="JMS\Serializer\Tests\Fixtures\Author">
+        <property name="author" groups="post" type="Signnow\Serializer\Tests\Fixtures\Author">
             <xml-element namespace="http://www.w3.org/2005/Atom"/>
         </property>
     </class>

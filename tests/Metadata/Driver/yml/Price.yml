@@ -1,4 +1,4 @@
-JMS\Serializer\Tests\Fixtures\Price:
+Signnow\Serializer\Tests\Fixtures\Price:
     properties:
         price:
             type: float

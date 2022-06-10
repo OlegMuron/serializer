@@ -1,0 +1,22 @@
+<?php
+
+namespace Signnow\Serializer\EventDispatcher;
+
+use Signnow\Serializer\Context;
+
+class ObjectEvent extends Event
+{
+    private $object;
+
+    public function __construct(Context $context, $object, array $type)
+    {
+        parent::__construct($context, $type);
+
+        $this->object = $object;
+    }
+
+    public function getObject()
+    {
+        return $this->object;
+    }
+}

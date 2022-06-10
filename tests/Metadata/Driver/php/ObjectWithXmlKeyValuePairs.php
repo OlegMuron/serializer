@@ -1,8 +1,8 @@
 <?php
-use JMS\Serializer\Metadata\ClassMetadata;
-use JMS\Serializer\Metadata\PropertyMetadata;
+use Signnow\Serializer\Metadata\ClassMetadata;
+use Signnow\Serializer\Metadata\PropertyMetadata;
 
-$className = 'JMS\Serializer\Tests\Fixtures\ObjectWithXmlKeyValuePairs';
+$className = 'Signnow\Serializer\Tests\Fixtures\ObjectWithXmlKeyValuePairs';
 
 $metadata = new ClassMetadata($className);
 

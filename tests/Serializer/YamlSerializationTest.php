@@ -1,9 +1,9 @@
 <?php
 
-namespace JMS\Serializer\Tests\Serializer;
+namespace Signnow\Serializer\Tests\Serializer;
 
-use JMS\Serializer\Exception\RuntimeException;
-use JMS\Serializer\SerializationContext;
+use Signnow\Serializer\Exception\RuntimeException;
+use Signnow\Serializer\SerializationContext;
 
 class YamlSerializationTest extends BaseSerializationTest
 {

@@ -1,4 +1,4 @@
-JMS\Serializer\Tests\Fixtures\ParentSkipWithEmptyChild:
+Signnow\Serializer\Tests\Fixtures\ParentSkipWithEmptyChild:
     properties:
         c:
           type: string

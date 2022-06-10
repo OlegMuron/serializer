@@ -1,9 +1,9 @@
 <?php
 
-namespace JMS\Serializer\Tests\Fixtures\Doctrine;
+namespace Signnow\Serializer\Tests\Fixtures\Doctrine;
 
 use Doctrine\ORM\Mapping as ORM;
-use JMS\Serializer\Annotation\SerializedName;
+use Signnow\Serializer\Annotation\SerializedName;
 
 /** @ORM\Entity */
 class Author

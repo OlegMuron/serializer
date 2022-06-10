@@ -1,18 +1,18 @@
 <?php
 
-namespace JMS\Serializer\Tests;
+namespace Signnow\Serializer\Tests;
 
-use JMS\Serializer\DeserializationContext;
-use JMS\Serializer\Expression\ExpressionEvaluator;
-use JMS\Serializer\Handler\HandlerRegistry;
-use JMS\Serializer\JsonSerializationVisitor;
-use JMS\Serializer\Naming\CamelCaseNamingStrategy;
-use JMS\Serializer\SerializationContext;
-use JMS\Serializer\SerializerBuilder;
-use JMS\Serializer\Tests\Fixtures\ContextualNamingStrategy;
-use JMS\Serializer\Tests\Fixtures\Person;
-use JMS\Serializer\Tests\Fixtures\PersonSecret;
-use JMS\Serializer\Tests\Fixtures\PersonSecretWithVariables;
+use Signnow\Serializer\DeserializationContext;
+use Signnow\Serializer\Expression\ExpressionEvaluator;
+use Signnow\Serializer\Handler\HandlerRegistry;
+use Signnow\Serializer\JsonSerializationVisitor;
+use Signnow\Serializer\Naming\CamelCaseNamingStrategy;
+use Signnow\Serializer\SerializationContext;
+use Signnow\Serializer\SerializerBuilder;
+use Signnow\Serializer\Tests\Fixtures\ContextualNamingStrategy;
+use Signnow\Serializer\Tests\Fixtures\Person;
+use Signnow\Serializer\Tests\Fixtures\PersonSecret;
+use Signnow\Serializer\Tests\Fixtures\PersonSecretWithVariables;
 use Symfony\Component\ExpressionLanguage\ExpressionFunction;
 use Symfony\Component\ExpressionLanguage\ExpressionLanguage;
 use Symfony\Component\Filesystem\Filesystem;
@@ -71,7 +71,7 @@ class SerializerBuilderTest extends \PHPUnit\Framework\TestCase
     }
 
     /**
-     * @expectedException JMS\Serializer\Exception\UnsupportedFormatException
+     * @expectedException Signnow\Serializer\Exception\UnsupportedFormatException
      * @expectedExceptionMessage The format "xml" is not supported for serialization.
      */
     public function testDoesNotAddOtherVisitorsWhenConfiguredExplicitly()
@@ -109,7 +109,7 @@ class SerializerBuilderTest extends \PHPUnit\Framework\TestCase
 
     public function testSetSerializationContext()
     {
-        $contextFactoryMock = $this->getMockForAbstractClass('JMS\\Serializer\\ContextFactory\\SerializationContextFactoryInterface');
+        $contextFactoryMock = $this->getMockForAbstractClass('Signnow\\Serializer\\ContextFactory\\SerializationContextFactoryInterface');
         $context = new SerializationContext();
         $context->setSerializeNull(true);
 
@@ -129,7 +129,7 @@ class SerializerBuilderTest extends \PHPUnit\Framework\TestCase
 
     public function testSetDeserializationContext()
     {
-        $contextFactoryMock = $this->getMockForAbstractClass('JMS\\Serializer\\ContextFactory\\DeserializationContextFactoryInterface');
+        $contextFactoryMock = $this->getMockForAbstractClass('Signnow\\Serializer\\ContextFactory\\DeserializationContextFactoryInterface');
         $context = new DeserializationContext();
 
         $contextFactoryMock

@@ -1,11 +1,11 @@
 <?php
 
-namespace JMS\Serializer\Tests\Fixtures;
+namespace Signnow\Serializer\Tests\Fixtures;
 
-use JMS\Serializer\Annotation\AccessType;
-use JMS\Serializer\Annotation\Exclude;
-use JMS\Serializer\Annotation\ReadOnlyProperty;
-use JMS\Serializer\Annotation\Type;
+use Signnow\Serializer\Annotation\AccessType;
+use Signnow\Serializer\Annotation\Exclude;
+use Signnow\Serializer\Annotation\ReadOnlyProperty;
+use Signnow\Serializer\Annotation\Type;
 
 /** @AccessType("public_method") */
 class GetSetObject

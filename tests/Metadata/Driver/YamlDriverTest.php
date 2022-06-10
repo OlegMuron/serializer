@@ -1,22 +1,22 @@
 <?php
 
-namespace JMS\Serializer\Tests\Metadata\Driver;
+namespace Signnow\Serializer\Tests\Metadata\Driver;
 
-use JMS\Serializer\Metadata\Driver\YamlDriver;
-use JMS\Serializer\Metadata\PropertyMetadata;
+use Signnow\Serializer\Metadata\Driver\YamlDriver;
+use Signnow\Serializer\Metadata\PropertyMetadata;
 use Metadata\Driver\FileLocator;
 
 class YamlDriverTest extends BaseDriverTest
 {
     public function testAccessorOrderIsInferred()
     {
-        $m = $this->getDriverForSubDir('accessor_inferred')->loadMetadataForClass(new \ReflectionClass('JMS\Serializer\Tests\Fixtures\Person'));
+        $m = $this->getDriverForSubDir('accessor_inferred')->loadMetadataForClass(new \ReflectionClass('Signnow\Serializer\Tests\Fixtures\Person'));
         $this->assertEquals(array('age', 'name'), array_keys($m->propertyMetadata));
     }
 
     public function testShortExposeSyntax()
     {
-        $m = $this->getDriverForSubDir('short_expose')->loadMetadataForClass(new \ReflectionClass('JMS\Serializer\Tests\Fixtures\Person'));
+        $m = $this->getDriverForSubDir('short_expose')->loadMetadataForClass(new \ReflectionClass('Signnow\Serializer\Tests\Fixtures\Person'));
 
         $this->assertArrayHasKey('name', $m->propertyMetadata);
         $this->assertArrayNotHasKey('age', $m->propertyMetadata);
@@ -24,7 +24,7 @@ class YamlDriverTest extends BaseDriverTest
 
     public function testBlogPost()
     {
-        $m = $this->getDriverForSubDir('exclude_all')->loadMetadataForClass(new \ReflectionClass('JMS\Serializer\Tests\Fixtures\BlogPost'));
+        $m = $this->getDriverForSubDir('exclude_all')->loadMetadataForClass(new \ReflectionClass('Signnow\Serializer\Tests\Fixtures\BlogPost'));
 
         $this->assertArrayHasKey('title', $m->propertyMetadata);
 
@@ -36,7 +36,7 @@ class YamlDriverTest extends BaseDriverTest
 
     public function testBlogPostExcludeNoneStrategy()
     {
-        $m = $this->getDriverForSubDir('exclude_none')->loadMetadataForClass(new \ReflectionClass('JMS\Serializer\Tests\Fixtures\BlogPost'));
+        $m = $this->getDriverForSubDir('exclude_none')->loadMetadataForClass(new \ReflectionClass('Signnow\Serializer\Tests\Fixtures\BlogPost'));
 
         $this->assertArrayNotHasKey('title', $m->propertyMetadata);
 
@@ -48,7 +48,7 @@ class YamlDriverTest extends BaseDriverTest
 
     public function testBlogPostCaseInsensitive()
     {
-        $m = $this->getDriverForSubDir('case')->loadMetadataForClass(new \ReflectionClass('JMS\Serializer\Tests\Fixtures\BlogPost'));
+        $m = $this->getDriverForSubDir('case')->loadMetadataForClass(new \ReflectionClass('Signnow\Serializer\Tests\Fixtures\BlogPost'));
 
         $p = new PropertyMetadata($m->name, 'title');
         $p->type = array('name' => 'string', 'params' => array());
@@ -57,7 +57,7 @@ class YamlDriverTest extends BaseDriverTest
 
     public function testBlogPostAccessor()
     {
-        $m = $this->getDriverForSubDir('accessor')->loadMetadataForClass(new \ReflectionClass('JMS\Serializer\Tests\Fixtures\BlogPost'));
+        $m = $this->getDriverForSubDir('accessor')->loadMetadataForClass(new \ReflectionClass('Signnow\Serializer\Tests\Fixtures\BlogPost'));
 
         $this->assertArrayHasKey('title', $m->propertyMetadata);
 
@@ -70,7 +70,7 @@ class YamlDriverTest extends BaseDriverTest
     private function getDriverForSubDir($subDir = null)
     {
         return new YamlDriver(new FileLocator(array(
-            'JMS\Serializer\Tests\Fixtures' => __DIR__ . '/yml' . ($subDir ? '/' . $subDir : ''),
+            'Signnow\Serializer\Tests\Fixtures' => __DIR__ . '/yml' . ($subDir ? '/' . $subDir : ''),
         )));
     }
 

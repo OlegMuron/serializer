@@ -1,9 +1,9 @@
-JMS\Serializer\Tests\Fixtures\Discriminator\Vehicle:
+Signnow\Serializer\Tests\Fixtures\Discriminator\Vehicle:
     discriminator:
         field_name: type
         map:
-            car: JMS\Serializer\Tests\Fixtures\Discriminator\Car
-            moped: JMS\Serializer\Tests\Fixtures\Discriminator\Moped
+            car: Signnow\Serializer\Tests\Fixtures\Discriminator\Car
+            moped: Signnow\Serializer\Tests\Fixtures\Discriminator\Moped
 
     properties:
         km:

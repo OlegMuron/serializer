@@ -1,10 +1,10 @@
 <?php
 
-namespace JMS\Serializer\Tests\Fixtures;
+namespace Signnow\Serializer\Tests\Fixtures;
 
-use JMS\Serializer\Annotation\SerializedName;
-use JMS\Serializer\Annotation\Since;
-use JMS\Serializer\Annotation\Until;
+use Signnow\Serializer\Annotation\SerializedName;
+use Signnow\Serializer\Annotation\Since;
+use Signnow\Serializer\Annotation\Until;
 
 class VersionedObject
 {

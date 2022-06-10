@@ -1,16 +1,16 @@
 <?php
 
-namespace JMS\Serializer\Tests\Fixtures\Doctrine;
+namespace Signnow\Serializer\Tests\Fixtures\Doctrine;
 
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping as ORM;
-use JMS\Serializer\Annotation as Serializer;
-use JMS\Serializer\Annotation\Groups;
-use JMS\Serializer\Annotation\SerializedName;
-use JMS\Serializer\Annotation\Type;
-use JMS\Serializer\Annotation\XmlAttribute;
-use JMS\Serializer\Annotation\XmlList;
-use JMS\Serializer\Annotation\XmlRoot;
+use Signnow\Serializer\Annotation as Serializer;
+use Signnow\Serializer\Annotation\Groups;
+use Signnow\Serializer\Annotation\SerializedName;
+use Signnow\Serializer\Annotation\Type;
+use Signnow\Serializer\Annotation\XmlAttribute;
+use Signnow\Serializer\Annotation\XmlList;
+use Signnow\Serializer\Annotation\XmlRoot;
 
 /**
  * @ORM\Entity

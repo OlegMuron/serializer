@@ -1,18 +1,18 @@
 <?php
 
-use JMS\Serializer\Metadata\ClassMetadata;
-use JMS\Serializer\Metadata\PropertyMetadata;
+use Signnow\Serializer\Metadata\ClassMetadata;
+use Signnow\Serializer\Metadata\PropertyMetadata;
 
-$metadata = new ClassMetadata('JMS\Serializer\Tests\Fixtures\Person');
+$metadata = new ClassMetadata('Signnow\Serializer\Tests\Fixtures\Person');
 $metadata->xmlRootName = 'child';
 
-$pMetadata = new PropertyMetadata('JMS\Serializer\Tests\Fixtures\Person', 'name');
+$pMetadata = new PropertyMetadata('Signnow\Serializer\Tests\Fixtures\Person', 'name');
 $pMetadata->setType('string');
 $pMetadata->xmlValue = true;
 $pMetadata->xmlElementCData = false;
 $metadata->addPropertyMetadata($pMetadata);
 
-$pMetadata = new PropertyMetadata('JMS\Serializer\Tests\Fixtures\Person', 'age');
+$pMetadata = new PropertyMetadata('Signnow\Serializer\Tests\Fixtures\Person', 'age');
 $pMetadata->setType('integer');
 $pMetadata->xmlAttribute = true;
 $metadata->addPropertyMetadata($pMetadata);

@@ -1,8 +1,8 @@
-JMS\Serializer\Tests\Fixtures\DiscriminatorGroup\Vehicle:
+Signnow\Serializer\Tests\Fixtures\DiscriminatorGroup\Vehicle:
     discriminator:
         field_name: type
         map:
-            car: JMS\Serializer\Tests\Fixtures\DiscriminatorGroup\Car
+            car: Signnow\Serializer\Tests\Fixtures\DiscriminatorGroup\Car
         groups: [foo]
 
     properties:

@@ -14,7 +14,7 @@ Constructing a Serializer
 This library provides a special builder object which makes constructing serializer instances a breeze in any PHP
 project. In its shortest version, it's just a single line of code::
 
-    $serializer = JMS\Serializer\SerializerBuilder::create()->build();
+    $serializer = Signnow\Serializer\SerializerBuilder::create()->build();
 
 This serializer is fully functional, but you might want to tweak it a bit for example to configure a cache directory.
 
@@ -24,10 +24,10 @@ The serializer collects several metadata about your objects from various sources
 order to make this process as efficient as possible, it is encourage to let the serializer cache that information. For
 that, you can configure a cache directory::
 
-    $builder = new JMS\Serializer\SerializerBuilder();
+    $builder = new Signnow\Serializer\SerializerBuilder();
 
     $serializer =
-        JMS\Serializer\SerializerBuilder::create()
+        Signnow\Serializer\SerializerBuilder::create()
         ->setCacheDir($someWritableDir)
         ->setDebug($trueOrFalse)
         ->build();
@@ -42,9 +42,9 @@ Adding Custom Handlers
 If you have created custom handlers, you can add them to the serializer easily::
 
     $serializer =
-        JMS\Serializer\SerializerBuilder::create()
+        Signnow\Serializer\SerializerBuilder::create()
             ->addDefaultHandlers()
-            ->configureHandlers(function(JMS\Serializer\Handler\HandlerRegistry $registry) {
+            ->configureHandlers(function(Signnow\Serializer\Handler\HandlerRegistry $registry) {
                 $registry->registerHandler('serialization', 'MyObject', 'json',
                     function($visitor, MyObject $obj, array $type) {
                         return $obj->getName();
@@ -63,7 +63,7 @@ metadata in XML, or YML files. For the latter, it is necessary to configure a me
 are located::
 
     $serializer =
-        JMS\Serializer\SerializerBuilder::create()
+        Signnow\Serializer\SerializerBuilder::create()
             ->addMetadataDir($someDir)
             ->build();
 
@@ -79,9 +79,9 @@ you can set a ``SerializationContextFactory`` to the Serializer.
 
 Example using the SerializerBuilder::
 
-    use JMS\Serializer\SerializationContext;
+    use Signnow\Serializer\SerializationContext;
 
-    $serializer = JMS\Serializer\SerializerBuilder::create()
+    $serializer = Signnow\Serializer\SerializerBuilder::create()
         ->setSerializationContextFactory(function () {
             return SerializationContext::create()
                 ->setSerializeNull(true)

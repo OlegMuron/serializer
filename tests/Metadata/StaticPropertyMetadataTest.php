@@ -1,8 +1,8 @@
 <?php
 
-namespace JMS\Serializer\Tests\Metadata;
+namespace Signnow\Serializer\Tests\Metadata;
 
-use JMS\Serializer\Metadata\StaticPropertyMetadata;
+use Signnow\Serializer\Metadata\StaticPropertyMetadata;
 
 class StaticPropertyMetadataTest extends AbstractPropertyMetadataTest
 {

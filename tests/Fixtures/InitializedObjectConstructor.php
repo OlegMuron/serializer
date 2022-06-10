@@ -1,11 +1,11 @@
 <?php
 
-namespace JMS\Serializer\Tests\Fixtures;
+namespace Signnow\Serializer\Tests\Fixtures;
 
-use JMS\Serializer\Construction\ObjectConstructorInterface;
-use JMS\Serializer\DeserializationContext;
-use JMS\Serializer\Metadata\ClassMetadata;
-use JMS\Serializer\VisitorInterface;
+use Signnow\Serializer\Construction\ObjectConstructorInterface;
+use Signnow\Serializer\DeserializationContext;
+use Signnow\Serializer\Metadata\ClassMetadata;
+use Signnow\Serializer\VisitorInterface;
 
 /**
  * Object constructor that allows deserialization into already constructed

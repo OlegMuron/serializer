@@ -1,6 +1,6 @@
 <?php
 
-namespace JMS\Serializer\Tests\Fixtures\Doctrine;
+namespace Signnow\Serializer\Tests\Fixtures\Doctrine;
 
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping as ORM;

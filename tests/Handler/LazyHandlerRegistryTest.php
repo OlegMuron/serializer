@@ -1,9 +1,9 @@
 <?php
 
-namespace JMS\Serializer\Tests\Handler;
+namespace Signnow\Serializer\Tests\Handler;
 
-use JMS\Serializer\GraphNavigator;
-use JMS\Serializer\Handler\LazyHandlerRegistry;
+use Signnow\Serializer\GraphNavigator;
+use Signnow\Serializer\Handler\LazyHandlerRegistry;
 
 abstract class LazyHandlerRegistryTest extends HandlerRegistryTest
 {

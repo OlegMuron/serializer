@@ -1,4 +1,4 @@
-JMS\Serializer\Tests\Fixtures\ObjectWithVirtualProperties:
+Signnow\Serializer\Tests\Fixtures\ObjectWithVirtualProperties:
     properties:
         existField:
             type: string

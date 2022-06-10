@@ -1,8 +1,8 @@
 <?php
 
-namespace JMS\Serializer\Tests\Serializer;
+namespace Signnow\Serializer\Tests\Serializer;
 
-use JMS\Serializer\Handler\DateHandler;
+use Signnow\Serializer\Handler\DateHandler;
 
 class DateIntervalFormatTest extends \PHPUnit\Framework\TestCase
 {

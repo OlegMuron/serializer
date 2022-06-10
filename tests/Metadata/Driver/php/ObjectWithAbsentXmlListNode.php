@@ -1,9 +1,9 @@
 <?php
 
-use JMS\Serializer\Metadata\ClassMetadata;
-use JMS\Serializer\Metadata\PropertyMetadata;
+use Signnow\Serializer\Metadata\ClassMetadata;
+use Signnow\Serializer\Metadata\PropertyMetadata;
 
-$className = 'JMS\Serializer\Tests\Fixtures\ObjectWithAbsentXmlListNode';
+$className = 'Signnow\Serializer\Tests\Fixtures\ObjectWithAbsentXmlListNode';
 
 $metadata = new ClassMetadata($className);
 

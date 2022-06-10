@@ -19,8 +19,8 @@ then it is easier to change the exclusion policy, and only mark these few proper
 
     <?php
 
-    use JMS\Serializer\Annotation\ExclusionPolicy;
-    use JMS\Serializer\Annotation\Expose;
+    use Signnow\Serializer\Annotation\ExclusionPolicy;
+    use Signnow\Serializer\Annotation\Expose;
 
     /**
      * The following annotations tells the serializer to skip all properties which
@@ -75,7 +75,7 @@ expose them via an API that is consumed by a third-party:
 If you have annotated your objects like above, you can serializing different
 versions like this::
 
-    use JMS\Serializer\SerializationContext;
+    use Signnow\Serializer\SerializationContext;
 
     $serializer->serialize(new VersionObject(), 'json', SerializationContext::create()->setVersion(1));
 
@@ -93,7 +93,7 @@ context.
 
 .. code-block :: php
 
-    use JMS\Serializer\Annotation\Groups;
+    use Signnow\Serializer\Annotation\Groups;
 
     class BlogPost
     {
@@ -114,7 +114,7 @@ context.
 
 You can then tell the serializer which groups to serialize in your controller::
 
-    use JMS\Serializer\SerializationContext;
+    use Signnow\Serializer\SerializationContext;
 
     $serializer->serialize(new BlogPost(), 'json', SerializationContext::create()->setGroups(array('list')));
 
@@ -131,7 +131,7 @@ depths of the object graph.
 
 For example if you have a User that has a manager and friends::
 
-    use JMS\Serializer\Annotation\Groups;
+    use Signnow\Serializer\Annotation\Groups;
 
     class User
     {
@@ -176,7 +176,7 @@ And the following object graph::
 
 You can override groups on specific paths::
 
-    use JMS\Serializer\SerializationContext;
+    use Signnow\Serializer\SerializationContext;
 
     $context = SerializationContext::create()->setGroups(array(
         'Default', // Serialize John's name
@@ -234,7 +234,7 @@ annotation to.
 
 .. code-block :: php
 
-    use JMS\Serializer\Annotation\MaxDepth;
+    use Signnow\Serializer\Annotation\MaxDepth;
 
     class User
     {
@@ -261,7 +261,7 @@ be serialized, and their author would also be serialized.
 
 You need to tell the serializer to take into account MaxDepth checks::
 
-    use JMS\Serializer\SerializationContext;
+    use Signnow\Serializer\SerializationContext;
 
     $serializer->serialize($data, 'json', SerializationContext::create()->enableMaxDepthChecks());
 
@@ -300,8 +300,8 @@ To enable this feature you have to set the Expression Evaluator when initializin
 .. code-block :: php
 
     <?php
-    use JMS\Serializer\Expression\ExpressionEvaluator;
-    use JMS\Serializer\Expression\SerializerBuilder;
+    use Signnow\Serializer\Expression\ExpressionEvaluator;
+    use Signnow\Serializer\Expression\SerializerBuilder;
     use Symfony\Component\ExpressionLanguage\ExpressionLanguage;
     
     $serializer = SerializerBuilder::create()

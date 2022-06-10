@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <serializer>
-    <class name="JMS\Serializer\Tests\Fixtures\SimpleSubClassObject">
+    <class name="Signnow\Serializer\Tests\Fixtures\SimpleSubClassObject">
         <xml-namespace prefix="foo" uri="http://better.foo.example.org"/>
         <xml-namespace prefix="old_foo" uri="http://foo.example.org"/>
         <property name="moo" type="string">

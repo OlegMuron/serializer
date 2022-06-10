@@ -1,15 +1,15 @@
 <?php
 
-namespace JMS\Serializer\Tests\Fixtures;
+namespace Signnow\Serializer\Tests\Fixtures;
 
-use JMS\Serializer\Annotation\Type;
-use JMS\Serializer\Annotation\XmlKeyValuePairs;
+use Signnow\Serializer\Annotation\Type;
+use Signnow\Serializer\Annotation\XmlKeyValuePairs;
 
 class ObjectWithXmlKeyValuePairsWithObjectType
 {
     /**
      * @var array
-     * @Type("array<string,JMS\Serializer\Tests\Fixtures\ObjectWithXmlKeyValuePairsWithType>")
+     * @Type("array<string,Signnow\Serializer\Tests\Fixtures\ObjectWithXmlKeyValuePairsWithType>")
      * @XmlKeyValuePairs
      */
     private $list;

@@ -1,4 +1,4 @@
-JMS\Serializer\Tests\Fixtures\ObjectWithExpressionVirtualPropertiesAndExcludeAll:
+Signnow\Serializer\Tests\Fixtures\ObjectWithExpressionVirtualPropertiesAndExcludeAll:
     exclusion_policy: all
     virtual_properties:
         virtualValue:

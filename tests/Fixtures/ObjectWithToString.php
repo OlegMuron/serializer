@@ -1,6 +1,6 @@
 <?php
 
-namespace JMS\Serializer\Tests\Fixtures;
+namespace Signnow\Serializer\Tests\Fixtures;
 
 class ObjectWithToString
 {

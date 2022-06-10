@@ -1,9 +1,9 @@
 <?php
 
-namespace JMS\Serializer\Tests\Fixtures;
+namespace Signnow\Serializer\Tests\Fixtures;
 
-use JMS\Serializer\Annotation\Type;
-use JMS\Serializer\Annotation\Groups;
+use Signnow\Serializer\Annotation\Type;
+use Signnow\Serializer\Annotation\Groups;
 
 class MultilineGroupsFormat
 {

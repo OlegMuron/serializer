@@ -1,4 +1,4 @@
-JMS\Serializer\Tests\Fixtures\Node:
+Signnow\Serializer\Tests\Fixtures\Node:
     properties:
         children:
             max_depth: 2
