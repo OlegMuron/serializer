@@ -37,6 +37,11 @@ class PropertyMetadata extends BasePropertyMetadata
     public $excludeIf = null;
 
     private $closureAccessor;
+    
+    /**
+     * @var \ReflectionProperty
+     */
+    public $reflection;
 
     private static $typeParser;
 
@@ -45,9 +50,19 @@ class PropertyMetadata extends BasePropertyMetadata
         parent::__construct($class, $name);
         $this->initAccessor();
     }
+    
+    private function getReflection(): \ReflectionProperty
+    {
+        if (null === $this->reflection) {
+            $this->reflection = new \ReflectionProperty($this->class, $this->name);
+        }
+        
+        return $this->reflection;
+    }
 
     private function initAccessor()
     {
+        $this->getReflection();
         $classRef = $this->reflection->getDeclaringClass();
         if ($classRef->isInternal() || $classRef->getProperty($this->name)->isStatic()) {
             $this->closureAccessor = function ($o) {
@@ -98,7 +113,7 @@ class PropertyMetadata extends BasePropertyMetadata
                 return $accessor($obj, $this->name);
             }
 
-            return parent::getValue($obj);
+            return $this->reflection->getValue($obj);
         }
 
         return $obj->{$this->getter}();
@@ -107,7 +122,7 @@ class PropertyMetadata extends BasePropertyMetadata
     public function setValue($obj, $value)
     {
         if (null === $this->setter) {
-            parent::setValue($obj, $value);
+            $this->reflection->setValue($obj, $value);
             return;
         }
 
@@ -165,7 +180,7 @@ class PropertyMetadata extends BasePropertyMetadata
     protected function unserializeProperties($str)
     {
         $unserialized = unserialize($str);
-        list(
+        [
             $this->sinceVersion,
             $this->untilVersion,
             $this->groups,
@@ -187,7 +202,7 @@ class PropertyMetadata extends BasePropertyMetadata
             $this->xmlAttributeMap,
             $this->maxDepth,
             $parentStr
-            ) = $unserialized;
+            ] = $unserialized;
 
         if (isset($unserialized['xmlEntryNamespace'])) {
             $this->xmlEntryNamespace = $unserialized['xmlEntryNamespace'];

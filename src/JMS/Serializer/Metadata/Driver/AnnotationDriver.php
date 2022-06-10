@@ -53,7 +53,7 @@ class AnnotationDriver implements DriverInterface
         $this->reader = $reader;
     }
 
-    public function loadMetadataForClass(\ReflectionClass $class)
+    public function loadMetadataForClass(\ReflectionClass $class): ?ClassMetadata
     {
         $classMetadata = new ClassMetadata($name = $class->name);
         $classMetadata->fileResources[] = $class->getFilename();

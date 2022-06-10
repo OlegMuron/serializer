@@ -15,7 +15,7 @@ use Symfony\Component\Yaml\Yaml;
 
 class YamlDriver extends AbstractFileDriver
 {
-    protected function loadMetadataFromFile(\ReflectionClass $class, $file)
+    protected function loadMetadataFromFile(\ReflectionClass $class, $file): ?ClassMetadata
     {
         $config = Yaml::parse(file_get_contents($file));
 
@@ -242,7 +242,7 @@ class YamlDriver extends AbstractFileDriver
         return $metadata;
     }
 
-    protected function getExtension()
+    protected function getExtension(): string
     {
         return 'yml';
     }

@@ -15,7 +15,7 @@ use Metadata\MethodMetadata;
 
 class XmlDriver extends AbstractFileDriver
 {
-    protected function loadMetadataFromFile(\ReflectionClass $class, $path)
+    protected function loadMetadataFromFile(\ReflectionClass $class, $path): ?ClassMetadata
     {
         $previous = libxml_use_internal_errors(true);
         libxml_clear_errors();
@@ -338,7 +338,7 @@ class XmlDriver extends AbstractFileDriver
         return $metadata;
     }
 
-    protected function getExtension()
+    protected function getExtension(): string
     {
         return 'xml';
     }
