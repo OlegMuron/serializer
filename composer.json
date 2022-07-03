@@ -51,12 +51,12 @@
     },
     "autoload": {
         "psr-4": {
-            "Signnow\\Serializer\\": "src/"
+            "SignNow\\Serializer\\": "src/"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "Signnow\\Serializer\\Tests\\": "tests/"
+            "SignNow\\Serializer\\Tests\\": "tests/"
         }
     },
     "extra": {
