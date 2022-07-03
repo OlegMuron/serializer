@@ -1,6 +1,6 @@
 <?php
 
-namespace Signnow\Serializer\Expression;
+namespace SignNow\Serializer\Expression;
 
 use Symfony\Component\ExpressionLanguage\ExpressionLanguage;
 

@@ -1,9 +1,9 @@
 <?php
 
-namespace Signnow\Serializer\Tests\Handler;
+namespace SignNow\Serializer\Tests\Handler;
 
-use Signnow\Serializer\GraphNavigator;
-use Signnow\Serializer\Handler\HandlerRegistry;
+use SignNow\Serializer\GraphNavigator;
+use SignNow\Serializer\Handler\HandlerRegistry;
 
 class HandlerRegistryTest extends \PHPUnit\Framework\TestCase
 {

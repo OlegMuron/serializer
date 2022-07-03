@@ -1,7 +1,7 @@
 <?php
 
-use Signnow\Serializer\Metadata\ClassMetadata;
+use SignNow\Serializer\Metadata\ClassMetadata;
 
-$metadata = new ClassMetadata('Signnow\Serializer\Tests\Fixtures\AuthorReadOnlyPerClass');
+$metadata = new ClassMetadata('SignNow\Serializer\Tests\Fixtures\AuthorReadOnlyPerClass');
 
 return $metadata;

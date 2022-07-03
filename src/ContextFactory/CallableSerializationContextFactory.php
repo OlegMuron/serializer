@@ -1,6 +1,6 @@
 <?php
 
-namespace Signnow\Serializer\ContextFactory;
+namespace SignNow\Serializer\ContextFactory;
 
 /**
  * Serialization Context Factory using a callable.

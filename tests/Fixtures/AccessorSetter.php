@@ -1,14 +1,14 @@
 <?php
 
-namespace Signnow\Serializer\Tests\Fixtures;
+namespace SignNow\Serializer\Tests\Fixtures;
 
-use Signnow\Serializer\Annotation as Serializer;
+use SignNow\Serializer\Annotation as Serializer;
 
 class AccessorSetter
 {
     /**
      * @var \stdClass
-     * @Serializer\Type("Signnow\Serializer\Tests\Fixtures\AccessorSetterElement")
+     * @Serializer\Type("SignNow\Serializer\Tests\Fixtures\AccessorSetterElement")
      * @Serializer\Accessor(setter="setElementDifferent")
      */
     protected $element;

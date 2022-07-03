@@ -1,12 +1,12 @@
 <?php
 
-namespace Signnow\Serializer\Tests\Fixtures;
+namespace SignNow\Serializer\Tests\Fixtures;
 
-use Signnow\Serializer\Annotation\Exclude;
-use Signnow\Serializer\Annotation\PostDeserialize;
-use Signnow\Serializer\Annotation\PostSerialize;
-use Signnow\Serializer\Annotation\PreSerialize;
-use Signnow\Serializer\Annotation\Type;
+use SignNow\Serializer\Annotation\Exclude;
+use SignNow\Serializer\Annotation\PostDeserialize;
+use SignNow\Serializer\Annotation\PostSerialize;
+use SignNow\Serializer\Annotation\PreSerialize;
+use SignNow\Serializer\Annotation\Type;
 
 class ObjectWithLifecycleCallbacks
 {

@@ -1,12 +1,12 @@
 <?php
 
-namespace Signnow\Serializer\Tests\Serializer\EventDispatcher\Subscriber;
+namespace SignNow\Serializer\Tests\Serializer\EventDispatcher\Subscriber;
 
-use Signnow\Serializer\DeserializationContext;
-use Signnow\Serializer\EventDispatcher\EventDispatcher;
-use Signnow\Serializer\EventDispatcher\ObjectEvent;
-use Signnow\Serializer\EventDispatcher\Subscriber\SymfonyValidatorSubscriber;
-use Signnow\Serializer\SerializerBuilder;
+use SignNow\Serializer\DeserializationContext;
+use SignNow\Serializer\EventDispatcher\EventDispatcher;
+use SignNow\Serializer\EventDispatcher\ObjectEvent;
+use SignNow\Serializer\EventDispatcher\Subscriber\SymfonyValidatorSubscriber;
+use SignNow\Serializer\SerializerBuilder;
 use Symfony\Component\Validator\ConstraintViolation;
 use Symfony\Component\Validator\ConstraintViolationList;
 
@@ -32,7 +32,7 @@ class SymfonyValidatorSubscriberTest extends \PHPUnit\Framework\TestCase
     }
 
     /**
-     * @expectedException Signnow\Serializer\Exception\ValidationFailedException
+     * @expectedException SignNow\Serializer\Exception\ValidationFailedException
      * @expectedExceptionMessage Validation failed with 1 error(s).
      */
     public function testValidateThrowsExceptionWhenListIsNotEmpty()
@@ -61,7 +61,7 @@ class SymfonyValidatorSubscriberTest extends \PHPUnit\Framework\TestCase
     {
         $this->validator->expects($this->once())
             ->method('validate')
-            ->with($this->isInstanceOf('Signnow\Serializer\Tests\Fixtures\AuthorList'), array('Foo'))
+            ->with($this->isInstanceOf('SignNow\Serializer\Tests\Fixtures\AuthorList'), array('Foo'))
             ->will($this->returnValue(new ConstraintViolationList()));
 
         $subscriber = $this->subscriber;
@@ -72,7 +72,7 @@ class SymfonyValidatorSubscriberTest extends \PHPUnit\Framework\TestCase
             ->build()
             ->deserialize(
                 '{"authors":[{"full_name":"foo"},{"full_name":"bar"}]}',
-                'Signnow\Serializer\Tests\Fixtures\AuthorList',
+                'SignNow\Serializer\Tests\Fixtures\AuthorList',
                 'json',
                 DeserializationContext::create()->setAttribute('validation_groups', array('Foo'))
             );

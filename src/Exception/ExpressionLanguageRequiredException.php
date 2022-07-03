@@ -1,6 +1,6 @@
 <?php
 
-namespace Signnow\Serializer\Exception;
+namespace SignNow\Serializer\Exception;
 
 /**
  * @author Asmir Mustafic <goetas@gmail.com>

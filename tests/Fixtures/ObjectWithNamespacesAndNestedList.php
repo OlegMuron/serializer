@@ -1,15 +1,15 @@
 <?php
 
-namespace Signnow\Serializer\Tests\Fixtures;
+namespace SignNow\Serializer\Tests\Fixtures;
 
-use Signnow\Serializer\Annotation as Serializer;
-use Signnow\Serializer\Annotation\SerializedName;
-use Signnow\Serializer\Annotation\Type;
-use Signnow\Serializer\Annotation\XmlElement;
-use Signnow\Serializer\Annotation\XmlList;
-use Signnow\Serializer\Annotation\XmlMap;
-use Signnow\Serializer\Annotation\XmlNamespace;
-use Signnow\Serializer\Annotation\XmlRoot;
+use SignNow\Serializer\Annotation as Serializer;
+use SignNow\Serializer\Annotation\SerializedName;
+use SignNow\Serializer\Annotation\Type;
+use SignNow\Serializer\Annotation\XmlElement;
+use SignNow\Serializer\Annotation\XmlList;
+use SignNow\Serializer\Annotation\XmlMap;
+use SignNow\Serializer\Annotation\XmlNamespace;
+use SignNow\Serializer\Annotation\XmlRoot;
 
 /**
  * @XmlRoot("ObjectWithNamespacesAndNestedList", namespace="http://example.com/namespace")
@@ -19,7 +19,7 @@ use Signnow\Serializer\Annotation\XmlRoot;
 class ObjectWithNamespacesAndNestedList
 {
     /**
-     * @Type("Signnow\Serializer\Tests\Fixtures\PersonCollection")
+     * @Type("SignNow\Serializer\Tests\Fixtures\PersonCollection")
      * @SerializedName("person_collection")
      */
     public $personCollection;

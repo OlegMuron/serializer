@@ -1,6 +1,6 @@
 <?php
 
-namespace Signnow\Serializer\Tests\Handler;
+namespace SignNow\Serializer\Tests\Handler;
 
 use Symfony\Component\DependencyInjection\Container;
 

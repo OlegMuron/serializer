@@ -1,9 +1,9 @@
 <?php
 
-use Signnow\Serializer\Metadata\ClassMetadata;
-use Signnow\Serializer\Metadata\PropertyMetadata;
+use SignNow\Serializer\Metadata\ClassMetadata;
+use SignNow\Serializer\Metadata\PropertyMetadata;
 
-$className = 'Signnow\Serializer\Tests\Fixtures\ObjectWithAbsentXmlListNode';
+$className = 'SignNow\Serializer\Tests\Fixtures\ObjectWithAbsentXmlListNode';
 
 $metadata = new ClassMetadata($className);
 

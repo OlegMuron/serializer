@@ -1,8 +1,8 @@
 <?php
 
-namespace Signnow\Serializer\Util;
+namespace SignNow\Serializer\Util;
 
-use Signnow\Serializer\Exception\RuntimeException;
+use SignNow\Serializer\Exception\RuntimeException;
 
 /**
  * A writer implementation.

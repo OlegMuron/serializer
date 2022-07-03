@@ -1,11 +1,11 @@
 <?php
 
-namespace Signnow\Serializer\Tests\Fixtures\ExclusionStrategy;
+namespace SignNow\Serializer\Tests\Fixtures\ExclusionStrategy;
 
-use Signnow\Serializer\Context;
-use Signnow\Serializer\Exclusion\ExclusionStrategyInterface;
-use Signnow\Serializer\Metadata\ClassMetadata;
-use Signnow\Serializer\Metadata\PropertyMetadata;
+use SignNow\Serializer\Context;
+use SignNow\Serializer\Exclusion\ExclusionStrategyInterface;
+use SignNow\Serializer\Metadata\ClassMetadata;
+use SignNow\Serializer\Metadata\PropertyMetadata;
 
 class AlwaysExcludeExclusionStrategy implements ExclusionStrategyInterface
 {

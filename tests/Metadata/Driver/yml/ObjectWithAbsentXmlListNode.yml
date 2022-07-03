@@ -1,4 +1,4 @@
-Signnow\Serializer\Tests\Fixtures\ObjectWithAbsentXmlListNode:
+SignNow\Serializer\Tests\Fixtures\ObjectWithAbsentXmlListNode:
     properties:
         absent:
             type: array

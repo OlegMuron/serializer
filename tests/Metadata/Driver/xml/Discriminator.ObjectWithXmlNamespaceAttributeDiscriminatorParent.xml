@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <serializer>
-    <class name="Signnow\Serializer\Tests\Fixtures\Discriminator\ObjectWithXmlNamespaceAttributeDiscriminatorParent"
+    <class name="SignNow\Serializer\Tests\Fixtures\Discriminator\ObjectWithXmlNamespaceAttributeDiscriminatorParent"
            discriminator-field-name="type"
     >
-        <discriminator-class value="child">Signnow\Serializer\Tests\Fixtures\Discriminator\ObjectWithXmlNamespaceAttributeDiscriminatorChild</discriminator-class>
+        <discriminator-class value="child">SignNow\Serializer\Tests\Fixtures\Discriminator\ObjectWithXmlNamespaceAttributeDiscriminatorChild</discriminator-class>
         <xml-discriminator namespace="http://example.com/" attribute="true" />
     </class>
 </serializer>

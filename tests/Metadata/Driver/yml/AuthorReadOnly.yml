@@ -1,4 +1,4 @@
-Signnow\Serializer\Tests\Fixtures\AuthorReadOnly:
+SignNow\Serializer\Tests\Fixtures\AuthorReadOnly:
     xml_root_name: author
     properties:
         id:

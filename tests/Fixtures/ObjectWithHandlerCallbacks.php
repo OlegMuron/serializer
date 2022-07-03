@@ -1,9 +1,9 @@
 <?php
 
-namespace Signnow\Serializer\Tests\Fixtures;
+namespace SignNow\Serializer\Tests\Fixtures;
 
-use Signnow\Serializer\Annotation\HandlerCallback;
-use Signnow\Serializer\Annotation\Type;
+use SignNow\Serializer\Annotation\HandlerCallback;
+use SignNow\Serializer\Annotation\Type;
 
 class ObjectWithHandlerCallbacks
 {

@@ -1,19 +1,19 @@
 <?php
 
-namespace Signnow\Serializer;
+namespace SignNow\Serializer;
 
-use Signnow\Serializer\Construction\ObjectConstructorInterface;
-use Signnow\Serializer\EventDispatcher\EventDispatcherInterface;
-use Signnow\Serializer\EventDispatcher\ObjectEvent;
-use Signnow\Serializer\EventDispatcher\PreDeserializeEvent;
-use Signnow\Serializer\EventDispatcher\PreSerializeEvent;
-use Signnow\Serializer\Exception\ExpressionLanguageRequiredException;
-use Signnow\Serializer\Exception\InvalidArgumentException;
-use Signnow\Serializer\Exception\RuntimeException;
-use Signnow\Serializer\Exclusion\ExpressionLanguageExclusionStrategy;
-use Signnow\Serializer\Expression\ExpressionEvaluatorInterface;
-use Signnow\Serializer\Handler\HandlerRegistryInterface;
-use Signnow\Serializer\Metadata\ClassMetadata;
+use SignNow\Serializer\Construction\ObjectConstructorInterface;
+use SignNow\Serializer\EventDispatcher\EventDispatcherInterface;
+use SignNow\Serializer\EventDispatcher\ObjectEvent;
+use SignNow\Serializer\EventDispatcher\PreDeserializeEvent;
+use SignNow\Serializer\EventDispatcher\PreSerializeEvent;
+use SignNow\Serializer\Exception\ExpressionLanguageRequiredException;
+use SignNow\Serializer\Exception\InvalidArgumentException;
+use SignNow\Serializer\Exception\RuntimeException;
+use SignNow\Serializer\Exclusion\ExpressionLanguageExclusionStrategy;
+use SignNow\Serializer\Expression\ExpressionEvaluatorInterface;
+use SignNow\Serializer\Handler\HandlerRegistryInterface;
+use SignNow\Serializer\Metadata\ClassMetadata;
 use Metadata\MetadataFactoryInterface;
 
 /**

@@ -1,11 +1,11 @@
 <?php
 
-namespace Signnow\Serializer\Handler;
+namespace SignNow\Serializer\Handler;
 
-use Signnow\Serializer\Context;
-use Signnow\Serializer\GraphNavigator;
-use Signnow\Serializer\Metadata\StaticPropertyMetadata;
-use Signnow\Serializer\VisitorInterface;
+use SignNow\Serializer\Context;
+use SignNow\Serializer\GraphNavigator;
+use SignNow\Serializer\Metadata\StaticPropertyMetadata;
+use SignNow\Serializer\VisitorInterface;
 
 /**
  * @author Asmir Mustafic <goetas@gmail.com>

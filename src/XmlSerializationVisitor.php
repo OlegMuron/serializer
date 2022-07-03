@@ -1,13 +1,13 @@
 <?php
 
-namespace Signnow\Serializer;
+namespace SignNow\Serializer;
 
-use Signnow\Serializer\Accessor\AccessorStrategyInterface;
-use Signnow\Serializer\Exception\RuntimeException;
-use Signnow\Serializer\Metadata\ClassMetadata;
-use Signnow\Serializer\Metadata\PropertyMetadata;
-use Signnow\Serializer\Naming\AdvancedNamingStrategyInterface;
-use Signnow\Serializer\Naming\PropertyNamingStrategyInterface;
+use SignNow\Serializer\Accessor\AccessorStrategyInterface;
+use SignNow\Serializer\Exception\RuntimeException;
+use SignNow\Serializer\Metadata\ClassMetadata;
+use SignNow\Serializer\Metadata\PropertyMetadata;
+use SignNow\Serializer\Naming\AdvancedNamingStrategyInterface;
+use SignNow\Serializer\Naming\PropertyNamingStrategyInterface;
 
 /**
  * XmlSerializationVisitor.
@@ -469,7 +469,7 @@ class XmlSerializationVisitor extends AbstractVisitor
     /**
      * Adds namespace attributes to the XML root element
      *
-     * @param \Signnow\Serializer\Metadata\ClassMetadata $metadata
+     * @param \SignNow\Serializer\Metadata\ClassMetadata $metadata
      * @param \DOMElement $element
      */
     private function addNamespaceAttributes(ClassMetadata $metadata, \DOMElement $element)

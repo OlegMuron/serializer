@@ -1,4 +1,4 @@
-Signnow\Serializer\Tests\Fixtures\ObjectWithXmlKeyValuePairs:
+SignNow\Serializer\Tests\Fixtures\ObjectWithXmlKeyValuePairs:
     properties:
         array:
             type: array

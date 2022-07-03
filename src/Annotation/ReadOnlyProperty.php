@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Signnow\Serializer\Annotation;
+namespace SignNow\Serializer\Annotation;
 
 /**
  * @Annotation

@@ -1,9 +1,9 @@
 <?php
 
-use Signnow\Serializer\Metadata\ClassMetadata;
-use Signnow\Serializer\Metadata\VirtualPropertyMetadata;
+use SignNow\Serializer\Metadata\ClassMetadata;
+use SignNow\Serializer\Metadata\VirtualPropertyMetadata;
 
-$className = 'Signnow\Serializer\Tests\Fixtures\ObjectWithVirtualPropertiesAndExcludeAll';
+$className = 'SignNow\Serializer\Tests\Fixtures\ObjectWithVirtualPropertiesAndExcludeAll';
 
 $metadata = new ClassMetadata($className);
 

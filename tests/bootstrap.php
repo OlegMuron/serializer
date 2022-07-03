@@ -8,7 +8,7 @@ call_user_func(function () {
     }
 
     $loader = require $autoloadFile;
-    $loader->add('Signnow\Serializer\Tests', __DIR__);
+    $loader->add('SignNow\Serializer\Tests', __DIR__);
 
     AnnotationRegistry::registerLoader('class_exists');
 });

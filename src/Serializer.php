@@ -1,17 +1,17 @@
 <?php
 
-namespace Signnow\Serializer;
+namespace SignNow\Serializer;
 
-use Signnow\Serializer\Construction\ObjectConstructorInterface;
-use Signnow\Serializer\ContextFactory\DefaultDeserializationContextFactory;
-use Signnow\Serializer\ContextFactory\DefaultSerializationContextFactory;
-use Signnow\Serializer\ContextFactory\DeserializationContextFactoryInterface;
-use Signnow\Serializer\ContextFactory\SerializationContextFactoryInterface;
-use Signnow\Serializer\EventDispatcher\EventDispatcherInterface;
-use Signnow\Serializer\Exception\RuntimeException;
-use Signnow\Serializer\Exception\UnsupportedFormatException;
-use Signnow\Serializer\Expression\ExpressionEvaluatorInterface;
-use Signnow\Serializer\Handler\HandlerRegistryInterface;
+use SignNow\Serializer\Construction\ObjectConstructorInterface;
+use SignNow\Serializer\ContextFactory\DefaultDeserializationContextFactory;
+use SignNow\Serializer\ContextFactory\DefaultSerializationContextFactory;
+use SignNow\Serializer\ContextFactory\DeserializationContextFactoryInterface;
+use SignNow\Serializer\ContextFactory\SerializationContextFactoryInterface;
+use SignNow\Serializer\EventDispatcher\EventDispatcherInterface;
+use SignNow\Serializer\Exception\RuntimeException;
+use SignNow\Serializer\Exception\UnsupportedFormatException;
+use SignNow\Serializer\Expression\ExpressionEvaluatorInterface;
+use SignNow\Serializer\Handler\HandlerRegistryInterface;
 use Metadata\MetadataFactoryInterface;
 use PhpCollection\MapInterface;
 

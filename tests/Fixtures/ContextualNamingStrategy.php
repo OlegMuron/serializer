@@ -1,11 +1,11 @@
 <?php
 
-namespace Signnow\Serializer\Tests\Fixtures;
+namespace SignNow\Serializer\Tests\Fixtures;
 
-use Signnow\Serializer\Context;
-use Signnow\Serializer\GraphNavigator;
-use Signnow\Serializer\Metadata\PropertyMetadata;
-use Signnow\Serializer\Naming\AdvancedNamingStrategyInterface;
+use SignNow\Serializer\Context;
+use SignNow\Serializer\GraphNavigator;
+use SignNow\Serializer\Metadata\PropertyMetadata;
+use SignNow\Serializer\Naming\AdvancedNamingStrategyInterface;
 
 /**
  * Class ContextualNamingStrategy

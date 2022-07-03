@@ -1,8 +1,8 @@
 <?php
 
-namespace Signnow\Serializer\EventDispatcher;
+namespace SignNow\Serializer\EventDispatcher;
 
-use Signnow\Serializer\DeserializationContext;
+use SignNow\Serializer\DeserializationContext;
 
 class PreDeserializeEvent extends Event
 {

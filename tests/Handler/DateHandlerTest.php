@@ -1,11 +1,11 @@
 <?php
 
-namespace Signnow\Serializer\Tests\Handler;
+namespace SignNow\Serializer\Tests\Handler;
 
-use Signnow\Serializer\Handler\DateHandler;
-use Signnow\Serializer\JsonDeserializationVisitor;
-use Signnow\Serializer\SerializationContext;
-use Signnow\Serializer\VisitorInterface;
+use SignNow\Serializer\Handler\DateHandler;
+use SignNow\Serializer\JsonDeserializationVisitor;
+use SignNow\Serializer\SerializationContext;
+use SignNow\Serializer\VisitorInterface;
 
 class DateHandlerTest extends \PHPUnit\Framework\TestCase
 {

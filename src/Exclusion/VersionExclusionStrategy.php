@@ -1,10 +1,10 @@
 <?php
 
-namespace Signnow\Serializer\Exclusion;
+namespace SignNow\Serializer\Exclusion;
 
-use Signnow\Serializer\Context;
-use Signnow\Serializer\Metadata\ClassMetadata;
-use Signnow\Serializer\Metadata\PropertyMetadata;
+use SignNow\Serializer\Context;
+use SignNow\Serializer\Metadata\ClassMetadata;
+use SignNow\Serializer\Metadata\PropertyMetadata;
 
 class VersionExclusionStrategy implements ExclusionStrategyInterface
 {

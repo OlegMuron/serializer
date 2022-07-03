@@ -1,9 +1,9 @@
 <?php
 
-use Signnow\Serializer\Metadata\ClassMetadata;
-use Signnow\Serializer\Metadata\ExpressionPropertyMetadata;
+use SignNow\Serializer\Metadata\ClassMetadata;
+use SignNow\Serializer\Metadata\ExpressionPropertyMetadata;
 
-$className = 'Signnow\Serializer\Tests\Fixtures\ObjectWithExpressionVirtualPropertiesAndExcludeAll';
+$className = 'SignNow\Serializer\Tests\Fixtures\ObjectWithExpressionVirtualPropertiesAndExcludeAll';
 
 $metadata = new ClassMetadata($className);
 

@@ -1,9 +1,9 @@
 <?php
 
-namespace Signnow\Serializer\Metadata;
+namespace SignNow\Serializer\Metadata;
 
-use Signnow\Serializer\Exception\RuntimeException;
-use Signnow\Serializer\TypeParser;
+use SignNow\Serializer\Exception\RuntimeException;
+use SignNow\Serializer\TypeParser;
 use Metadata\PropertyMetadata as BasePropertyMetadata;
 
 class PropertyMetadata extends BasePropertyMetadata

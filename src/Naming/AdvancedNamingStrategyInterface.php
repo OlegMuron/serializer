@@ -1,9 +1,9 @@
 <?php
 
-namespace Signnow\Serializer\Naming;
+namespace SignNow\Serializer\Naming;
 
-use Signnow\Serializer\Context;
-use Signnow\Serializer\Metadata\PropertyMetadata;
+use SignNow\Serializer\Context;
+use SignNow\Serializer\Metadata\PropertyMetadata;
 
 /**
  * Interface for advanced property naming strategies.

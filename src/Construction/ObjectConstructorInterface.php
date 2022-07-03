@@ -1,10 +1,10 @@
 <?php
 
-namespace Signnow\Serializer\Construction;
+namespace SignNow\Serializer\Construction;
 
-use Signnow\Serializer\DeserializationContext;
-use Signnow\Serializer\Metadata\ClassMetadata;
-use Signnow\Serializer\VisitorInterface;
+use SignNow\Serializer\DeserializationContext;
+use SignNow\Serializer\Metadata\ClassMetadata;
+use SignNow\Serializer\VisitorInterface;
 
 /**
  * Implementations of this interface construct new objects during deserialization.

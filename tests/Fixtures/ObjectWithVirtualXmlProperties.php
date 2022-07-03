@@ -1,16 +1,16 @@
 <?php
 
-namespace Signnow\Serializer\Tests\Fixtures;
+namespace SignNow\Serializer\Tests\Fixtures;
 
-use Signnow\Serializer\Annotation\Groups;
-use Signnow\Serializer\Annotation\SerializedName;
-use Signnow\Serializer\Annotation\Since;
-use Signnow\Serializer\Annotation\Until;
-use Signnow\Serializer\Annotation\VirtualProperty;
-use Signnow\Serializer\Annotation\XmlAttribute;
-use Signnow\Serializer\Annotation\XmlList;
-use Signnow\Serializer\Annotation\XmlMap;
-use Signnow\Serializer\Annotation\XmlValue;
+use SignNow\Serializer\Annotation\Groups;
+use SignNow\Serializer\Annotation\SerializedName;
+use SignNow\Serializer\Annotation\Since;
+use SignNow\Serializer\Annotation\Until;
+use SignNow\Serializer\Annotation\VirtualProperty;
+use SignNow\Serializer\Annotation\XmlAttribute;
+use SignNow\Serializer\Annotation\XmlList;
+use SignNow\Serializer\Annotation\XmlMap;
+use SignNow\Serializer\Annotation\XmlValue;
 
 class ObjectWithVirtualXmlProperties
 {

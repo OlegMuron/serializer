@@ -1,9 +1,9 @@
 <?php
 
-namespace Signnow\Serializer\Tests\Metadata;
+namespace SignNow\Serializer\Tests\Metadata;
 
-use Signnow\Serializer\Metadata\VirtualPropertyMetadata;
-use Signnow\Serializer\Tests\Fixtures\ObjectWithVirtualProperties;
+use SignNow\Serializer\Metadata\VirtualPropertyMetadata;
+use SignNow\Serializer\Tests\Fixtures\ObjectWithVirtualProperties;
 
 class VirtualPropertyMetadataTest extends AbstractPropertyMetadataTest
 {

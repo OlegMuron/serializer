@@ -1,18 +1,18 @@
 <?php
 
-namespace Signnow\Serializer\Tests\Fixtures;
+namespace SignNow\Serializer\Tests\Fixtures;
 
 use Doctrine\Common\Collections\ArrayCollection;
-use Signnow\Serializer\Annotation\PostDeserialize;
-use Signnow\Serializer\Annotation\Type;
+use SignNow\Serializer\Annotation\PostDeserialize;
+use SignNow\Serializer\Annotation\Type;
 
 /** No annotation */
 class CircularReferenceParent
 {
-    /** @Type("array<Signnow\Serializer\Tests\Fixtures\CircularReferenceChild>") */
+    /** @Type("array<SignNow\Serializer\Tests\Fixtures\CircularReferenceChild>") */
     protected $collection = array();
 
-    /** @Type("ArrayCollection<Signnow\Serializer\Tests\Fixtures\CircularReferenceChild>") */
+    /** @Type("ArrayCollection<SignNow\Serializer\Tests\Fixtures\CircularReferenceChild>") */
     private $anotherCollection;
 
     public function __construct()

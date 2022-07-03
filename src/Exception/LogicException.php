@@ -1,6 +1,6 @@
 <?php
 
-namespace Signnow\Serializer\Exception;
+namespace SignNow\Serializer\Exception;
 
 /**
  * LogicException for the Serializer.

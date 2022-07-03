@@ -1,9 +1,9 @@
 <?php
 
-namespace Signnow\Serializer;
+namespace SignNow\Serializer;
 
-use Signnow\Serializer\Accessor\AccessorStrategyInterface;
-use Signnow\Serializer\Accessor\DefaultAccessorStrategy;
+use SignNow\Serializer\Accessor\AccessorStrategyInterface;
+use SignNow\Serializer\Accessor\DefaultAccessorStrategy;
 
 abstract class AbstractVisitor implements VisitorInterface
 {

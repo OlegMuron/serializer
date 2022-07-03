@@ -1,6 +1,6 @@
 <?php
 
-namespace Signnow\Serializer\Exception;
+namespace SignNow\Serializer\Exception;
 
 /**
  * Base exception for the Serializer.

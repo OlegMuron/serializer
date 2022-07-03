@@ -1,19 +1,19 @@
 <?php
 
-namespace Signnow\Serializer\Tests\Metadata\Driver;
+namespace SignNow\Serializer\Tests\Metadata\Driver;
 
 use Doctrine\Common\Annotations\AnnotationReader;
 use Doctrine\ODM\PHPCR\Configuration;
 use Doctrine\ODM\PHPCR\DocumentManager;
 use Doctrine\ODM\PHPCR\Mapping\Driver\AnnotationDriver as DoctrinePHPCRDriver;
-use Signnow\Serializer\Metadata\Driver\AnnotationDriver;
-use Signnow\Serializer\Metadata\Driver\DoctrinePHPCRTypeDriver;
+use SignNow\Serializer\Metadata\Driver\AnnotationDriver;
+use SignNow\Serializer\Metadata\Driver\DoctrinePHPCRTypeDriver;
 
 class DoctrinePHPCRDriverTest extends \PHPUnit\Framework\TestCase
 {
     public function getMetadata()
     {
-        $refClass = new \ReflectionClass('Signnow\Serializer\Tests\Fixtures\DoctrinePHPCR\BlogPost');
+        $refClass = new \ReflectionClass('SignNow\Serializer\Tests\Fixtures\DoctrinePHPCR\BlogPost');
         $metadata = $this->getDoctrinePHPCRDriver()->loadMetadataForClass($refClass);
 
         return $metadata;
@@ -32,7 +32,7 @@ class DoctrinePHPCRDriverTest extends \PHPUnit\Framework\TestCase
     {
         $metadata = $this->getMetadata();
         $this->assertEquals(
-            array('name' => 'Signnow\Serializer\Tests\Fixtures\DoctrinePHPCR\Author', 'params' => array()),
+            array('name' => 'SignNow\Serializer\Tests\Fixtures\DoctrinePHPCR\Author', 'params' => array()),
             $metadata->propertyMetadata['author']->type
         );
     }
@@ -43,7 +43,7 @@ class DoctrinePHPCRDriverTest extends \PHPUnit\Framework\TestCase
 
         $this->assertEquals(
             array('name' => 'ArrayCollection', 'params' => array(
-                array('name' => 'Signnow\Serializer\Tests\Fixtures\DoctrinePHPCR\Comment', 'params' => array()))
+                array('name' => 'SignNow\Serializer\Tests\Fixtures\DoctrinePHPCR\Comment', 'params' => array()))
             ),
             $metadata->propertyMetadata['comments']->type
         );
@@ -64,7 +64,7 @@ class DoctrinePHPCRDriverTest extends \PHPUnit\Framework\TestCase
     {
         // Note: Using regular BlogPost fixture here instead of Doctrine fixture
         // because it has no Doctrine metadata.
-        $refClass = new \ReflectionClass('Signnow\Serializer\Tests\Fixtures\BlogPost');
+        $refClass = new \ReflectionClass('SignNow\Serializer\Tests\Fixtures\BlogPost');
 
         $plainMetadata = $this->getAnnotationDriver()->loadMetadataForClass($refClass);
         $doctrineMetadata = $this->getDoctrinePHPCRDriver()->loadMetadataForClass($refClass);
@@ -81,7 +81,7 @@ class DoctrinePHPCRDriverTest extends \PHPUnit\Framework\TestCase
     {
         $config = new Configuration();
         $config->setProxyDir(sys_get_temp_dir() . '/JMSDoctrineTestProxies');
-        $config->setProxyNamespace('Signnow\Tests\Proxies');
+        $config->setProxyNamespace('SignNow\Tests\Proxies');
         $config->setMetadataDriverImpl(
             new DoctrinePHPCRDriver(new AnnotationReader(), __DIR__ . '/../../Fixtures/DoctrinePHPCR')
         );

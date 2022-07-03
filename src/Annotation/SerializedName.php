@@ -1,8 +1,8 @@
 <?php
 
-namespace Signnow\Serializer\Annotation;
+namespace SignNow\Serializer\Annotation;
 
-use Signnow\Serializer\Exception\RuntimeException;
+use SignNow\Serializer\Exception\RuntimeException;
 
 /**
  * @Annotation

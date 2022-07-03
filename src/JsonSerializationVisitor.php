@@ -1,11 +1,11 @@
 <?php
 
-namespace Signnow\Serializer;
+namespace SignNow\Serializer;
 
-use Signnow\Serializer\Exception\InvalidArgumentException;
-use Signnow\Serializer\Metadata\ClassMetadata;
-use Signnow\Serializer\Metadata\PropertyMetadata;
-use Signnow\Serializer\Naming\AdvancedNamingStrategyInterface;
+use SignNow\Serializer\Exception\InvalidArgumentException;
+use SignNow\Serializer\Metadata\ClassMetadata;
+use SignNow\Serializer\Metadata\PropertyMetadata;
+use SignNow\Serializer\Naming\AdvancedNamingStrategyInterface;
 
 class JsonSerializationVisitor extends GenericSerializationVisitor
 {

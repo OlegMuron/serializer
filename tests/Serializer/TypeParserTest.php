@@ -1,8 +1,8 @@
 <?php
 
-namespace Signnow\Serializer\Tests\Serializer;
+namespace SignNow\Serializer\Tests\Serializer;
 
-use Signnow\Serializer\TypeParser;
+use SignNow\Serializer\TypeParser;
 
 class TypeParserTest extends \PHPUnit\Framework\TestCase
 {

@@ -1,13 +1,13 @@
 <?php
 
-namespace Signnow\Serializer\Tests\Handler;
+namespace SignNow\Serializer\Tests\Handler;
 
 use Doctrine\Common\Collections\ArrayCollection;
-use Signnow\Serializer\Handler\ArrayCollectionHandler;
-use Signnow\Serializer\Metadata\ClassMetadata;
-use Signnow\Serializer\SerializationContext;
-use Signnow\Serializer\Tests\Fixtures\ExclusionStrategy\AlwaysExcludeExclusionStrategy;
-use Signnow\Serializer\VisitorInterface;
+use SignNow\Serializer\Handler\ArrayCollectionHandler;
+use SignNow\Serializer\Metadata\ClassMetadata;
+use SignNow\Serializer\SerializationContext;
+use SignNow\Serializer\Tests\Fixtures\ExclusionStrategy\AlwaysExcludeExclusionStrategy;
+use SignNow\Serializer\VisitorInterface;
 use Metadata\MetadataFactoryInterface;
 
 class ArrayCollectionHandlerTest extends \PHPUnit\Framework\TestCase

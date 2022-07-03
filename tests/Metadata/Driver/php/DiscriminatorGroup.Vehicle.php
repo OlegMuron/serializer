@@ -1,14 +1,14 @@
 <?php
 
-use Signnow\Serializer\Metadata\ClassMetadata;
-use Signnow\Serializer\Metadata\PropertyMetadata;
+use SignNow\Serializer\Metadata\ClassMetadata;
+use SignNow\Serializer\Metadata\PropertyMetadata;
 
-$metadata = new ClassMetadata('Signnow\Serializer\Tests\Fixtures\DiscriminatorGroup\Vehicle');
+$metadata = new ClassMetadata('SignNow\Serializer\Tests\Fixtures\DiscriminatorGroup\Vehicle');
 $metadata->setDiscriminator('type', array(
-    'car' => 'Signnow\Serializer\Tests\Fixtures\DiscriminatorGroup\Car',
+    'car' => 'SignNow\Serializer\Tests\Fixtures\DiscriminatorGroup\Car',
 ), array('foo'));
 
-$km = new PropertyMetadata('Signnow\Serializer\Tests\Fixtures\DiscriminatorGroup\Vehicle', 'km');
+$km = new PropertyMetadata('SignNow\Serializer\Tests\Fixtures\DiscriminatorGroup\Vehicle', 'km');
 $km->setType('integer');
 $metadata->addPropertyMetadata($km);
 

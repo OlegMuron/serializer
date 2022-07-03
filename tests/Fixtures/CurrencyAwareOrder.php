@@ -1,14 +1,14 @@
 <?php
 
-namespace Signnow\Serializer\Tests\Fixtures;
+namespace SignNow\Serializer\Tests\Fixtures;
 
-use Signnow\Serializer\Annotation\Type;
-use Signnow\Serializer\Annotation\XmlRoot;
+use SignNow\Serializer\Annotation\Type;
+use SignNow\Serializer\Annotation\XmlRoot;
 
 /** @XmlRoot("order") */
 class CurrencyAwareOrder
 {
-    /** @Type("Signnow\Serializer\Tests\Fixtures\CurrencyAwarePrice") */
+    /** @Type("SignNow\Serializer\Tests\Fixtures\CurrencyAwarePrice") */
     private $cost;
 
     public function __construct(CurrencyAwarePrice $price = null)

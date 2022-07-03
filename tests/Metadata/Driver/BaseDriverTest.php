@@ -1,26 +1,30 @@
 <?php
 
-namespace Signnow\Serializer\Tests\Metadata\Driver;
+namespace SignNow\Serializer\Tests\Metadata\Driver;
 
-use Signnow\Serializer\GraphNavigator;
-use Signnow\Serializer\Metadata\ClassMetadata;
-use Signnow\Serializer\Metadata\ExpressionPropertyMetadata;
-use Signnow\Serializer\Metadata\PropertyMetadata;
-use Signnow\Serializer\Metadata\VirtualPropertyMetadata;
-use Signnow\Serializer\Tests\Fixtures\Discriminator\ObjectWithXmlAttributeDiscriminatorChild;
-use Signnow\Serializer\Tests\Fixtures\Discriminator\ObjectWithXmlAttributeDiscriminatorParent;
-use Signnow\Serializer\Tests\Fixtures\Discriminator\ObjectWithXmlNamespaceAttributeDiscriminatorChild;
-use Signnow\Serializer\Tests\Fixtures\Discriminator\ObjectWithXmlNamespaceAttributeDiscriminatorParent;
-use Signnow\Serializer\Tests\Fixtures\Discriminator\ObjectWithXmlNamespaceDiscriminatorChild;
-use Signnow\Serializer\Tests\Fixtures\Discriminator\ObjectWithXmlNamespaceDiscriminatorParent;
-use Signnow\Serializer\Tests\Fixtures\ParentSkipWithEmptyChild;
+use PHPUnit\Framework\TestCase;
+use ReflectionClass;
+use SignNow\Serializer\GraphNavigator;
+use SignNow\Serializer\Metadata\ClassMetadata;
+use SignNow\Serializer\Metadata\ExpressionPropertyMetadata;
+use SignNow\Serializer\Metadata\PropertyMetadata;
+use SignNow\Serializer\Metadata\VirtualPropertyMetadata;
+use SignNow\Serializer\Tests\Fixtures\Discriminator\ObjectWithXmlAttributeDiscriminatorChild;
+use SignNow\Serializer\Tests\Fixtures\Discriminator\ObjectWithXmlAttributeDiscriminatorParent;
+use SignNow\Serializer\Tests\Fixtures\Discriminator\ObjectWithXmlNamespaceAttributeDiscriminatorChild;
+use SignNow\Serializer\Tests\Fixtures\Discriminator\ObjectWithXmlNamespaceAttributeDiscriminatorParent;
+use SignNow\Serializer\Tests\Fixtures\Discriminator\ObjectWithXmlNamespaceDiscriminatorChild;
+use SignNow\Serializer\Tests\Fixtures\Discriminator\ObjectWithXmlNamespaceDiscriminatorParent;
+use SignNow\Serializer\Tests\Fixtures\ObjectWithExpressionVirtualPropertiesAndExcludeAll;
+use SignNow\Serializer\Tests\Fixtures\ObjectWithVirtualPropertiesAndExcludeAll;
+use SignNow\Serializer\Tests\Fixtures\ParentSkipWithEmptyChild;
 use Metadata\Driver\DriverInterface;
 
-abstract class BaseDriverTest extends \PHPUnit\Framework\TestCase
+abstract class BaseDriverTest extends TestCase
 {
     public function testLoadBlogPostMetadata()
     {
-        $m = $this->getDriver()->loadMetadataForClass(new \ReflectionClass('Signnow\Serializer\Tests\Fixtures\BlogPost'));
+        $m = $this->getDriver()->loadMetadataForClass(new ReflectionClass('SignNow\Serializer\Tests\Fixtures\BlogPost'));
 
         $this->assertNotNull($m);
         $this->assertEquals('blog-post', $m->xmlRootName);
@@ -66,7 +70,7 @@ abstract class BaseDriverTest extends \PHPUnit\Framework\TestCase
         $this->assertEquals($p, $m->propertyMetadata['etag']);
 
         $p = new PropertyMetadata($m->name, 'comments');
-        $p->type = array('name' => 'ArrayCollection', 'params' => array(array('name' => 'Signnow\Serializer\Tests\Fixtures\Comment', 'params' => array())));
+        $p->type = array('name' => 'ArrayCollection', 'params' => array(array('name' => 'SignNow\Serializer\Tests\Fixtures\Comment', 'params' => array())));
         $p->xmlCollection = true;
         $p->xmlCollectionInline = true;
         $p->xmlEntryName = 'comment';
@@ -74,12 +78,12 @@ abstract class BaseDriverTest extends \PHPUnit\Framework\TestCase
         $this->assertEquals($p, $m->propertyMetadata['comments']);
 
         $p = new PropertyMetadata($m->name, 'author');
-        $p->type = array('name' => 'Signnow\Serializer\Tests\Fixtures\Author', 'params' => array());
+        $p->type = array('name' => 'SignNow\Serializer\Tests\Fixtures\Author', 'params' => array());
         $p->groups = array("post");
         $p->xmlNamespace = 'http://www.w3.org/2005/Atom';
         $this->assertEquals($p, $m->propertyMetadata['author']);
 
-        $m = $this->getDriver()->loadMetadataForClass(new \ReflectionClass('Signnow\Serializer\Tests\Fixtures\Price'));
+        $m = $this->getDriver()->loadMetadataForClass(new ReflectionClass('SignNow\Serializer\Tests\Fixtures\Price'));
         $this->assertNotNull($m);
 
         $p = new PropertyMetadata($m->name, 'price');
@@ -90,7 +94,7 @@ abstract class BaseDriverTest extends \PHPUnit\Framework\TestCase
 
     public function testXMLListAbsentNode()
     {
-        $m = $this->getDriver()->loadMetadataForClass(new \ReflectionClass('Signnow\Serializer\Tests\Fixtures\ObjectWithAbsentXmlListNode'));
+        $m = $this->getDriver()->loadMetadataForClass(new ReflectionClass('SignNow\Serializer\Tests\Fixtures\ObjectWithAbsentXmlListNode'));
 
         $this->assertArrayHasKey('absent', $m->propertyMetadata);
         $this->assertArrayHasKey('present', $m->propertyMetadata);
@@ -103,7 +107,7 @@ abstract class BaseDriverTest extends \PHPUnit\Framework\TestCase
 
     public function testVirtualProperty()
     {
-        $m = $this->getDriver()->loadMetadataForClass(new \ReflectionClass('Signnow\Serializer\Tests\Fixtures\ObjectWithVirtualProperties'));
+        $m = $this->getDriver()->loadMetadataForClass(new ReflectionClass('SignNow\Serializer\Tests\Fixtures\ObjectWithVirtualProperties'));
 
         $this->assertArrayHasKey('existField', $m->propertyMetadata);
         $this->assertArrayHasKey('virtualValue', $m->propertyMetadata);
@@ -120,7 +124,7 @@ abstract class BaseDriverTest extends \PHPUnit\Framework\TestCase
 
     public function testXmlKeyValuePairs()
     {
-        $m = $this->getDriver()->loadMetadataForClass(new \ReflectionClass('Signnow\Serializer\Tests\Fixtures\ObjectWithXmlKeyValuePairs'));
+        $m = $this->getDriver()->loadMetadataForClass(new ReflectionClass('SignNow\Serializer\Tests\Fixtures\ObjectWithXmlKeyValuePairs'));
 
         $this->assertArrayHasKey('array', $m->propertyMetadata);
         $this->assertTrue($m->propertyMetadata['array']->xmlKeyValuePairs);
@@ -128,9 +132,9 @@ abstract class BaseDriverTest extends \PHPUnit\Framework\TestCase
 
     public function testExpressionVirtualPropertyWithExcludeAll()
     {
-        $a = new \Signnow\Serializer\Tests\Fixtures\ObjectWithExpressionVirtualPropertiesAndExcludeAll();
-        $m = $this->getDriver()->loadMetadataForClass(new \ReflectionClass($a));;
-
+        $a = new ObjectWithExpressionVirtualPropertiesAndExcludeAll();
+        $m = $this->getDriver()->loadMetadataForClass(new ReflectionClass($a));
+    
         $this->assertArrayHasKey('virtualValue', $m->propertyMetadata);
 
         $p = new ExpressionPropertyMetadata($m->name, 'virtualValue', 'object.getVirtualValue()');
@@ -139,8 +143,8 @@ abstract class BaseDriverTest extends \PHPUnit\Framework\TestCase
 
     public function testVirtualPropertyWithExcludeAll()
     {
-        $a = new \Signnow\Serializer\Tests\Fixtures\ObjectWithVirtualPropertiesAndExcludeAll();
-        $m = $this->getDriver()->loadMetadataForClass(new \ReflectionClass($a));
+        $a = new ObjectWithVirtualPropertiesAndExcludeAll();
+        $m = $this->getDriver()->loadMetadataForClass(new ReflectionClass($a));
 
         $this->assertArrayHasKey('virtualValue', $m->propertyMetadata);
 
@@ -152,7 +156,7 @@ abstract class BaseDriverTest extends \PHPUnit\Framework\TestCase
 
     public function testReadOnlyDefinedBeforeGetterAndSetter()
     {
-        $m = $this->getDriver()->loadMetadataForClass(new \ReflectionClass('Signnow\Serializer\Tests\Fixtures\AuthorReadOnly'));
+        $m = $this->getDriver()->loadMetadataForClass(new ReflectionClass('SignNow\Serializer\Tests\Fixtures\AuthorReadOnly'));
 
         $this->assertNotNull($m);
     }
@@ -160,7 +164,7 @@ abstract class BaseDriverTest extends \PHPUnit\Framework\TestCase
     public function testExpressionVirtualProperty()
     {
         /** @var $m ClassMetadata */
-        $m = $this->getDriver()->loadMetadataForClass(new \ReflectionClass('Signnow\Serializer\Tests\Fixtures\AuthorExpressionAccess'));
+        $m = $this->getDriver()->loadMetadataForClass(new ReflectionClass('SignNow\Serializer\Tests\Fixtures\AuthorExpressionAccess'));
 
         $keys = array_keys($m->propertyMetadata);
         $this->assertEquals(['firstName', 'lastName', 'id'], $keys);
@@ -169,15 +173,15 @@ abstract class BaseDriverTest extends \PHPUnit\Framework\TestCase
     public function testLoadDiscriminator()
     {
         /** @var $m ClassMetadata */
-        $m = $this->getDriver()->loadMetadataForClass(new \ReflectionClass('Signnow\Serializer\Tests\Fixtures\Discriminator\Vehicle'));
+        $m = $this->getDriver()->loadMetadataForClass(new ReflectionClass('SignNow\Serializer\Tests\Fixtures\Discriminator\Vehicle'));
 
         $this->assertNotNull($m);
         $this->assertEquals('type', $m->discriminatorFieldName);
         $this->assertEquals($m->name, $m->discriminatorBaseClass);
         $this->assertEquals(
             array(
-                'car' => 'Signnow\Serializer\Tests\Fixtures\Discriminator\Car',
-                'moped' => 'Signnow\Serializer\Tests\Fixtures\Discriminator\Moped',
+                'car' => 'SignNow\Serializer\Tests\Fixtures\Discriminator\Car',
+                'moped' => 'SignNow\Serializer\Tests\Fixtures\Discriminator\Moped',
             ),
             $m->discriminatorMap
         );
@@ -186,15 +190,15 @@ abstract class BaseDriverTest extends \PHPUnit\Framework\TestCase
     public function testLoadDiscriminatorWhenParentIsInDiscriminatorMap()
     {
         /** @var ClassMetadata $m */
-        $m = $this->getDriver()->loadMetadataForClass(new \ReflectionClass('Signnow\Serializer\Tests\Fixtures\Discriminator\Post'));
+        $m = $this->getDriver()->loadMetadataForClass(new ReflectionClass('SignNow\Serializer\Tests\Fixtures\Discriminator\Post'));
 
         self::assertNotNull($m);
         self::assertEquals('type', $m->discriminatorFieldName);
         self::assertEquals($m->name, $m->discriminatorBaseClass);
         self::assertEquals(
             [
-                'post' => 'Signnow\Serializer\Tests\Fixtures\Discriminator\Post',
-                'image_post' => 'Signnow\Serializer\Tests\Fixtures\Discriminator\ImagePost',
+                'post' => 'SignNow\Serializer\Tests\Fixtures\Discriminator\Post',
+                'image_post' => 'SignNow\Serializer\Tests\Fixtures\Discriminator\ImagePost',
             ],
             $m->discriminatorMap
         );
@@ -203,7 +207,7 @@ abstract class BaseDriverTest extends \PHPUnit\Framework\TestCase
     public function testLoadXmlDiscriminator()
     {
         /** @var $m ClassMetadata */
-        $m = $this->getDriver()->loadMetadataForClass(new \ReflectionClass(ObjectWithXmlAttributeDiscriminatorParent::class));
+        $m = $this->getDriver()->loadMetadataForClass(new ReflectionClass(ObjectWithXmlAttributeDiscriminatorParent::class));
 
         $this->assertNotNull($m);
         $this->assertEquals('type', $m->discriminatorFieldName);
@@ -221,7 +225,7 @@ abstract class BaseDriverTest extends \PHPUnit\Framework\TestCase
     public function testLoadXmlDiscriminatorWithNamespaces()
     {
         /** @var $m ClassMetadata */
-        $m = $this->getDriver()->loadMetadataForClass(new \ReflectionClass(ObjectWithXmlNamespaceDiscriminatorParent::class));
+        $m = $this->getDriver()->loadMetadataForClass(new ReflectionClass(ObjectWithXmlNamespaceDiscriminatorParent::class));
 
         $this->assertNotNull($m);
         $this->assertEquals('type', $m->discriminatorFieldName);
@@ -239,7 +243,7 @@ abstract class BaseDriverTest extends \PHPUnit\Framework\TestCase
     public function testLoadXmlDiscriminatorWithAttributeNamespaces()
     {
         /** @var $m ClassMetadata */
-        $m = $this->getDriver()->loadMetadataForClass(new \ReflectionClass(ObjectWithXmlNamespaceAttributeDiscriminatorParent::class));
+        $m = $this->getDriver()->loadMetadataForClass(new ReflectionClass(ObjectWithXmlNamespaceAttributeDiscriminatorParent::class));
 
         $this->assertNotNull($m);
         $this->assertEquals('type', $m->discriminatorFieldName);
@@ -257,7 +261,7 @@ abstract class BaseDriverTest extends \PHPUnit\Framework\TestCase
     public function testLoadDiscriminatorWithGroup()
     {
         /** @var $m ClassMetadata */
-        $m = $this->getDriver()->loadMetadataForClass(new \ReflectionClass('Signnow\Serializer\Tests\Fixtures\DiscriminatorGroup\Vehicle'));
+        $m = $this->getDriver()->loadMetadataForClass(new ReflectionClass('SignNow\Serializer\Tests\Fixtures\DiscriminatorGroup\Vehicle'));
 
         $this->assertNotNull($m);
         $this->assertEquals('type', $m->discriminatorFieldName);
@@ -265,7 +269,7 @@ abstract class BaseDriverTest extends \PHPUnit\Framework\TestCase
         $this->assertEquals($m->name, $m->discriminatorBaseClass);
         $this->assertEquals(
             array(
-                'car' => 'Signnow\Serializer\Tests\Fixtures\DiscriminatorGroup\Car'
+                'car' => 'SignNow\Serializer\Tests\Fixtures\DiscriminatorGroup\Car'
             ),
             $m->discriminatorMap
         );
@@ -274,7 +278,7 @@ abstract class BaseDriverTest extends \PHPUnit\Framework\TestCase
     public function testSkipWhenEmptyOption()
     {
         /** @var $m ClassMetadata */
-        $m = $this->getDriver()->loadMetadataForClass(new \ReflectionClass(ParentSkipWithEmptyChild::class));
+        $m = $this->getDriver()->loadMetadataForClass(new ReflectionClass(ParentSkipWithEmptyChild::class));
 
         $this->assertNotNull($m);
 
@@ -289,7 +293,7 @@ abstract class BaseDriverTest extends \PHPUnit\Framework\TestCase
     public function testLoadDiscriminatorSubClass()
     {
         /** @var $m ClassMetadata */
-        $m = $this->getDriver()->loadMetadataForClass(new \ReflectionClass('Signnow\Serializer\Tests\Fixtures\Discriminator\Car'));
+        $m = $this->getDriver()->loadMetadataForClass(new ReflectionClass('SignNow\Serializer\Tests\Fixtures\Discriminator\Car'));
 
         $this->assertNotNull($m);
         $this->assertNull($m->discriminatorValue);
@@ -301,7 +305,7 @@ abstract class BaseDriverTest extends \PHPUnit\Framework\TestCase
     public function testLoadDiscriminatorSubClassWhenParentIsInDiscriminatorMap()
     {
         /** @var ClassMetadata $m */
-        $m = $this->getDriver()->loadMetadataForClass(new \ReflectionClass('Signnow\Serializer\Tests\Fixtures\Discriminator\ImagePost'));
+        $m = $this->getDriver()->loadMetadataForClass(new ReflectionClass('SignNow\Serializer\Tests\Fixtures\Discriminator\ImagePost'));
 
         self::assertNotNull($m);
         self::assertNull($m->discriminatorValue);
@@ -312,7 +316,7 @@ abstract class BaseDriverTest extends \PHPUnit\Framework\TestCase
 
     public function testLoadXmlObjectWithNamespacesMetadata()
     {
-        $m = $this->getDriver()->loadMetadataForClass(new \ReflectionClass('Signnow\Serializer\Tests\Fixtures\ObjectWithXmlNamespaces'));
+        $m = $this->getDriver()->loadMetadataForClass(new ReflectionClass('SignNow\Serializer\Tests\Fixtures\ObjectWithXmlNamespaces'));
         $this->assertNotNull($m);
         $this->assertEquals('test-object', $m->xmlRootName);
         $this->assertEquals('http://example.com/namespace', $m->xmlRootNamespace);
@@ -355,14 +359,14 @@ abstract class BaseDriverTest extends \PHPUnit\Framework\TestCase
 
     public function testMaxDepth()
     {
-        $m = $this->getDriver()->loadMetadataForClass(new \ReflectionClass('Signnow\Serializer\Tests\Fixtures\Node'));
+        $m = $this->getDriver()->loadMetadataForClass(new ReflectionClass('SignNow\Serializer\Tests\Fixtures\Node'));
 
         $this->assertEquals(2, $m->propertyMetadata['children']->maxDepth);
     }
 
     public function testPersonCData()
     {
-        $m = $this->getDriver()->loadMetadataForClass(new \ReflectionClass('Signnow\Serializer\Tests\Fixtures\Person'));
+        $m = $this->getDriver()->loadMetadataForClass(new ReflectionClass('SignNow\Serializer\Tests\Fixtures\Person'));
 
         $this->assertNotNull($m);
         $this->assertFalse($m->propertyMetadata['name']->xmlElementCData);
@@ -370,7 +374,7 @@ abstract class BaseDriverTest extends \PHPUnit\Framework\TestCase
 
     public function testXmlNamespaceInheritanceMetadata()
     {
-        $m = $this->getDriver()->loadMetadataForClass(new \ReflectionClass('Signnow\Serializer\Tests\Fixtures\SimpleClassObject'));
+        $m = $this->getDriver()->loadMetadataForClass(new ReflectionClass('SignNow\Serializer\Tests\Fixtures\SimpleClassObject'));
         $this->assertNotNull($m);
         $this->assertCount(3, $m->xmlNamespaces);
         $this->assertArrayHasKey('old_foo', $m->xmlNamespaces);
@@ -398,7 +402,7 @@ abstract class BaseDriverTest extends \PHPUnit\Framework\TestCase
         $this->assertEquals($p, $m->propertyMetadata['moo']);
 
 
-        $subm = $this->getDriver()->loadMetadataForClass(new \ReflectionClass('Signnow\Serializer\Tests\Fixtures\SimpleSubClassObject'));
+        $subm = $this->getDriver()->loadMetadataForClass(new ReflectionClass('SignNow\Serializer\Tests\Fixtures\SimpleSubClassObject'));
         $this->assertNotNull($subm);
         $this->assertCount(2, $subm->xmlNamespaces);
         $this->assertArrayHasKey('old_foo', $subm->xmlNamespaces);
@@ -437,13 +441,13 @@ abstract class BaseDriverTest extends \PHPUnit\Framework\TestCase
         $p->type = array('name' => 'string', 'params' => array());
         $p->xmlNamespace = "http://old.foo.example.org";
         $p->xmlAttribute = true;
-        $p->class = 'Signnow\Serializer\Tests\Fixtures\SimpleClassObject';
+        $p->class = 'SignNow\Serializer\Tests\Fixtures\SimpleClassObject';
         $this->assetMetadataEquals($p, $m->propertyMetadata['foo']);
 
         $p = new PropertyMetadata($m->name, 'bar');
         $p->type = array('name' => 'string', 'params' => array());
         $p->xmlNamespace = "http://foo.example.org";
-        $p->class = 'Signnow\Serializer\Tests\Fixtures\SimpleClassObject';
+        $p->class = 'SignNow\Serializer\Tests\Fixtures\SimpleClassObject';
         $this->assetMetadataEquals($p, $m->propertyMetadata['bar']);
 
         $p = new PropertyMetadata($m->name, 'moo');
@@ -485,7 +489,7 @@ abstract class BaseDriverTest extends \PHPUnit\Framework\TestCase
 
     public function testHandlerCallbacks()
     {
-        $m = $this->getDriver()->loadMetadataForClass(new \ReflectionClass('Signnow\Serializer\Tests\Fixtures\ObjectWithHandlerCallbacks'));
+        $m = $this->getDriver()->loadMetadataForClass(new ReflectionClass('SignNow\Serializer\Tests\Fixtures\ObjectWithHandlerCallbacks'));
 
         $this->assertEquals('toJson', $m->handlerCallbacks[GraphNavigator::DIRECTION_SERIALIZATION]['json']);
         $this->assertEquals('toXml', $m->handlerCallbacks[GraphNavigator::DIRECTION_SERIALIZATION]['xml']);
@@ -493,8 +497,8 @@ abstract class BaseDriverTest extends \PHPUnit\Framework\TestCase
 
     public function testExclusionIf()
     {
-        $class = 'Signnow\Serializer\Tests\Fixtures\PersonSecret';
-        $m = $this->getDriver()->loadMetadataForClass(new \ReflectionClass($class));
+        $class = 'SignNow\Serializer\Tests\Fixtures\PersonSecret';
+        $m = $this->getDriver()->loadMetadataForClass(new ReflectionClass($class));
 
         $p = new PropertyMetadata($class, 'name');
         $p->type = array('name' => 'string', 'params' => array());
@@ -513,7 +517,7 @@ abstract class BaseDriverTest extends \PHPUnit\Framework\TestCase
 
     public function testExcludePropertyNoPublicAccessorException()
     {
-        $first = $this->getDriver()->loadMetadataForClass(new \ReflectionClass('Signnow\Serializer\Tests\Fixtures\ExcludePublicAccessor'));
+        $first = $this->getDriver()->loadMetadataForClass(new ReflectionClass('SignNow\Serializer\Tests\Fixtures\ExcludePublicAccessor'));
 
         if ($this instanceof PhpDriverTest) {
             return;

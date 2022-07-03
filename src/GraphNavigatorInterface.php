@@ -1,6 +1,6 @@
 <?php
 
-namespace Signnow\Serializer;
+namespace SignNow\Serializer;
 
 /**
  * Handles traversal along the object graph.

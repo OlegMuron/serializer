@@ -1,8 +1,8 @@
 <?php
-use Signnow\Serializer\Metadata\ClassMetadata;
-use Signnow\Serializer\Metadata\PropertyMetadata;
+use SignNow\Serializer\Metadata\ClassMetadata;
+use SignNow\Serializer\Metadata\PropertyMetadata;
 
-$className = 'Signnow\Serializer\Tests\Fixtures\ObjectWithXmlKeyValuePairs';
+$className = 'SignNow\Serializer\Tests\Fixtures\ObjectWithXmlKeyValuePairs';
 
 $metadata = new ClassMetadata($className);
 

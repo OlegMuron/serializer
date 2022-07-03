@@ -1,12 +1,12 @@
 <?php
 
-namespace Signnow\Serializer\Tests\Fixtures;
+namespace SignNow\Serializer\Tests\Fixtures;
 
-use Signnow\Serializer\Annotation\SerializedName;
-use Signnow\Serializer\Annotation\Type;
-use Signnow\Serializer\Annotation\XmlList;
-use Signnow\Serializer\Annotation\XmlMap;
-use Signnow\Serializer\Annotation\XmlRoot;
+use SignNow\Serializer\Annotation\SerializedName;
+use SignNow\Serializer\Annotation\Type;
+use SignNow\Serializer\Annotation\XmlList;
+use SignNow\Serializer\Annotation\XmlMap;
+use SignNow\Serializer\Annotation\XmlRoot;
 
 /** @XmlRoot("log") */
 class Log
@@ -20,7 +20,7 @@ class Log
 
     /**
      * @XmlList(inline=true, entry = "comment")
-     * @Type("array<Signnow\Serializer\Tests\Fixtures\Comment>")
+     * @Type("array<SignNow\Serializer\Tests\Fixtures\Comment>")
      */
     private $comments;
 

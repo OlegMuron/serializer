@@ -1,12 +1,12 @@
 <?php
 
-namespace Signnow\Serializer\Handler;
+namespace SignNow\Serializer\Handler;
 
-use Signnow\Serializer\Context;
-use Signnow\Serializer\GraphNavigator;
-use Signnow\Serializer\JsonSerializationVisitor;
-use Signnow\Serializer\XmlSerializationVisitor;
-use Signnow\Serializer\YamlSerializationVisitor;
+use SignNow\Serializer\Context;
+use SignNow\Serializer\GraphNavigator;
+use SignNow\Serializer\JsonSerializationVisitor;
+use SignNow\Serializer\XmlSerializationVisitor;
+use SignNow\Serializer\YamlSerializationVisitor;
 use Symfony\Component\Validator\ConstraintViolation;
 use Symfony\Component\Validator\ConstraintViolationList;
 

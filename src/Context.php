@@ -1,15 +1,15 @@
 <?php
 
-namespace Signnow\Serializer;
+namespace SignNow\Serializer;
 
-use Signnow\Serializer\Exception\RuntimeException;
-use Signnow\Serializer\Exclusion\DepthExclusionStrategy;
-use Signnow\Serializer\Exclusion\DisjunctExclusionStrategy;
-use Signnow\Serializer\Exclusion\ExclusionStrategyInterface;
-use Signnow\Serializer\Exclusion\GroupsExclusionStrategy;
-use Signnow\Serializer\Exclusion\VersionExclusionStrategy;
-use Signnow\Serializer\Metadata\ClassMetadata;
-use Signnow\Serializer\Metadata\PropertyMetadata;
+use SignNow\Serializer\Exception\RuntimeException;
+use SignNow\Serializer\Exclusion\DepthExclusionStrategy;
+use SignNow\Serializer\Exclusion\DisjunctExclusionStrategy;
+use SignNow\Serializer\Exclusion\ExclusionStrategyInterface;
+use SignNow\Serializer\Exclusion\GroupsExclusionStrategy;
+use SignNow\Serializer\Exclusion\VersionExclusionStrategy;
+use SignNow\Serializer\Metadata\ClassMetadata;
+use SignNow\Serializer\Metadata\PropertyMetadata;
 use Metadata\MetadataFactory;
 use Metadata\MetadataFactoryInterface;
 use PhpCollection\Map;

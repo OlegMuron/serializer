@@ -1,4 +1,4 @@
-Signnow\Serializer\Tests\Fixtures\AuthorReadOnlyPerClass:
+SignNow\Serializer\Tests\Fixtures\AuthorReadOnlyPerClass:
     xml_root_name: author
     read_only: true
     properties:

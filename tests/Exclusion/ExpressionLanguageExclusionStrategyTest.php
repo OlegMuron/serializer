@@ -1,11 +1,11 @@
 <?php
 
-namespace Signnow\Serializer\Tests\Exclusion;
+namespace SignNow\Serializer\Tests\Exclusion;
 
-use Signnow\Serializer\Exclusion\ExpressionLanguageExclusionStrategy;
-use Signnow\Serializer\Expression\ExpressionEvaluator;
-use Signnow\Serializer\Metadata\StaticPropertyMetadata;
-use Signnow\Serializer\SerializationContext;
+use SignNow\Serializer\Exclusion\ExpressionLanguageExclusionStrategy;
+use SignNow\Serializer\Expression\ExpressionEvaluator;
+use SignNow\Serializer\Metadata\StaticPropertyMetadata;
+use SignNow\Serializer\SerializationContext;
 
 /**
  * @author Asmir Mustafic <goetas@gmail.com>

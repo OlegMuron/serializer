@@ -1,16 +1,16 @@
 <?php
 
-namespace Signnow\Serializer\Tests\Twig;
+namespace SignNow\Serializer\Tests\Twig;
 
-use Signnow\Serializer\Twig\SerializerExtension;
-use Signnow\Serializer\Twig\SerializerRuntimeExtension;
-use Signnow\Serializer\Twig\SerializerRuntimeHelper;
+use SignNow\Serializer\Twig\SerializerExtension;
+use SignNow\Serializer\Twig\SerializerRuntimeExtension;
+use SignNow\Serializer\Twig\SerializerRuntimeHelper;
 
 class SerializerExtensionTest extends \PHPUnit\Framework\TestCase
 {
     public function testSerialize()
     {
-        $mockSerializer = $this->getMockBuilder('Signnow\Serializer\SerializerInterface')->getMock();
+        $mockSerializer = $this->getMockBuilder('SignNow\Serializer\SerializerInterface')->getMock();
         $obj = new \stdClass();
         $mockSerializer
             ->expects($this->once())
@@ -26,7 +26,7 @@ class SerializerExtensionTest extends \PHPUnit\Framework\TestCase
         $this->assertSame(array($serializerExtension, 'serialize'), $filters[0]->getCallable());
 
         $this->assertEquals(
-            array(new \Twig_SimpleFunction('serialization_context', '\Signnow\Serializer\SerializationContext::create')),
+            array(new \Twig_SimpleFunction('serialization_context', '\SignNow\Serializer\SerializationContext::create')),
             $serializerExtension->getFunctions()
         );
     }
@@ -35,7 +35,7 @@ class SerializerExtensionTest extends \PHPUnit\Framework\TestCase
     {
         $obj = new \stdClass();
 
-        $mockSerializer = $this->getMockBuilder('Signnow\Serializer\SerializerInterface')->getMock();
+        $mockSerializer = $this->getMockBuilder('SignNow\Serializer\SerializerInterface')->getMock();
         $mockSerializer
             ->expects($this->once())
             ->method('serialize')
@@ -55,7 +55,7 @@ class SerializerExtensionTest extends \PHPUnit\Framework\TestCase
             $serializerExtension->getFilters()
         );
         $this->assertEquals(
-            array(new \Twig_SimpleFunction('serialization_context', '\Signnow\Serializer\SerializationContext::create')),
+            array(new \Twig_SimpleFunction('serialization_context', '\SignNow\Serializer\SerializationContext::create')),
             $serializerExtension->getFunctions()
         );
     }

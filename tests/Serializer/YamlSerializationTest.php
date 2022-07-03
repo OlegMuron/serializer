@@ -1,9 +1,9 @@
 <?php
 
-namespace Signnow\Serializer\Tests\Serializer;
+namespace SignNow\Serializer\Tests\Serializer;
 
-use Signnow\Serializer\Exception\RuntimeException;
-use Signnow\Serializer\SerializationContext;
+use SignNow\Serializer\Exception\RuntimeException;
+use SignNow\Serializer\SerializationContext;
 
 class YamlSerializationTest extends BaseSerializationTest
 {

@@ -1,19 +1,19 @@
 <?php
 
-use Signnow\Serializer\Metadata\ClassMetadata;
-use Signnow\Serializer\Metadata\ExpressionPropertyMetadata;
-use Signnow\Serializer\Metadata\PropertyMetadata;
-use Signnow\Serializer\Metadata\VirtualPropertyMetadata;
+use SignNow\Serializer\Metadata\ClassMetadata;
+use SignNow\Serializer\Metadata\ExpressionPropertyMetadata;
+use SignNow\Serializer\Metadata\PropertyMetadata;
+use SignNow\Serializer\Metadata\VirtualPropertyMetadata;
 
-$metadata = new ClassMetadata('Signnow\Serializer\Tests\Fixtures\AuthorExpressionAccess');
+$metadata = new ClassMetadata('SignNow\Serializer\Tests\Fixtures\AuthorExpressionAccess');
 
-$p = new ExpressionPropertyMetadata('Signnow\Serializer\Tests\Fixtures\AuthorExpressionAccess', 'firstName', 'object.getFirstName()');
+$p = new ExpressionPropertyMetadata('SignNow\Serializer\Tests\Fixtures\AuthorExpressionAccess', 'firstName', 'object.getFirstName()');
 $metadata->addPropertyMetadata($p);
 
-$p = new VirtualPropertyMetadata('Signnow\Serializer\Tests\Fixtures\AuthorExpressionAccess', 'getLastName');
+$p = new VirtualPropertyMetadata('SignNow\Serializer\Tests\Fixtures\AuthorExpressionAccess', 'getLastName');
 $metadata->addPropertyMetadata($p);
 
-$p = new PropertyMetadata('Signnow\Serializer\Tests\Fixtures\AuthorExpressionAccess', 'id');
+$p = new PropertyMetadata('SignNow\Serializer\Tests\Fixtures\AuthorExpressionAccess', 'id');
 $metadata->addPropertyMetadata($p);
 
 return $metadata;

@@ -1,10 +1,10 @@
 <?php
 
-namespace Signnow\Serializer\Metadata\Driver;
+namespace SignNow\Serializer\Metadata\Driver;
 
 use Doctrine\Persistence\Mapping\ClassMetadata as DoctrineClassMetadata;
-use Signnow\Serializer\Metadata\ClassMetadata;
-use Signnow\Serializer\Metadata\PropertyMetadata;
+use SignNow\Serializer\Metadata\ClassMetadata;
+use SignNow\Serializer\Metadata\PropertyMetadata;
 
 /**
  * This class decorates any other driver. If the inner driver does not provide a

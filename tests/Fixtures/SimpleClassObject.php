@@ -1,11 +1,11 @@
 <?php
 
-namespace Signnow\Serializer\Tests\Fixtures;
+namespace SignNow\Serializer\Tests\Fixtures;
 
-use Signnow\Serializer\Annotation\Type;
-use Signnow\Serializer\Annotation\XmlAttribute;
-use Signnow\Serializer\Annotation\XmlElement;
-use Signnow\Serializer\Annotation\XmlNamespace;
+use SignNow\Serializer\Annotation\Type;
+use SignNow\Serializer\Annotation\XmlAttribute;
+use SignNow\Serializer\Annotation\XmlElement;
+use SignNow\Serializer\Annotation\XmlNamespace;
 
 /**
  * @XmlNamespace(prefix="old_foo", uri="http://old.foo.example.org");

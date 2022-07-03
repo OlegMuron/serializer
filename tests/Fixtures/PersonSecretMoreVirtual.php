@@ -1,8 +1,8 @@
 <?php
 
-namespace Signnow\Serializer\Tests\Fixtures;
+namespace SignNow\Serializer\Tests\Fixtures;
 
-use Signnow\Serializer\Annotation as Serializer;
+use SignNow\Serializer\Annotation as Serializer;
 
 /**
  * @Serializer\ExclusionPolicy("ALL")

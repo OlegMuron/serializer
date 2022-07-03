@@ -1,6 +1,6 @@
 <?php
 
-namespace Signnow\Serializer\Tests\Fixtures\Doctrine\SingleTableInheritance;
+namespace SignNow\Serializer\Tests\Fixtures\Doctrine\SingleTableInheritance;
 
 use Doctrine\ORM\Mapping as ORM;
 
@@ -9,7 +9,7 @@ use Doctrine\ORM\Mapping as ORM;
  * @ORM\InheritanceType("SINGLE_TABLE")
  * @ORM\DiscriminatorColumn(name="type", type="string")
  * @ORM\DiscriminatorMap({
- *     "school" = "Signnow\Serializer\Tests\Fixtures\Doctrine\SingleTableInheritance\School"
+ *     "school" = "SignNow\Serializer\Tests\Fixtures\Doctrine\SingleTableInheritance\School"
  * })
  */
 abstract class Organization

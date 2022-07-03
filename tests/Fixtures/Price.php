@@ -1,10 +1,10 @@
 <?php
 
-namespace Signnow\Serializer\Tests\Fixtures;
+namespace SignNow\Serializer\Tests\Fixtures;
 
-use Signnow\Serializer\Annotation\Type;
-use Signnow\Serializer\Annotation\XmlRoot;
-use Signnow\Serializer\Annotation\XmlValue;
+use SignNow\Serializer\Annotation\Type;
+use SignNow\Serializer\Annotation\XmlRoot;
+use SignNow\Serializer\Annotation\XmlValue;
 
 /**
  * @XmlRoot("price")

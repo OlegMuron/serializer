@@ -1,11 +1,11 @@
 <?php
 
-namespace Signnow\Serializer\Tests\Fixtures;
+namespace SignNow\Serializer\Tests\Fixtures;
 
-use Signnow\Serializer\Construction\ObjectConstructorInterface;
-use Signnow\Serializer\DeserializationContext;
-use Signnow\Serializer\Metadata\ClassMetadata;
-use Signnow\Serializer\VisitorInterface;
+use SignNow\Serializer\Construction\ObjectConstructorInterface;
+use SignNow\Serializer\DeserializationContext;
+use SignNow\Serializer\Metadata\ClassMetadata;
+use SignNow\Serializer\VisitorInterface;
 
 /**
  * Object constructor that allows deserialization into already constructed

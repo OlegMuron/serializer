@@ -1,4 +1,4 @@
-Signnow\Serializer\Tests\Fixtures\BlogPost:
+SignNow\Serializer\Tests\Fixtures\BlogPost:
     xml_root_name: blog-post
     exclusion_policy: NONE
     properties:

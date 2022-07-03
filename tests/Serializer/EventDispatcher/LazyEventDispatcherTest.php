@@ -1,8 +1,8 @@
 <?php
 
-namespace Signnow\Serializer\Tests\Serializer\EventDispatcher;
+namespace SignNow\Serializer\Tests\Serializer\EventDispatcher;
 
-use Signnow\Serializer\EventDispatcher\LazyEventDispatcher;
+use SignNow\Serializer\EventDispatcher\LazyEventDispatcher;
 
 abstract class LazyEventDispatcherTest extends EventDispatcherTest
 {

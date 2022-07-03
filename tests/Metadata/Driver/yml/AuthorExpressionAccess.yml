@@ -1,4 +1,4 @@
-Signnow\Serializer\Tests\Fixtures\AuthorExpressionAccess:
+SignNow\Serializer\Tests\Fixtures\AuthorExpressionAccess:
     xml_root_name: author
     properties:
         id:

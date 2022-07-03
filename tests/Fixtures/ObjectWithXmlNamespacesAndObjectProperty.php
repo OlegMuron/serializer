@@ -1,11 +1,11 @@
 <?php
 
-namespace Signnow\Serializer\Tests\Fixtures;
+namespace SignNow\Serializer\Tests\Fixtures;
 
-use Signnow\Serializer\Annotation\Type;
-use Signnow\Serializer\Annotation\XmlElement;
-use Signnow\Serializer\Annotation\XmlNamespace;
-use Signnow\Serializer\Annotation\XmlRoot;
+use SignNow\Serializer\Annotation\Type;
+use SignNow\Serializer\Annotation\XmlElement;
+use SignNow\Serializer\Annotation\XmlNamespace;
+use SignNow\Serializer\Annotation\XmlRoot;
 
 /**
  * @XmlRoot("property:test-object", namespace="http://example.com/namespace-property")
@@ -20,7 +20,7 @@ class ObjectWithXmlNamespacesAndObjectProperty
     private $title;
 
     /**
-     * @Type("Signnow\Serializer\Tests\Fixtures\ObjectWithXmlNamespacesAndObjectPropertyAuthor")
+     * @Type("SignNow\Serializer\Tests\Fixtures\ObjectWithXmlNamespacesAndObjectPropertyAuthor")
      * @XmlElement(namespace="http://example.com/namespace-property")
      */
     private $author;

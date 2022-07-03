@@ -1,6 +1,6 @@
 <?php
 
-namespace Signnow\Serializer\Tests\Fixtures\Doctrine\SingleTableInheritance;
+namespace SignNow\Serializer\Tests\Fixtures\Doctrine\SingleTableInheritance;
 
 use Doctrine\ORM\Mapping as ORM;
 
@@ -9,8 +9,8 @@ use Doctrine\ORM\Mapping as ORM;
  * @ORM\InheritanceType("SINGLE_TABLE")
  * @ORM\DiscriminatorColumn(name="type", type="string")
  * @ORM\DiscriminatorMap({
- *     "student" = "Signnow\Serializer\Tests\Fixtures\Doctrine\SingleTableInheritance\Student",
- *     "teacher" = "Signnow\Serializer\Tests\Fixtures\Doctrine\SingleTableInheritance\Teacher",
+ *     "student" = "SignNow\Serializer\Tests\Fixtures\Doctrine\SingleTableInheritance\Student",
+ *     "teacher" = "SignNow\Serializer\Tests\Fixtures\Doctrine\SingleTableInheritance\Teacher",
  * })
  */
 abstract class Person extends AbstractModel

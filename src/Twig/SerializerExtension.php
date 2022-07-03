@@ -1,9 +1,9 @@
 <?php
 
-namespace Signnow\Serializer\Twig;
+namespace SignNow\Serializer\Twig;
 
-use Signnow\Serializer\SerializationContext;
-use Signnow\Serializer\SerializerInterface;
+use SignNow\Serializer\SerializationContext;
+use SignNow\Serializer\SerializerInterface;
 
 /**
  * Serializer helper twig extension
@@ -34,7 +34,7 @@ class SerializerExtension extends \Twig_Extension
     public function getFunctions()
     {
         return array(
-            new \Twig_SimpleFunction('serialization_context', '\Signnow\Serializer\SerializationContext::create'),
+            new \Twig_SimpleFunction('serialization_context', '\SignNow\Serializer\SerializationContext::create'),
         );
     }
 

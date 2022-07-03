@@ -1,6 +1,6 @@
 <?php
 
-namespace Signnow\Serializer\Tests\Serializer\EventDispatcher;
+namespace SignNow\Serializer\Tests\Serializer\EventDispatcher;
 
 use Psr\Container\ContainerInterface;
 

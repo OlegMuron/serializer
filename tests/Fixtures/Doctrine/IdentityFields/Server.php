@@ -1,9 +1,9 @@
 <?php
 
-namespace Signnow\Serializer\Tests\Fixtures\Doctrine\IdentityFields;
+namespace SignNow\Serializer\Tests\Fixtures\Doctrine\IdentityFields;
 
 use Doctrine\ORM\Mapping as ORM;
-use Signnow\Serializer\Annotation as Serializer;
+use SignNow\Serializer\Annotation as Serializer;
 
 /** @ORM\Entity */
 class Server

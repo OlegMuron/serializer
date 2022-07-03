@@ -1,12 +1,12 @@
 <?php
 
-namespace Signnow\Serializer\Tests\Fixtures;
+namespace SignNow\Serializer\Tests\Fixtures;
 
-use Signnow\Serializer\Annotation\AccessorOrder;
-use Signnow\Serializer\Annotation\SerializedName;
-use Signnow\Serializer\Annotation\Type;
-use Signnow\Serializer\Annotation\VirtualProperty;
-use Signnow\Serializer\Annotation\SkipWhenEmpty;
+use SignNow\Serializer\Annotation\AccessorOrder;
+use SignNow\Serializer\Annotation\SerializedName;
+use SignNow\Serializer\Annotation\Type;
+use SignNow\Serializer\Annotation\VirtualProperty;
+use SignNow\Serializer\Annotation\SkipWhenEmpty;
 
 /**
  * @AccessorOrder("custom", custom = {"prop_name", "existField", "foo" })

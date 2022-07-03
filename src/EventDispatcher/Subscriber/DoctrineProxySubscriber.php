@@ -1,15 +1,15 @@
 <?php
 
-namespace Signnow\Serializer\EventDispatcher\Subscriber;
+namespace SignNow\Serializer\EventDispatcher\Subscriber;
 
 use Doctrine\Persistence\Proxy;
 use Doctrine\ODM\MongoDB\PersistentCollection as MongoDBPersistentCollection;
 use Doctrine\ODM\PHPCR\PersistentCollection as PHPCRPersistentCollection;
 use Doctrine\ORM\PersistentCollection;
 use Doctrine\ORM\Proxy\Proxy as ORMProxy;
-use Signnow\Serializer\EventDispatcher\EventDispatcherInterface;
-use Signnow\Serializer\EventDispatcher\EventSubscriberInterface;
-use Signnow\Serializer\EventDispatcher\PreSerializeEvent;
+use SignNow\Serializer\EventDispatcher\EventDispatcherInterface;
+use SignNow\Serializer\EventDispatcher\EventSubscriberInterface;
+use SignNow\Serializer\EventDispatcher\PreSerializeEvent;
 
 class DoctrineProxySubscriber implements EventSubscriberInterface
 {

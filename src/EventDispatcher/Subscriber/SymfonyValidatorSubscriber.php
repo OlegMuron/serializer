@@ -1,10 +1,10 @@
 <?php
 
-namespace Signnow\Serializer\EventDispatcher\Subscriber;
+namespace SignNow\Serializer\EventDispatcher\Subscriber;
 
-use Signnow\Serializer\EventDispatcher\Event;
-use Signnow\Serializer\EventDispatcher\EventSubscriberInterface;
-use Signnow\Serializer\Exception\ValidationFailedException;
+use SignNow\Serializer\EventDispatcher\Event;
+use SignNow\Serializer\EventDispatcher\EventSubscriberInterface;
+use SignNow\Serializer\Exception\ValidationFailedException;
 use Symfony\Component\Validator\ValidatorInterface;
 
 class SymfonyValidatorSubscriber implements EventSubscriberInterface

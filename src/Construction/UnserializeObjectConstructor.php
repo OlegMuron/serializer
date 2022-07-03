@@ -1,11 +1,11 @@
 <?php
 
-namespace Signnow\Serializer\Construction;
+namespace SignNow\Serializer\Construction;
 
 use Doctrine\Instantiator\Instantiator;
-use Signnow\Serializer\DeserializationContext;
-use Signnow\Serializer\Metadata\ClassMetadata;
-use Signnow\Serializer\VisitorInterface;
+use SignNow\Serializer\DeserializationContext;
+use SignNow\Serializer\Metadata\ClassMetadata;
+use SignNow\Serializer\VisitorInterface;
 
 class UnserializeObjectConstructor implements ObjectConstructorInterface
 {

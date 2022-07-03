@@ -1,15 +1,15 @@
 <?php
 
-namespace Signnow\Serializer\Construction;
+namespace SignNow\Serializer\Construction;
 
 use Doctrine\Persistence\ManagerRegistry;
-use Signnow\Serializer\AbstractVisitor;
-use Signnow\Serializer\DeserializationContext;
-use Signnow\Serializer\Exception\InvalidArgumentException;
-use Signnow\Serializer\Exception\ObjectConstructionException;
-use Signnow\Serializer\Metadata\ClassMetadata;
-use Signnow\Serializer\Naming\PropertyNamingStrategyInterface;
-use Signnow\Serializer\VisitorInterface;
+use SignNow\Serializer\AbstractVisitor;
+use SignNow\Serializer\DeserializationContext;
+use SignNow\Serializer\Exception\InvalidArgumentException;
+use SignNow\Serializer\Exception\ObjectConstructionException;
+use SignNow\Serializer\Metadata\ClassMetadata;
+use SignNow\Serializer\Naming\PropertyNamingStrategyInterface;
+use SignNow\Serializer\VisitorInterface;
 
 /**
  * Doctrine object constructor for new (or existing) objects during deserialization.

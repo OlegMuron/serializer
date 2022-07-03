@@ -29,7 +29,7 @@ Usage
 -----
 For standalone projects usage of the provided builder is encouraged::
 
-    $serializer = Signnow\Serializer\SerializerBuilder::create()->build();
+    $serializer = SignNow\Serializer\SerializerBuilder::create()->build();
     $jsonContent = $serializer->serialize($data, 'json');
     echo $jsonContent; // or return it in a Response
 

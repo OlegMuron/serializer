@@ -14,7 +14,7 @@ Simple Callables
 You can register simple callables on the builder object::
 
     $builder
-        ->configureHandlers(function(Signnow\Serializer\Handler\HandlerRegistry $registry) {
+        ->configureHandlers(function(SignNow\Serializer\Handler\HandlerRegistry $registry) {
             $registry->registerHandler('serialization', 'MyObject', 'json',
                 function($visitor, MyObject $obj, array $type) {
                     return $obj->getName();
@@ -28,10 +28,10 @@ Subscribing Handlers
 Subscribing handlers contain the configuration themselves which makes them easier to share with other users,
 and easier to set-up in general::
 
-    use Signnow\Serializer\Handler\SubscribingHandlerInterface;
-    use Signnow\Serializer\GraphNavigator;
-    use Signnow\Serializer\JsonSerializationVisitor;
-    use Signnow\Serializer\Context;
+    use SignNow\Serializer\Handler\SubscribingHandlerInterface;
+    use SignNow\Serializer\GraphNavigator;
+    use SignNow\Serializer\JsonSerializationVisitor;
+    use SignNow\Serializer\Context;
 
     class MyHandler implements SubscribingHandlerInterface
     {
@@ -56,7 +56,7 @@ and easier to set-up in general::
 Also, this type of handler is registered via the builder object::
 
     $builder
-        ->configureHandlers(function(Signnow\Serializer\Handler\HandlerRegistry $registry) {
+        ->configureHandlers(function(SignNow\Serializer\Handler\HandlerRegistry $registry) {
             $registry->registerSubscribingHandler(new MyHandler());
         })
     ;

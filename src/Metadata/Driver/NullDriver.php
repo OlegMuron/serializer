@@ -1,8 +1,8 @@
 <?php
 
-namespace Signnow\Serializer\Metadata\Driver;
+namespace SignNow\Serializer\Metadata\Driver;
 
-use Signnow\Serializer\Metadata\ClassMetadata;
+use SignNow\Serializer\Metadata\ClassMetadata;
 use Metadata\Driver\DriverInterface;
 
 class NullDriver implements DriverInterface

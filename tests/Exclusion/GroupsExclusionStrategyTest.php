@@ -1,10 +1,10 @@
 <?php
 
-namespace Signnow\Serializer\Tests\Exclusion;
+namespace SignNow\Serializer\Tests\Exclusion;
 
-use Signnow\Serializer\Exclusion\GroupsExclusionStrategy;
-use Signnow\Serializer\Metadata\StaticPropertyMetadata;
-use Signnow\Serializer\SerializationContext;
+use SignNow\Serializer\Exclusion\GroupsExclusionStrategy;
+use SignNow\Serializer\Metadata\StaticPropertyMetadata;
+use SignNow\Serializer\SerializationContext;
 
 class GroupsExclusionStrategyTest extends \PHPUnit\Framework\TestCase
 {

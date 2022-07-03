@@ -1,9 +1,9 @@
 <?php
 
-namespace Signnow\Serializer\Tests\Metadata\Driver;
+namespace SignNow\Serializer\Tests\Metadata\Driver;
 
 use Doctrine\Common\Annotations\AnnotationReader;
-use Signnow\Serializer\Metadata\Driver\AnnotationDriver;
+use SignNow\Serializer\Metadata\Driver\AnnotationDriver;
 
 class AnnotationDriverTest extends BaseDriverTest
 {

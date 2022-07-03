@@ -1,8 +1,8 @@
 <?php
 
-namespace Signnow\Serializer\Naming;
+namespace SignNow\Serializer\Naming;
 
-use Signnow\Serializer\Metadata\PropertyMetadata;
+use SignNow\Serializer\Metadata\PropertyMetadata;
 
 /**
  * Naming strategy which uses an annotation to translate the property name.

@@ -1,6 +1,6 @@
 <?php
 
-namespace Signnow\Serializer\EventDispatcher;
+namespace SignNow\Serializer\EventDispatcher;
 
 use Psr\Container\ContainerInterface as PsrContainerInterface;
 use Symfony\Component\DependencyInjection\ContainerInterface;

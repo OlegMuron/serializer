@@ -53,10 +53,10 @@ will need to wrap your custom strategy with the ``SerializedNameAnnotationStrate
 .. code-block :: php
 
     <?php
-    $serializer = \Signnow\Serializer\SerializerBuilder::create()
+    $serializer = \SignNow\Serializer\SerializerBuilder::create()
         ->setPropertyNamingStrategy(
-            new \Signnow\Serializer\Naming\SerializedNameAnnotationStrategy(
-                new \Signnow\Serializer\Naming\IdenticalPropertyNamingStrategy()
+            new \SignNow\Serializer\Naming\SerializedNameAnnotationStrategy(
+                new \SignNow\Serializer\Naming\IdenticalPropertyNamingStrategy()
             )
         )
         ->build();
@@ -96,7 +96,7 @@ set the value via reflection, but you may change this to use a public method ins
 .. code-block :: php
 
     <?php
-    use Signnow\Serializer\Annotation\AccessType;
+    use SignNow\Serializer\Annotation\AccessType;
 
     /** @AccessType("public_method") */
     class User
@@ -122,7 +122,7 @@ be called to retrieve, or set the value of the given property:
 .. code-block :: php
 
     <?php
-    use Signnow\Serializer\Annotation\Accessor;
+    use SignNow\Serializer\Annotation\Accessor;
 
     class User
     {
@@ -157,7 +157,7 @@ default the order is undefined, but you may change it to either "alphabetical", 
 .. code-block :: php
 
     <?php
-    use Signnow\Serializer\Annotation\AccessorOrder;
+    use SignNow\Serializer\Annotation\AccessorOrder;
 
     /**
      * @AccessorOrder("alphabetical")
@@ -414,7 +414,7 @@ Examples:
 
     namespace MyNamespace;
 
-    use Signnow\Serializer\Annotation\Type;
+    use SignNow\Serializer\Annotation\Type;
 
     class BlogPost
     {
@@ -472,7 +472,7 @@ This allows you to specify the name of the top-level element.
 
     <?php
 
-    use Signnow\Serializer\Annotation\XmlRoot;
+    use SignNow\Serializer\Annotation\XmlRoot;
 
     /** @XmlRoot("user") */
     class User
@@ -503,7 +503,7 @@ and not as child elements.
 
     <?php
 
-    use Signnow\Serializer\Annotation\XmlAttribute;
+    use SignNow\Serializer\Annotation\XmlAttribute;
 
     class User
     {
@@ -543,8 +543,8 @@ Example for "attribute":
 
     <?php
 
-    use Signnow\Serializer\Annotation\Discriminator;
-    use Signnow\Serializer\Annotation\XmlDiscriminator;
+    use SignNow\Serializer\Annotation\Discriminator;
+    use SignNow\Serializer\Annotation\XmlDiscriminator;
 
     /**
      * @Discriminator(field = "type", map = {"car": "Car", "moped": "Moped"}, groups={"foo", "bar"})
@@ -565,8 +565,8 @@ Example for "cdata":
 .. code-block :: php
     <?php
 
-    use Signnow\Serializer\Annotation\Discriminator;
-    use Signnow\Serializer\Annotation\XmlDiscriminator;
+    use SignNow\Serializer\Annotation\Discriminator;
+    use SignNow\Serializer\Annotation\XmlDiscriminator;
 
 
 
@@ -596,9 +596,9 @@ XMLElement.
 
     <?php
 
-    use Signnow\Serializer\Annotation\XmlAttribute;
-    use Signnow\Serializer\Annotation\XmlValue;
-    use Signnow\Serializer\Annotation\XmlRoot;
+    use SignNow\Serializer\Annotation\XmlAttribute;
+    use SignNow\Serializer\Annotation\XmlValue;
+    use SignNow\Serializer\Annotation\XmlRoot;
 
     /** @XmlRoot("price") */
     class Price
@@ -626,8 +626,8 @@ keys of the array are not important.
 
     <?php
 
-    use Signnow\Serializer\Annotation\XmlList;
-    use Signnow\Serializer\Annotation\XmlRoot;
+    use SignNow\Serializer\Annotation\XmlList;
+    use SignNow\Serializer\Annotation\XmlRoot;
 
     /** @XmlRoot("post") */
     class Post
@@ -687,7 +687,7 @@ This is similar to the @XmlKeyValuePairs, but instead of creating child elements
 
     <?php
 
-    use Signnow\Serializer\Annotation\XmlAttribute;
+    use SignNow\Serializer\Annotation\XmlAttribute;
 
     class Input
     {
@@ -712,7 +712,7 @@ This annotation can be defined on a property to add additional xml serialization
 
     <?php
 
-    use Signnow\Serializer\Annotation\XmlElement;
+    use SignNow\Serializer\Annotation\XmlElement;
 
     /**
      * @XmlNamespace(uri="http://www.w3.org/2005/Atom", prefix="atom")
@@ -739,7 +739,7 @@ This annotation allows you to specify Xml namespace/s and prefix used.
 
     <?php
 
-    use Signnow\Serializer\Annotation\XmlNamespace;
+    use SignNow\Serializer\Annotation\XmlNamespace;
 
     /**
      * @XmlNamespace(uri="http://example.com/namespace")
@@ -748,7 +748,7 @@ This annotation allows you to specify Xml namespace/s and prefix used.
     class BlogPost
     {
         /**
-         * @Type("Signnow\Serializer\Tests\Fixtures\Author")
+         * @Type("SignNow\Serializer\Tests\Fixtures\Author")
          * @Groups({"post"})
          * @XmlElement(namespace="http://www.w3.org/2005/Atom")
          */

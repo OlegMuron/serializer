@@ -1,10 +1,10 @@
 <?php
 
-namespace Signnow\Serializer\Accessor;
+namespace SignNow\Serializer\Accessor;
 
-use Signnow\Serializer\Expression\ExpressionEvaluatorInterface;
-use Signnow\Serializer\Metadata\ExpressionPropertyMetadata;
-use Signnow\Serializer\Metadata\PropertyMetadata;
+use SignNow\Serializer\Expression\ExpressionEvaluatorInterface;
+use SignNow\Serializer\Metadata\ExpressionPropertyMetadata;
+use SignNow\Serializer\Metadata\PropertyMetadata;
 
 /**
  * @author Asmir Mustafic <goetas@gmail.com>

@@ -1,13 +1,13 @@
 <?php
 
-namespace Signnow\Serializer\Tests\Fixtures;
+namespace SignNow\Serializer\Tests\Fixtures;
 
-use Signnow\Serializer\Annotation\Type;
+use SignNow\Serializer\Annotation\Type;
 
 class Garage
 {
     /**
-     * @Type("array<Signnow\Serializer\Tests\Fixtures\Discriminator\Vehicle>")
+     * @Type("array<SignNow\Serializer\Tests\Fixtures\Discriminator\Vehicle>")
      */
     public $vehicles;
 

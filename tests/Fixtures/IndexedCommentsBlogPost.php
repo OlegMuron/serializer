@@ -1,12 +1,12 @@
 <?php
 
-namespace Signnow\Serializer\Tests\Fixtures;
+namespace SignNow\Serializer\Tests\Fixtures;
 
-use Signnow\Serializer\Annotation\Accessor;
-use Signnow\Serializer\Annotation\XmlAttribute;
-use Signnow\Serializer\Annotation\XmlList;
-use Signnow\Serializer\Annotation\XmlMap;
-use Signnow\Serializer\Annotation\XmlRoot;
+use SignNow\Serializer\Annotation\Accessor;
+use SignNow\Serializer\Annotation\XmlAttribute;
+use SignNow\Serializer\Annotation\XmlList;
+use SignNow\Serializer\Annotation\XmlMap;
+use SignNow\Serializer\Annotation\XmlRoot;
 
 /** @XmlRoot("post") */
 class IndexedCommentsBlogPost

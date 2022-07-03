@@ -1,9 +1,9 @@
 <?php
 
-namespace Signnow\Serializer\Tests\Fixtures\DoctrinePHPCR;
+namespace SignNow\Serializer\Tests\Fixtures\DoctrinePHPCR;
 
 use Doctrine\ODM\PHPCR\Mapping\Annotations as PHPCRODM;
-use Signnow\Serializer\Annotation\SerializedName;
+use SignNow\Serializer\Annotation\SerializedName;
 
 /** @PHPCRODM\Document */
 class Author

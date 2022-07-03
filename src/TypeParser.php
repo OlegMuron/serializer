@@ -1,6 +1,6 @@
 <?php
 
-namespace Signnow\Serializer;
+namespace SignNow\Serializer;
 
 /**
  * Parses a serializer type.

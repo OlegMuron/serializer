@@ -1,14 +1,14 @@
 <?php
 
-namespace Signnow\Serializer\Metadata\Driver;
+namespace SignNow\Serializer\Metadata\Driver;
 
 use Doctrine\Persistence\ManagerRegistry;
 use Doctrine\Persistence\Mapping\ClassMetadata as DoctrineClassMetadata;
-use Signnow\Serializer\Metadata\ClassMetadata;
-use Signnow\Serializer\Metadata\ExpressionPropertyMetadata;
-use Signnow\Serializer\Metadata\PropertyMetadata;
-use Signnow\Serializer\Metadata\StaticPropertyMetadata;
-use Signnow\Serializer\Metadata\VirtualPropertyMetadata;
+use SignNow\Serializer\Metadata\ClassMetadata;
+use SignNow\Serializer\Metadata\ExpressionPropertyMetadata;
+use SignNow\Serializer\Metadata\PropertyMetadata;
+use SignNow\Serializer\Metadata\StaticPropertyMetadata;
+use SignNow\Serializer\Metadata\VirtualPropertyMetadata;
 use Metadata\Driver\DriverInterface;
 
 /**
@@ -18,7 +18,7 @@ use Metadata\Driver\DriverInterface;
 abstract class AbstractDoctrineTypeDriver implements DriverInterface
 {
     /**
-     * Map of doctrine 2 field types to Signnow\Serializer types
+     * Map of doctrine 2 field types to SignNow\Serializer types
      * @var array
      */
     protected $fieldMapping = array(

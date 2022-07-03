@@ -1,9 +1,9 @@
 <?php
 
-namespace Signnow\Serializer\Tests\Metadata;
+namespace SignNow\Serializer\Tests\Metadata;
 
-use Signnow\Serializer\Metadata\PropertyMetadata;
-use Signnow\Serializer\Tests\Fixtures\SimpleObject;
+use SignNow\Serializer\Metadata\PropertyMetadata;
+use SignNow\Serializer\Tests\Fixtures\SimpleObject;
 
 class PropertyMetadataTest extends AbstractPropertyMetadataTest
 {

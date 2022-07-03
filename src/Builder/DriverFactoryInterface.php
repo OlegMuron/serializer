@@ -1,6 +1,6 @@
 <?php
 
-namespace Signnow\Serializer\Builder;
+namespace SignNow\Serializer\Builder;
 
 use Doctrine\Common\Annotations\Reader;
 use Metadata\Driver\DriverInterface;

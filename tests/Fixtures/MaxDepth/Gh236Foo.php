@@ -1,8 +1,8 @@
 <?php
 
-namespace Signnow\Serializer\Tests\Fixtures\MaxDepth;
+namespace SignNow\Serializer\Tests\Fixtures\MaxDepth;
 
-use Signnow\Serializer\Annotation as Serializer;
+use SignNow\Serializer\Annotation as Serializer;
 
 class Gh236Foo
 {

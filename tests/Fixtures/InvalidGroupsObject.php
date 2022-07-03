@@ -1,9 +1,9 @@
 <?php
 
-namespace Signnow\Serializer\Tests\Fixtures;
+namespace SignNow\Serializer\Tests\Fixtures;
 
-use Signnow\Serializer\Annotation\Groups;
-use Signnow\Serializer\Annotation\Type;
+use SignNow\Serializer\Annotation\Groups;
+use SignNow\Serializer\Annotation\Type;
 
 class InvalidGroupsObject
 {

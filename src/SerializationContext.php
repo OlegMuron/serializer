@@ -1,8 +1,8 @@
 <?php
 
-namespace Signnow\Serializer;
+namespace SignNow\Serializer;
 
-use Signnow\Serializer\Exception\RuntimeException;
+use SignNow\Serializer\Exception\RuntimeException;
 use Metadata\MetadataFactoryInterface;
 
 class SerializationContext extends Context

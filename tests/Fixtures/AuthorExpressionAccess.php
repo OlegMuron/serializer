@@ -1,8 +1,8 @@
 <?php
 
-namespace Signnow\Serializer\Tests\Fixtures;
+namespace SignNow\Serializer\Tests\Fixtures;
 
-use Signnow\Serializer\Annotation as Serializer;
+use SignNow\Serializer\Annotation as Serializer;
 
 /**
  * @Serializer\VirtualProperty("firstName", exp="object.getFirstName()", options={@Serializer\SerializedName("my_first_name")})

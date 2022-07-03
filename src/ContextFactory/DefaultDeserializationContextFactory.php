@@ -1,8 +1,8 @@
 <?php
 
-namespace Signnow\Serializer\ContextFactory;
+namespace SignNow\Serializer\ContextFactory;
 
-use Signnow\Serializer\DeserializationContext;
+use SignNow\Serializer\DeserializationContext;
 
 /**
  * Default Deserialization Context Factory.

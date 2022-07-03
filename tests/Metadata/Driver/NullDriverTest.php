@@ -1,9 +1,9 @@
 <?php
 
-namespace Signnow\Serializer\Tests\Metadata\Driver;
+namespace SignNow\Serializer\Tests\Metadata\Driver;
 
-use Signnow\Serializer\Metadata\ClassMetadata;
-use Signnow\Serializer\Metadata\Driver\NullDriver;
+use SignNow\Serializer\Metadata\ClassMetadata;
+use SignNow\Serializer\Metadata\Driver\NullDriver;
 
 class NullDriverTest extends \PHPUnit\Framework\TestCase
 {

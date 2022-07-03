@@ -1,13 +1,13 @@
 <?php
 
-namespace Signnow\Serializer\Tests\Fixtures;
+namespace SignNow\Serializer\Tests\Fixtures;
 
-use Signnow\Serializer\Annotation\Type;
+use SignNow\Serializer\Annotation\Type;
 
 class Comment
 {
     /**
-     * @Type("Signnow\Serializer\Tests\Fixtures\Author")
+     * @Type("SignNow\Serializer\Tests\Fixtures\Author")
      */
     private $author;
 

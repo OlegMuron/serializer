@@ -1,12 +1,12 @@
 <?php
 
-namespace Signnow\Serializer\Tests\Fixtures;
+namespace SignNow\Serializer\Tests\Fixtures;
 
-use Signnow\Serializer\Annotation\Accessor;
-use Signnow\Serializer\Annotation\ReadOnlyProperty;
-use Signnow\Serializer\Annotation\SerializedName;
-use Signnow\Serializer\Annotation\Type;
-use Signnow\Serializer\Annotation\XmlRoot;
+use SignNow\Serializer\Annotation\Accessor;
+use SignNow\Serializer\Annotation\ReadOnlyProperty;
+use SignNow\Serializer\Annotation\SerializedName;
+use SignNow\Serializer\Annotation\Type;
+use SignNow\Serializer\Annotation\XmlRoot;
 
 /**
  * @XmlRoot("author")

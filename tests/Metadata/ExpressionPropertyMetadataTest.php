@@ -1,8 +1,8 @@
 <?php
 
-namespace Signnow\Serializer\Tests\Metadata;
+namespace SignNow\Serializer\Tests\Metadata;
 
-use Signnow\Serializer\Metadata\ExpressionPropertyMetadata;
+use SignNow\Serializer\Metadata\ExpressionPropertyMetadata;
 
 class ExpressionPropertyMetadataTest extends AbstractPropertyMetadataTest
 {

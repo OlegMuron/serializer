@@ -1,11 +1,11 @@
 <?php
 
-namespace Signnow\Serializer\Builder;
+namespace SignNow\Serializer\Builder;
 
 use Doctrine\Common\Annotations\Reader;
-use Signnow\Serializer\Metadata\Driver\AnnotationDriver;
-use Signnow\Serializer\Metadata\Driver\XmlDriver;
-use Signnow\Serializer\Metadata\Driver\YamlDriver;
+use SignNow\Serializer\Metadata\Driver\AnnotationDriver;
+use SignNow\Serializer\Metadata\Driver\XmlDriver;
+use SignNow\Serializer\Metadata\Driver\YamlDriver;
 use Metadata\Driver\DriverChain;
 use Metadata\Driver\FileLocator;
 

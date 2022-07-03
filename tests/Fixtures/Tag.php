@@ -1,20 +1,20 @@
 <?php
 
-namespace Signnow\Serializer\Tests\Fixtures;
+namespace SignNow\Serializer\Tests\Fixtures;
 
-use Signnow\Serializer\Annotation as JMS;
+use SignNow\Serializer\Annotation as SignNow;
 
 
 /**
- * @Signnow\XmlRoot("tag")
- * @Signnow\XmlNamespace(uri="http://purl.org/dc/elements/1.1/", prefix="dc")
+ * @SignNow\XmlRoot("tag")
+ * @SignNow\XmlNamespace(uri="http://purl.org/dc/elements/1.1/", prefix="dc")
  */
 class Tag
 {
 
     /**
-     * @Signnow\XmlElement(cdata=false)
-     * @Signnow\Type("string")
+     * @SignNow\XmlElement(cdata=false)
+     * @SignNow\Type("string")
      */
     public $name;
 

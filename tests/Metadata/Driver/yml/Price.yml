@@ -1,4 +1,4 @@
-Signnow\Serializer\Tests\Fixtures\Price:
+SignNow\Serializer\Tests\Fixtures\Price:
     properties:
         price:
             type: float

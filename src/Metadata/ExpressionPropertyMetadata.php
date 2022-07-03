@@ -1,8 +1,8 @@
 <?php
 
-namespace Signnow\Serializer\Metadata;
+namespace SignNow\Serializer\Metadata;
 
-use Signnow\Serializer\Exception\ExpressionLanguageRequiredException;
+use SignNow\Serializer\Exception\ExpressionLanguageRequiredException;
 
 /**
  * @Annotation

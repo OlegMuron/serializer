@@ -1,8 +1,8 @@
 <?php
 
-namespace Signnow\Serializer\Accessor;
+namespace SignNow\Serializer\Accessor;
 
-use Signnow\Serializer\Metadata\PropertyMetadata;
+use SignNow\Serializer\Metadata\PropertyMetadata;
 
 /**
  * @author Asmir Mustafic <goetas@gmail.com>

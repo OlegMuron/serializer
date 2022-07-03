@@ -1,9 +1,9 @@
 <?php
 
-namespace Signnow\Serializer\Tests\Fixtures;
+namespace SignNow\Serializer\Tests\Fixtures;
 
-use Signnow\Serializer\Annotation\Type;
-use Signnow\Serializer\Annotation\XmlKeyValuePairs;
+use SignNow\Serializer\Annotation\Type;
+use SignNow\Serializer\Annotation\XmlKeyValuePairs;
 
 class NamedDateTimeImmutableArraysObject
 {

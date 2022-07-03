@@ -1,12 +1,12 @@
 <?php
 
-namespace Signnow\Serializer\Handler;
+namespace SignNow\Serializer\Handler;
 
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
-use Signnow\Serializer\Context;
-use Signnow\Serializer\GraphNavigator;
-use Signnow\Serializer\VisitorInterface;
+use SignNow\Serializer\Context;
+use SignNow\Serializer\GraphNavigator;
+use SignNow\Serializer\VisitorInterface;
 
 class ArrayCollectionHandler implements SubscribingHandlerInterface
 {

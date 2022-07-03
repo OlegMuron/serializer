@@ -1,6 +1,6 @@
 <?php
 
-namespace Signnow\Serializer\Handler;
+namespace SignNow\Serializer\Handler;
 
 /**
  * Handler Registry Interface.

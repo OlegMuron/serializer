@@ -1,6 +1,6 @@
 <?php
 
-namespace Signnow\Serializer\Tests\Fixtures;
+namespace SignNow\Serializer\Tests\Fixtures;
 
 class ObjectWithToString
 {

@@ -1,9 +1,9 @@
 <?php
 
-namespace Signnow\Serializer\Twig;
+namespace SignNow\Serializer\Twig;
 
-use Signnow\Serializer\SerializationContext;
-use Signnow\Serializer\SerializerInterface;
+use SignNow\Serializer\SerializationContext;
+use SignNow\Serializer\SerializerInterface;
 
 /**
  * @author Asmir Mustafic <goetas@gmail.com>

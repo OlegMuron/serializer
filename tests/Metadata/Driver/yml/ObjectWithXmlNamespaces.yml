@@ -1,4 +1,4 @@
-Signnow\Serializer\Tests\Fixtures\ObjectWithXmlNamespaces:
+SignNow\Serializer\Tests\Fixtures\ObjectWithXmlNamespaces:
     xml_root_name: test-object
     xml_root_namespace: http://example.com/namespace
     xml_namespaces:

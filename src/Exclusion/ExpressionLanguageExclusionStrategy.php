@@ -1,11 +1,11 @@
 <?php
 
-namespace Signnow\Serializer\Exclusion;
+namespace SignNow\Serializer\Exclusion;
 
-use Signnow\Serializer\Context;
-use Signnow\Serializer\Expression\ExpressionEvaluatorInterface;
-use Signnow\Serializer\Metadata\PropertyMetadata;
-use Signnow\Serializer\SerializationContext;
+use SignNow\Serializer\Context;
+use SignNow\Serializer\Expression\ExpressionEvaluatorInterface;
+use SignNow\Serializer\Metadata\PropertyMetadata;
+use SignNow\Serializer\SerializationContext;
 
 /**
  * Exposes an exclusion strategy based on the Symfony's expression language.

@@ -1,4 +1,4 @@
-Signnow\Serializer\Tests\Fixtures\ObjectWithExpressionVirtualPropertiesAndExcludeAll:
+SignNow\Serializer\Tests\Fixtures\ObjectWithExpressionVirtualPropertiesAndExcludeAll:
     exclusion_policy: all
     virtual_properties:
         virtualValue:

@@ -1,4 +1,4 @@
-Signnow\Serializer\Tests\Fixtures\BlogPost:
+SignNow\Serializer\Tests\Fixtures\BlogPost:
     xml_root_name: blog-post
     xml_namespaces:
         "": http://example.com/namespace
@@ -31,13 +31,13 @@ Signnow\Serializer\Tests\Fixtures\BlogPost:
             xml_element:
                 namespace: http://schemas.google.com/g/2005
         comments:
-            type: ArrayCollection<Signnow\Serializer\Tests\Fixtures\Comment>
+            type: ArrayCollection<SignNow\Serializer\Tests\Fixtures\Comment>
             groups: [comments]
             xml_list:
                 inline: true
                 entry_name: comment
         author:
-            type: Signnow\Serializer\Tests\Fixtures\Author
+            type: SignNow\Serializer\Tests\Fixtures\Author
             groups: [post]
             xml_element:
                 namespace: http://www.w3.org/2005/Atom

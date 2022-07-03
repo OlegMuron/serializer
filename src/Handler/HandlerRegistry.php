@@ -1,10 +1,10 @@
 <?php
 
-namespace Signnow\Serializer\Handler;
+namespace SignNow\Serializer\Handler;
 
-use Signnow\Serializer\Exception\LogicException;
-use Signnow\Serializer\Exception\RuntimeException;
-use Signnow\Serializer\GraphNavigator;
+use SignNow\Serializer\Exception\LogicException;
+use SignNow\Serializer\Exception\RuntimeException;
+use SignNow\Serializer\GraphNavigator;
 
 class HandlerRegistry implements HandlerRegistryInterface
 {

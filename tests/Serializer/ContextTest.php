@@ -1,13 +1,13 @@
 <?php
 
-namespace Signnow\Serializer\Tests\Serializer;
+namespace SignNow\Serializer\Tests\Serializer;
 
-use Signnow\Serializer\Metadata\ClassMetadata;
-use Signnow\Serializer\Metadata\PropertyMetadata;
-use Signnow\Serializer\SerializationContext;
-use Signnow\Serializer\SerializerBuilder;
-use Signnow\Serializer\Tests\Fixtures\InlineChild;
-use Signnow\Serializer\Tests\Fixtures\Node;
+use SignNow\Serializer\Metadata\ClassMetadata;
+use SignNow\Serializer\Metadata\PropertyMetadata;
+use SignNow\Serializer\SerializationContext;
+use SignNow\Serializer\SerializerBuilder;
+use SignNow\Serializer\Tests\Fixtures\InlineChild;
+use SignNow\Serializer\Tests\Fixtures\Node;
 
 class ContextTest extends \PHPUnit\Framework\TestCase
 {
@@ -23,7 +23,7 @@ class ContextTest extends \PHPUnit\Framework\TestCase
 
         $self = $this;
 
-        $exclusionStrategy = $this->getMockBuilder('Signnow\Serializer\Exclusion\ExclusionStrategyInterface')->getMock();
+        $exclusionStrategy = $this->getMockBuilder('SignNow\Serializer\Exclusion\ExclusionStrategyInterface')->getMock();
         $exclusionStrategy->expects($this->any())
             ->method('shouldSkipClass')
             ->with($this->anything(), $this->callback(function (SerializationContext $context) use ($self, $objects) {
@@ -31,16 +31,16 @@ class ContextTest extends \PHPUnit\Framework\TestCase
 
                 if ($context->getObject() === $objects[0]) {
                     $expectedDepth = 1;
-                    $expectedPath = 'Signnow\Serializer\Tests\Fixtures\Node';
+                    $expectedPath = 'SignNow\Serializer\Tests\Fixtures\Node';
                 } elseif ($context->getObject() === $objects[1]) {
                     $expectedDepth = 2;
-                    $expectedPath = 'Signnow\Serializer\Tests\Fixtures\Node -> Signnow\Serializer\Tests\Fixtures\Node';
+                    $expectedPath = 'SignNow\Serializer\Tests\Fixtures\Node -> SignNow\Serializer\Tests\Fixtures\Node';
                 } elseif ($context->getObject() === $objects[2]) {
                     $expectedDepth = 2;
-                    $expectedPath = 'Signnow\Serializer\Tests\Fixtures\Node -> Signnow\Serializer\Tests\Fixtures\Node';
+                    $expectedPath = 'SignNow\Serializer\Tests\Fixtures\Node -> SignNow\Serializer\Tests\Fixtures\Node';
                 } elseif ($context->getObject() === $objects[3]) {
                     $expectedDepth = 3;
-                    $expectedPath = 'Signnow\Serializer\Tests\Fixtures\Node -> Signnow\Serializer\Tests\Fixtures\Node -> Signnow\Serializer\Tests\Fixtures\Node';
+                    $expectedPath = 'SignNow\Serializer\Tests\Fixtures\Node -> SignNow\Serializer\Tests\Fixtures\Node -> SignNow\Serializer\Tests\Fixtures\Node';
                 }
 
                 $self->assertEquals($expectedDepth, $context->getDepth(), 'shouldSkipClass depth');
@@ -57,16 +57,16 @@ class ContextTest extends \PHPUnit\Framework\TestCase
 
                 if ($context->getObject() === $objects[0]) {
                     $expectedDepth = 1;
-                    $expectedPath = 'Signnow\Serializer\Tests\Fixtures\Node';
+                    $expectedPath = 'SignNow\Serializer\Tests\Fixtures\Node';
                 } elseif ($context->getObject() === $objects[1]) {
                     $expectedDepth = 2;
-                    $expectedPath = 'Signnow\Serializer\Tests\Fixtures\Node -> Signnow\Serializer\Tests\Fixtures\Node';
+                    $expectedPath = 'SignNow\Serializer\Tests\Fixtures\Node -> SignNow\Serializer\Tests\Fixtures\Node';
                 } elseif ($context->getObject() === $objects[2]) {
                     $expectedDepth = 2;
-                    $expectedPath = 'Signnow\Serializer\Tests\Fixtures\Node -> Signnow\Serializer\Tests\Fixtures\Node';
+                    $expectedPath = 'SignNow\Serializer\Tests\Fixtures\Node -> SignNow\Serializer\Tests\Fixtures\Node';
                 } elseif ($context->getObject() === $objects[3]) {
                     $expectedDepth = 3;
-                    $expectedPath = 'Signnow\Serializer\Tests\Fixtures\Node -> Signnow\Serializer\Tests\Fixtures\Node -> Signnow\Serializer\Tests\Fixtures\Node';
+                    $expectedPath = 'SignNow\Serializer\Tests\Fixtures\Node -> SignNow\Serializer\Tests\Fixtures\Node -> SignNow\Serializer\Tests\Fixtures\Node';
                 }
 
                 $self->assertEquals($expectedDepth, $context->getDepth(), 'shouldSkipProperty depth');
@@ -88,7 +88,7 @@ class ContextTest extends \PHPUnit\Framework\TestCase
         ));
         $self = $this;
 
-        $exclusionStrategy = $this->getMockBuilder('Signnow\Serializer\Exclusion\ExclusionStrategyInterface')->getMock();
+        $exclusionStrategy = $this->getMockBuilder('SignNow\Serializer\Exclusion\ExclusionStrategyInterface')->getMock();
         $exclusionStrategy->expects($this->any())
             ->method('shouldSkipClass')
             ->will($this->returnCallback(function (ClassMetadata $classMetadata, SerializationContext $context) use ($self, $object, $child) {
@@ -100,7 +100,7 @@ class ContextTest extends \PHPUnit\Framework\TestCase
 
                 if ($child === $context->getObject()) {
                     $self->assertEquals(2, $stack->count());
-                    $self->assertEquals('Signnow\Serializer\Tests\Fixtures\Node', $stack[1]->name);
+                    $self->assertEquals('SignNow\Serializer\Tests\Fixtures\Node', $stack[1]->name);
                     $self->assertEquals('children', $stack[0]->name);
                 }
 
@@ -112,16 +112,16 @@ class ContextTest extends \PHPUnit\Framework\TestCase
             ->will($this->returnCallback(function (PropertyMetadata $propertyMetadata, SerializationContext $context) use ($self, $object, $child) {
                 $stack = $context->getMetadataStack();
 
-                if ('Signnow\Serializer\Tests\Fixtures\Node' === $propertyMetadata->class && $propertyMetadata->name === 'children') {
+                if ('SignNow\Serializer\Tests\Fixtures\Node' === $propertyMetadata->class && $propertyMetadata->name === 'children') {
                     $self->assertEquals(1, $stack->count());
-                    $self->assertEquals('Signnow\Serializer\Tests\Fixtures\Node', $stack[0]->name);
+                    $self->assertEquals('SignNow\Serializer\Tests\Fixtures\Node', $stack[0]->name);
                 }
 
-                if ('Signnow\Serializer\Tests\Fixtures\InlineChild' === $propertyMetadata->class) {
+                if ('SignNow\Serializer\Tests\Fixtures\InlineChild' === $propertyMetadata->class) {
                     $self->assertEquals(3, $stack->count());
-                    $self->assertEquals('Signnow\Serializer\Tests\Fixtures\Node', $stack[2]->name);
+                    $self->assertEquals('SignNow\Serializer\Tests\Fixtures\Node', $stack[2]->name);
                     $self->assertEquals('children', $stack[1]->name);
-                    $self->assertEquals('Signnow\Serializer\Tests\Fixtures\InlineChild', $stack[0]->name);
+                    $self->assertEquals('SignNow\Serializer\Tests\Fixtures\InlineChild', $stack[0]->name);
                 }
 
                 return false;

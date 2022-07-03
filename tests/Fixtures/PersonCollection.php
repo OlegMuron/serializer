@@ -1,11 +1,11 @@
 <?php
 
-namespace Signnow\Serializer\Tests\Fixtures;
+namespace SignNow\Serializer\Tests\Fixtures;
 
 use Doctrine\Common\Collections\ArrayCollection;
-use Signnow\Serializer\Annotation\Type;
-use Signnow\Serializer\Annotation\XmlList;
-use Signnow\Serializer\Annotation\XmlRoot;
+use SignNow\Serializer\Annotation\Type;
+use SignNow\Serializer\Annotation\XmlList;
+use SignNow\Serializer\Annotation\XmlRoot;
 
 /**
  * @XmlRoot("person_collection")
@@ -13,7 +13,7 @@ use Signnow\Serializer\Annotation\XmlRoot;
 class PersonCollection
 {
     /**
-     * @Type("ArrayCollection<Signnow\Serializer\Tests\Fixtures\Person>")
+     * @Type("ArrayCollection<SignNow\Serializer\Tests\Fixtures\Person>")
      * @XmlList(entry = "person", inline = true)
      */
     public $persons;

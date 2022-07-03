@@ -1,10 +1,10 @@
 <?php
 
-namespace Signnow\Serializer\Tests\Fixtures;
+namespace SignNow\Serializer\Tests\Fixtures;
 
-use Signnow\Serializer\Annotation as Serializer;
-use Signnow\Serializer\Context;
-use Signnow\Serializer\Metadata\PropertyMetadata;
+use SignNow\Serializer\Annotation as Serializer;
+use SignNow\Serializer\Context;
+use SignNow\Serializer\Metadata\PropertyMetadata;
 
 /**
  */

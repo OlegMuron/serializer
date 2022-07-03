@@ -1,12 +1,12 @@
 <?php
 
-namespace Signnow\Serializer\Tests\Handler;
+namespace SignNow\Serializer\Tests\Handler;
 
-use Signnow\Serializer\SerializerBuilder;
+use SignNow\Serializer\SerializerBuilder;
 
 class PropelCollectionHandlerTest extends \PHPUnit\Framework\TestCase
 {
-    /** @var  $serializer \Signnow\Serializer\Serializer */
+    /** @var  $serializer \SignNow\Serializer\Serializer */
     private $serializer;
 
     public function setUp(): void

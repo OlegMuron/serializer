@@ -1,55 +1,55 @@
 <?php
 
-namespace Signnow\Serializer\Tests\Serializer;
+namespace SignNow\Serializer\Tests\Serializer;
 
-use Signnow\Serializer\Construction\UnserializeObjectConstructor;
-use Signnow\Serializer\Context;
-use Signnow\Serializer\Exception\InvalidArgumentException;
-use Signnow\Serializer\GraphNavigator;
-use Signnow\Serializer\Handler\DateHandler;
-use Signnow\Serializer\Handler\HandlerRegistry;
-use Signnow\Serializer\Metadata\StaticPropertyMetadata;
-use Signnow\Serializer\Naming\CamelCaseNamingStrategy;
-use Signnow\Serializer\Naming\PropertyNamingStrategyInterface;
-use Signnow\Serializer\Naming\SerializedNameAnnotationStrategy;
-use Signnow\Serializer\SerializationContext;
-use Signnow\Serializer\Serializer;
-use Signnow\Serializer\Tests\Fixtures\Discriminator\ObjectWithXmlAttributeDiscriminatorChild;
-use Signnow\Serializer\Tests\Fixtures\Discriminator\ObjectWithXmlAttributeDiscriminatorParent;
-use Signnow\Serializer\Tests\Fixtures\Discriminator\ObjectWithXmlNamespaceAttributeDiscriminatorChild;
-use Signnow\Serializer\Tests\Fixtures\Discriminator\ObjectWithXmlNamespaceAttributeDiscriminatorParent;
-use Signnow\Serializer\Tests\Fixtures\Discriminator\ObjectWithXmlNamespaceDiscriminatorChild;
-use Signnow\Serializer\Tests\Fixtures\Discriminator\ObjectWithXmlNamespaceDiscriminatorParent;
-use Signnow\Serializer\Tests\Fixtures\Discriminator\ObjectWithXmlNotCDataDiscriminatorChild;
-use Signnow\Serializer\Tests\Fixtures\Discriminator\ObjectWithXmlNotCDataDiscriminatorParent;
-use Signnow\Serializer\Tests\Fixtures\Input;
-use Signnow\Serializer\Tests\Fixtures\InvalidUsageOfXmlValue;
-use Signnow\Serializer\Tests\Fixtures\ObjectWithNamespacesAndList;
-use Signnow\Serializer\Tests\Fixtures\ObjectWithNamespacesAndNestedList;
-use Signnow\Serializer\Tests\Fixtures\ObjectWithToString;
-use Signnow\Serializer\Tests\Fixtures\ObjectWithVirtualXmlProperties;
-use Signnow\Serializer\Tests\Fixtures\ObjectWithXmlKeyValuePairs;
-use Signnow\Serializer\Tests\Fixtures\ObjectWithXmlKeyValuePairsWithObjectType;
-use Signnow\Serializer\Tests\Fixtures\ObjectWithXmlKeyValuePairsWithType;
-use Signnow\Serializer\Tests\Fixtures\ObjectWithXmlNamespaces;
-use Signnow\Serializer\Tests\Fixtures\ObjectWithXmlNamespacesAndObjectProperty;
-use Signnow\Serializer\Tests\Fixtures\ObjectWithXmlNamespacesAndObjectPropertyAuthor;
-use Signnow\Serializer\Tests\Fixtures\ObjectWithXmlNamespacesAndObjectPropertyVirtual;
-use Signnow\Serializer\Tests\Fixtures\ObjectWithXmlRootNamespace;
-use Signnow\Serializer\Tests\Fixtures\Person;
-use Signnow\Serializer\Tests\Fixtures\PersonCollection;
-use Signnow\Serializer\Tests\Fixtures\PersonLocation;
-use Signnow\Serializer\Tests\Fixtures\SimpleClassObject;
-use Signnow\Serializer\Tests\Fixtures\SimpleObject;
-use Signnow\Serializer\Tests\Fixtures\SimpleSubClassObject;
-use Signnow\Serializer\XmlDeserializationVisitor;
-use Signnow\Serializer\XmlSerializationVisitor;
+use SignNow\Serializer\Construction\UnserializeObjectConstructor;
+use SignNow\Serializer\Context;
+use SignNow\Serializer\Exception\InvalidArgumentException;
+use SignNow\Serializer\GraphNavigator;
+use SignNow\Serializer\Handler\DateHandler;
+use SignNow\Serializer\Handler\HandlerRegistry;
+use SignNow\Serializer\Metadata\StaticPropertyMetadata;
+use SignNow\Serializer\Naming\CamelCaseNamingStrategy;
+use SignNow\Serializer\Naming\PropertyNamingStrategyInterface;
+use SignNow\Serializer\Naming\SerializedNameAnnotationStrategy;
+use SignNow\Serializer\SerializationContext;
+use SignNow\Serializer\Serializer;
+use SignNow\Serializer\Tests\Fixtures\Discriminator\ObjectWithXmlAttributeDiscriminatorChild;
+use SignNow\Serializer\Tests\Fixtures\Discriminator\ObjectWithXmlAttributeDiscriminatorParent;
+use SignNow\Serializer\Tests\Fixtures\Discriminator\ObjectWithXmlNamespaceAttributeDiscriminatorChild;
+use SignNow\Serializer\Tests\Fixtures\Discriminator\ObjectWithXmlNamespaceAttributeDiscriminatorParent;
+use SignNow\Serializer\Tests\Fixtures\Discriminator\ObjectWithXmlNamespaceDiscriminatorChild;
+use SignNow\Serializer\Tests\Fixtures\Discriminator\ObjectWithXmlNamespaceDiscriminatorParent;
+use SignNow\Serializer\Tests\Fixtures\Discriminator\ObjectWithXmlNotCDataDiscriminatorChild;
+use SignNow\Serializer\Tests\Fixtures\Discriminator\ObjectWithXmlNotCDataDiscriminatorParent;
+use SignNow\Serializer\Tests\Fixtures\Input;
+use SignNow\Serializer\Tests\Fixtures\InvalidUsageOfXmlValue;
+use SignNow\Serializer\Tests\Fixtures\ObjectWithNamespacesAndList;
+use SignNow\Serializer\Tests\Fixtures\ObjectWithNamespacesAndNestedList;
+use SignNow\Serializer\Tests\Fixtures\ObjectWithToString;
+use SignNow\Serializer\Tests\Fixtures\ObjectWithVirtualXmlProperties;
+use SignNow\Serializer\Tests\Fixtures\ObjectWithXmlKeyValuePairs;
+use SignNow\Serializer\Tests\Fixtures\ObjectWithXmlKeyValuePairsWithObjectType;
+use SignNow\Serializer\Tests\Fixtures\ObjectWithXmlKeyValuePairsWithType;
+use SignNow\Serializer\Tests\Fixtures\ObjectWithXmlNamespaces;
+use SignNow\Serializer\Tests\Fixtures\ObjectWithXmlNamespacesAndObjectProperty;
+use SignNow\Serializer\Tests\Fixtures\ObjectWithXmlNamespacesAndObjectPropertyAuthor;
+use SignNow\Serializer\Tests\Fixtures\ObjectWithXmlNamespacesAndObjectPropertyVirtual;
+use SignNow\Serializer\Tests\Fixtures\ObjectWithXmlRootNamespace;
+use SignNow\Serializer\Tests\Fixtures\Person;
+use SignNow\Serializer\Tests\Fixtures\PersonCollection;
+use SignNow\Serializer\Tests\Fixtures\PersonLocation;
+use SignNow\Serializer\Tests\Fixtures\SimpleClassObject;
+use SignNow\Serializer\Tests\Fixtures\SimpleObject;
+use SignNow\Serializer\Tests\Fixtures\SimpleSubClassObject;
+use SignNow\Serializer\XmlDeserializationVisitor;
+use SignNow\Serializer\XmlSerializationVisitor;
 use PhpCollection\Map;
 
 class XmlSerializationTest extends BaseSerializationTest
 {
     /**
-     * @expectedException Signnow\Serializer\Exception\RuntimeException
+     * @expectedException SignNow\Serializer\Exception\RuntimeException
      */
     public function testInvalidUsageOfXmlValue()
     {
@@ -75,7 +75,7 @@ class XmlSerializationTest extends BaseSerializationTest
 
     public function testAccessorSetterDeserialization()
     {
-        /** @var \Signnow\Serializer\Tests\Fixtures\AccessorSetter $object */
+        /** @var \SignNow\Serializer\Tests\Fixtures\AccessorSetter $object */
         $object = $this->deserialize('<?xml version="1.0"?>
             <AccessorSetter>
                 <element attribute="attribute">element</element>
@@ -83,11 +83,11 @@ class XmlSerializationTest extends BaseSerializationTest
                     <entry>collectionEntry</entry>
                 </collection>
             </AccessorSetter>',
-            'Signnow\Serializer\Tests\Fixtures\AccessorSetter'
+            'SignNow\Serializer\Tests\Fixtures\AccessorSetter'
         );
 
         $this->assertInstanceOf('stdClass', $object->getElement());
-        $this->assertInstanceOf('Signnow\Serializer\Tests\Fixtures\AccessorSetterElement', $object->getElement()->element);
+        $this->assertInstanceOf('SignNow\Serializer\Tests\Fixtures\AccessorSetterElement', $object->getElement()->element);
         $this->assertEquals('attribute-different', $object->getElement()->element->getAttribute());
         $this->assertEquals('element-different', $object->getElement()->element->getElement());
         $this->assertEquals(['collectionEntry' => 'collectionEntry'], $object->getCollection());
@@ -118,7 +118,7 @@ class XmlSerializationTest extends BaseSerializationTest
     }
 
     /**
-     * @expectedException Signnow\Serializer\Exception\InvalidArgumentException
+     * @expectedException SignNow\Serializer\Exception\InvalidArgumentException
      * @expectedExceptionMessage The document type "<!DOCTYPE author [<!ENTITY foo SYSTEM "php://filter/read=convert.base64-encode/resource=XmlSerializationTest.php">]>" is not allowed. If it is safe, you may add it to the whitelist configuration.
      */
     public function testExternalEntitiesAreDisabledByDefault()
@@ -133,7 +133,7 @@ class XmlSerializationTest extends BaseSerializationTest
     }
 
     /**
-     * @expectedException Signnow\Serializer\Exception\InvalidArgumentException
+     * @expectedException SignNow\Serializer\Exception\InvalidArgumentException
      * @expectedExceptionMessage The document type "<!DOCTYPE foo>" is not allowed. If it is safe, you may add it to the whitelist configuration.
      */
     public function testDocumentTypesAreNotAllowed()
@@ -193,7 +193,7 @@ class XmlSerializationTest extends BaseSerializationTest
     public function testUnserializeMissingArray()
     {
         $xml = '<result></result>';
-        $object = $this->serializer->deserialize($xml, 'Signnow\Serializer\Tests\Fixtures\ObjectWithAbsentXmlListNode', 'xml');
+        $object = $this->serializer->deserialize($xml, 'SignNow\Serializer\Tests\Fixtures\ObjectWithAbsentXmlListNode', 'xml');
         $this->assertEquals($object->absentAndNs, array());
 
         $xml = '<result xmlns:x="http://www.example.com">
@@ -201,7 +201,7 @@ class XmlSerializationTest extends BaseSerializationTest
                         <x:entry>foo</x:entry>
                     </absent_and_ns>
                   </result>';
-        $object = $this->serializer->deserialize($xml, 'Signnow\Serializer\Tests\Fixtures\ObjectWithAbsentXmlListNode', 'xml');
+        $object = $this->serializer->deserialize($xml, 'SignNow\Serializer\Tests\Fixtures\ObjectWithAbsentXmlListNode', 'xml');
         $this->assertEquals($object->absentAndNs, array("foo"));
     }
 
@@ -320,7 +320,7 @@ class XmlSerializationTest extends BaseSerializationTest
     }
 
     /**
-     * @expectedException Signnow\Serializer\Exception\RuntimeException
+     * @expectedException SignNow\Serializer\Exception\RuntimeException
      * @expectedExceptionMessage Unsupported value type for XML attribute map. Expected array but got object
      */
     public function testXmlAttributeMapWithoutArray()
@@ -537,7 +537,7 @@ class XmlSerializationTest extends BaseSerializationTest
     }
 
     /**
-     * @expectedException \Signnow\Serializer\Exception\XmlErrorException
+     * @expectedException \SignNow\Serializer\Exception\XmlErrorException
      */
     public function testDeserializeEmptyString()
     {

@@ -1,17 +1,17 @@
 <?php
 
-namespace Signnow\Serializer\Tests\Fixtures;
+namespace SignNow\Serializer\Tests\Fixtures;
 
-use Signnow\Serializer\Construction\UnserializeObjectConstructor;
-use Signnow\Serializer\DeserializationContext;
-use Signnow\Serializer\Metadata\ClassMetadata;
-use Signnow\Serializer\VisitorInterface;
+use SignNow\Serializer\Construction\UnserializeObjectConstructor;
+use SignNow\Serializer\DeserializationContext;
+use SignNow\Serializer\Metadata\ClassMetadata;
+use SignNow\Serializer\VisitorInterface;
 
 class InitializedBlogPostConstructor extends UnserializeObjectConstructor
 {
     public function construct(VisitorInterface $visitor, ClassMetadata $metadata, $data, array $type, DeserializationContext $context)
     {
-        if ($type['name'] !== 'Signnow\Serializer\Tests\Fixtures\BlogPost') {
+        if ($type['name'] !== 'SignNow\Serializer\Tests\Fixtures\BlogPost') {
             return parent::construct($visitor, $metadata, $data, $type);
         }
 

@@ -1,13 +1,13 @@
 <?php
 
-namespace Signnow\Serializer\Tests\Fixtures\Discriminator;
+namespace SignNow\Serializer\Tests\Fixtures\Discriminator;
 
-use Signnow\Serializer\Annotation as Serializer;
+use SignNow\Serializer\Annotation as Serializer;
 
 /**
  * @Serializer\Discriminator(field = "type", map = {
- *    "post": "Signnow\Serializer\Tests\Fixtures\Discriminator\Post",
- *    "image_post": "Signnow\Serializer\Tests\Fixtures\Discriminator\ImagePost",
+ *    "post": "SignNow\Serializer\Tests\Fixtures\Discriminator\Post",
+ *    "image_post": "SignNow\Serializer\Tests\Fixtures\Discriminator\ImagePost",
  * })
  */
 class Post

@@ -1,12 +1,12 @@
 <?php
 
-use Signnow\Serializer\GraphNavigator;
-use Signnow\Serializer\Metadata\ClassMetadata;
-use Signnow\Serializer\Metadata\PropertyMetadata;
+use SignNow\Serializer\GraphNavigator;
+use SignNow\Serializer\Metadata\ClassMetadata;
+use SignNow\Serializer\Metadata\PropertyMetadata;
 
-$metadata = new ClassMetadata('Signnow\Serializer\Tests\Fixtures\ObjectWithHandlerCallbacks');
+$metadata = new ClassMetadata('SignNow\Serializer\Tests\Fixtures\ObjectWithHandlerCallbacks');
 
-$pMetadata = new PropertyMetadata('Signnow\Serializer\Tests\Fixtures\ObjectWithHandlerCallbacks', 'name');
+$pMetadata = new PropertyMetadata('SignNow\Serializer\Tests\Fixtures\ObjectWithHandlerCallbacks', 'name');
 $pMetadata->type = 'string';
 $metadata->addPropertyMetadata($pMetadata);
 

@@ -1,6 +1,6 @@
 <?php
 
-namespace Signnow\Serializer\Annotation;
+namespace SignNow\Serializer\Annotation;
 
 
 /**

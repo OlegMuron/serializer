@@ -1,8 +1,8 @@
 <?php
 
-namespace Signnow\Serializer\EventDispatcher;
+namespace SignNow\Serializer\EventDispatcher;
 
-use Signnow\Serializer\Context;
+use SignNow\Serializer\Context;
 
 class Event
 {

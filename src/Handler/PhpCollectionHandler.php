@@ -1,10 +1,10 @@
 <?php
 
-namespace Signnow\Serializer\Handler;
+namespace SignNow\Serializer\Handler;
 
-use Signnow\Serializer\Context;
-use Signnow\Serializer\GraphNavigator;
-use Signnow\Serializer\VisitorInterface;
+use SignNow\Serializer\Context;
+use SignNow\Serializer\GraphNavigator;
+use SignNow\Serializer\VisitorInterface;
 use PhpCollection\Map;
 use PhpCollection\Sequence;
 

@@ -1,12 +1,12 @@
 <?php
 
-namespace Signnow\Serializer\Tests\Serializer\EventDispatcher;
+namespace SignNow\Serializer\Tests\Serializer\EventDispatcher;
 
-use Signnow\Serializer\EventDispatcher\Event;
-use Signnow\Serializer\EventDispatcher\EventDispatcher;
-use Signnow\Serializer\EventDispatcher\EventDispatcherInterface;
-use Signnow\Serializer\EventDispatcher\EventSubscriberInterface;
-use Signnow\Serializer\EventDispatcher\ObjectEvent;
+use SignNow\Serializer\EventDispatcher\Event;
+use SignNow\Serializer\EventDispatcher\EventDispatcher;
+use SignNow\Serializer\EventDispatcher\EventDispatcherInterface;
+use SignNow\Serializer\EventDispatcher\EventSubscriberInterface;
+use SignNow\Serializer\EventDispatcher\ObjectEvent;
 
 class EventDispatcherTest extends \PHPUnit\Framework\TestCase
 {
@@ -143,7 +143,7 @@ class EventDispatcherTest extends \PHPUnit\Framework\TestCase
     protected function setUp(): void
     {
         $this->dispatcher = $this->createEventDispatcher();
-        $this->event = new ObjectEvent($this->getMockBuilder('Signnow\Serializer\Context')->getMock(), new \stdClass(), array('name' => 'foo', 'params' => array()));
+        $this->event = new ObjectEvent($this->getMockBuilder('SignNow\Serializer\Context')->getMock(), new \stdClass(), array('name' => 'foo', 'params' => array()));
     }
 
     protected function createEventDispatcher()

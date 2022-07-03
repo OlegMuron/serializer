@@ -1,9 +1,9 @@
 <?php
 
-namespace Signnow\Serializer\Tests\Fixtures\Doctrine;
+namespace SignNow\Serializer\Tests\Fixtures\Doctrine;
 
 use Doctrine\ORM\Mapping as ORM;
-use Signnow\Serializer\Annotation\SerializedName;
+use SignNow\Serializer\Annotation\SerializedName;
 
 /** @ORM\Entity */
 class Author

@@ -1,12 +1,12 @@
 <?php
 
-namespace Signnow\Serializer\Handler;
+namespace SignNow\Serializer\Handler;
 
-use Signnow\Serializer\GraphNavigator;
-use Signnow\Serializer\JsonSerializationVisitor;
-use Signnow\Serializer\VisitorInterface;
-use Signnow\Serializer\XmlSerializationVisitor;
-use Signnow\Serializer\YamlSerializationVisitor;
+use SignNow\Serializer\GraphNavigator;
+use SignNow\Serializer\JsonSerializationVisitor;
+use SignNow\Serializer\VisitorInterface;
+use SignNow\Serializer\XmlSerializationVisitor;
+use SignNow\Serializer\YamlSerializationVisitor;
 use Symfony\Component\Form\Form;
 use Symfony\Component\Form\FormError;
 use Symfony\Component\Translation\TranslatorInterface;

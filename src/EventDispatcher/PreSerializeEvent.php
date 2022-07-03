@@ -1,6 +1,6 @@
 <?php
 
-namespace Signnow\Serializer\EventDispatcher;
+namespace SignNow\Serializer\EventDispatcher;
 
 class PreSerializeEvent extends ObjectEvent
 {

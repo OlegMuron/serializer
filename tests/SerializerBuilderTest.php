@@ -1,18 +1,19 @@
 <?php
 
-namespace Signnow\Serializer\Tests;
+namespace SignNow\Serializer\Tests;
 
-use Signnow\Serializer\DeserializationContext;
-use Signnow\Serializer\Expression\ExpressionEvaluator;
-use Signnow\Serializer\Handler\HandlerRegistry;
-use Signnow\Serializer\JsonSerializationVisitor;
-use Signnow\Serializer\Naming\CamelCaseNamingStrategy;
-use Signnow\Serializer\SerializationContext;
-use Signnow\Serializer\SerializerBuilder;
-use Signnow\Serializer\Tests\Fixtures\ContextualNamingStrategy;
-use Signnow\Serializer\Tests\Fixtures\Person;
-use Signnow\Serializer\Tests\Fixtures\PersonSecret;
-use Signnow\Serializer\Tests\Fixtures\PersonSecretWithVariables;
+use SignNow\Serializer\DeserializationContext;
+use SignNow\Serializer\Exception\UnsupportedFormatException;
+use SignNow\Serializer\Expression\ExpressionEvaluator;
+use SignNow\Serializer\Handler\HandlerRegistry;
+use SignNow\Serializer\JsonSerializationVisitor;
+use SignNow\Serializer\Naming\CamelCaseNamingStrategy;
+use SignNow\Serializer\SerializationContext;
+use SignNow\Serializer\SerializerBuilder;
+use SignNow\Serializer\Tests\Fixtures\ContextualNamingStrategy;
+use SignNow\Serializer\Tests\Fixtures\Person;
+use SignNow\Serializer\Tests\Fixtures\PersonSecret;
+use SignNow\Serializer\Tests\Fixtures\PersonSecretWithVariables;
 use Symfony\Component\ExpressionLanguage\ExpressionFunction;
 use Symfony\Component\ExpressionLanguage\ExpressionLanguage;
 use Symfony\Component\Filesystem\Filesystem;
@@ -69,13 +70,11 @@ class SerializerBuilderTest extends \PHPUnit\Framework\TestCase
 
         $this->assertEquals('{}', $this->builder->build()->serialize(new \DateTime('2020-04-16'), 'json'));
     }
-
-    /**
-     * @expectedException Signnow\Serializer\Exception\UnsupportedFormatException
-     * @expectedExceptionMessage The format "xml" is not supported for serialization.
-     */
+    
     public function testDoesNotAddOtherVisitorsWhenConfiguredExplicitly()
     {
+        $this->expectExceptionMessage("The format \"xml\" is not supported for serialization.");
+        $this->expectException(UnsupportedFormatException::class);
         $this->assertSame(
             $this->builder,
             $this->builder->setSerializationVisitor('json', new JsonSerializationVisitor(new CamelCaseNamingStrategy()))
@@ -109,7 +108,7 @@ class SerializerBuilderTest extends \PHPUnit\Framework\TestCase
 
     public function testSetSerializationContext()
     {
-        $contextFactoryMock = $this->getMockForAbstractClass('Signnow\\Serializer\\ContextFactory\\SerializationContextFactoryInterface');
+        $contextFactoryMock = $this->getMockForAbstractClass('SignNow\\Serializer\\ContextFactory\\SerializationContextFactoryInterface');
         $context = new SerializationContext();
         $context->setSerializeNull(true);
 
@@ -129,7 +128,7 @@ class SerializerBuilderTest extends \PHPUnit\Framework\TestCase
 
     public function testSetDeserializationContext()
     {
-        $contextFactoryMock = $this->getMockForAbstractClass('Signnow\\Serializer\\ContextFactory\\DeserializationContextFactoryInterface');
+        $contextFactoryMock = $this->getMockForAbstractClass('SignNow\\Serializer\\ContextFactory\\DeserializationContextFactoryInterface');
         $context = new DeserializationContext();
 
         $contextFactoryMock

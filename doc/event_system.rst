@@ -13,7 +13,7 @@ on the other hand, can be simple callables and do not require a dedicated class.
 
 .. code-block :: php
 
-    class MyEventSubscriber implements Signnow\Serializer\EventDispatcher\EventSubscriberInterface
+    class MyEventSubscriber implements SignNow\Serializer\EventDispatcher\EventSubscriberInterface
     {
         public static function getSubscribedEvents()
         {
@@ -28,16 +28,16 @@ on the other hand, can be simple callables and do not require a dedicated class.
             );
         }
 
-        public function onPreSerialize(Signnow\Serializer\EventDispatcher\PreSerializeEvent $event)
+        public function onPreSerialize(SignNow\Serializer\EventDispatcher\PreSerializeEvent $event)
         {
             // do something
         }
     }
 
     $builder
-        ->configureListeners(function(Signnow\Serializer\EventDispatcher\EventDispatcher $dispatcher) {
+        ->configureListeners(function(SignNow\Serializer\EventDispatcher\EventDispatcher $dispatcher) {
             $dispatcher->addListener('serializer.pre_serialize',
-                function(Signnow\Serializer\EventDispatcher\PreSerializeEvent $event) {
+                function(SignNow\Serializer\EventDispatcher\PreSerializeEvent $event) {
                     // do something
                 }
             );
@@ -55,7 +55,7 @@ This is dispatched before a type is visited. You have access to the visitor,
 data, and type. Listeners may modify the type that is being used for
 serialization.
 
-**Event Object**: ``Signnow\Serializer\EventDispatcher\PreSerializeEvent``
+**Event Object**: ``SignNow\Serializer\EventDispatcher\PreSerializeEvent``
 
 serializer.post_serialize
 ~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -63,7 +63,7 @@ This is dispatched right before a type is left. You can for example use this
 to add additional data for an object that you normally do not save inside
 objects such as links.
 
-**Event Object**: ``Signnow\Serializer\EventDispatcher\ObjectEvent``
+**Event Object**: ``SignNow\Serializer\EventDispatcher\ObjectEvent``
 
 serializer.pre_deserialize
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -74,7 +74,7 @@ serializer.pre_deserialize
 This is dispatched before an object is deserialized. You can use this to
 modify submitted data, or modify the type that is being used for deserialization.
 
-**Event Object**: ``Signnow\Serializer\EventDispatcher\PreDeserializeEvent``
+**Event Object**: ``SignNow\Serializer\EventDispatcher\PreDeserializeEvent``
 
 serializer.post_deserialize
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -82,4 +82,4 @@ This is dispatched after a type is processed. You can use it to normalize
 submitted data if you require external services for example, or also to
 perform validation of the submitted data.
 
-**Event Object**: ``Signnow\Serializer\EventDispatcher\ObjectEvent``
+**Event Object**: ``SignNow\Serializer\EventDispatcher\ObjectEvent``

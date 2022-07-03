@@ -1,10 +1,10 @@
 <?php
 
-namespace Signnow\Serializer\Tests\Fixtures;
+namespace SignNow\Serializer\Tests\Fixtures;
 
-use Signnow\Serializer\Annotation\AccessType;
-use Signnow\Serializer\Annotation\Exclude;
-use Signnow\Serializer\Annotation\ReadOnlyProperty;
+use SignNow\Serializer\Annotation\AccessType;
+use SignNow\Serializer\Annotation\Exclude;
+use SignNow\Serializer\Annotation\ReadOnlyProperty;
 
 /**
  */

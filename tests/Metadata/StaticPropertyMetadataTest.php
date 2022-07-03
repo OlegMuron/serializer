@@ -1,8 +1,8 @@
 <?php
 
-namespace Signnow\Serializer\Tests\Metadata;
+namespace SignNow\Serializer\Tests\Metadata;
 
-use Signnow\Serializer\Metadata\StaticPropertyMetadata;
+use SignNow\Serializer\Metadata\StaticPropertyMetadata;
 
 class StaticPropertyMetadataTest extends AbstractPropertyMetadataTest
 {

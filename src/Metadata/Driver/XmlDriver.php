@@ -1,15 +1,15 @@
 <?php
 
-namespace Signnow\Serializer\Metadata\Driver;
+namespace SignNow\Serializer\Metadata\Driver;
 
-use Signnow\Serializer\Annotation\ExclusionPolicy;
-use Signnow\Serializer\Exception\RuntimeException;
-use Signnow\Serializer\Exception\XmlErrorException;
-use Signnow\Serializer\GraphNavigator;
-use Signnow\Serializer\Metadata\ClassMetadata;
-use Signnow\Serializer\Metadata\ExpressionPropertyMetadata;
-use Signnow\Serializer\Metadata\PropertyMetadata;
-use Signnow\Serializer\Metadata\VirtualPropertyMetadata;
+use SignNow\Serializer\Annotation\ExclusionPolicy;
+use SignNow\Serializer\Exception\RuntimeException;
+use SignNow\Serializer\Exception\XmlErrorException;
+use SignNow\Serializer\GraphNavigator;
+use SignNow\Serializer\Metadata\ClassMetadata;
+use SignNow\Serializer\Metadata\ExpressionPropertyMetadata;
+use SignNow\Serializer\Metadata\PropertyMetadata;
+use SignNow\Serializer\Metadata\VirtualPropertyMetadata;
 use Metadata\Driver\AbstractFileDriver;
 use Metadata\MethodMetadata;
 

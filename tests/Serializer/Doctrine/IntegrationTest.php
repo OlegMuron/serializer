@@ -1,6 +1,6 @@
 <?php
 
-namespace Signnow\Serializer\Tests\Serializer\Doctrine;
+namespace SignNow\Serializer\Tests\Serializer\Doctrine;
 
 use Doctrine\Common\Annotations\AnnotationReader;
 use Doctrine\Common\Annotations\Reader;
@@ -13,18 +13,18 @@ use Doctrine\ORM\EntityManager;
 use Doctrine\ORM\Mapping\Driver\AnnotationDriver;
 use Doctrine\ORM\ORMException;
 use Doctrine\ORM\Tools\SchemaTool;
-use Signnow\Serializer\Builder\CallbackDriverFactory;
-use Signnow\Serializer\Builder\DefaultDriverFactory;
-use Signnow\Serializer\Metadata\Driver\DoctrineTypeDriver;
-use Signnow\Serializer\Serializer;
-use Signnow\Serializer\SerializerBuilder;
-use Signnow\Serializer\Tests\Fixtures\Doctrine\SingleTableInheritance\Clazz;
-use Signnow\Serializer\Tests\Fixtures\Doctrine\SingleTableInheritance\Excursion;
-use Signnow\Serializer\Tests\Fixtures\Doctrine\SingleTableInheritance\Organization;
-use Signnow\Serializer\Tests\Fixtures\Doctrine\SingleTableInheritance\Person;
-use Signnow\Serializer\Tests\Fixtures\Doctrine\SingleTableInheritance\School;
-use Signnow\Serializer\Tests\Fixtures\Doctrine\SingleTableInheritance\Student;
-use Signnow\Serializer\Tests\Fixtures\Doctrine\SingleTableInheritance\Teacher;
+use SignNow\Serializer\Builder\CallbackDriverFactory;
+use SignNow\Serializer\Builder\DefaultDriverFactory;
+use SignNow\Serializer\Metadata\Driver\DoctrineTypeDriver;
+use SignNow\Serializer\Serializer;
+use SignNow\Serializer\SerializerBuilder;
+use SignNow\Serializer\Tests\Fixtures\Doctrine\SingleTableInheritance\Clazz;
+use SignNow\Serializer\Tests\Fixtures\Doctrine\SingleTableInheritance\Excursion;
+use SignNow\Serializer\Tests\Fixtures\Doctrine\SingleTableInheritance\Organization;
+use SignNow\Serializer\Tests\Fixtures\Doctrine\SingleTableInheritance\Person;
+use SignNow\Serializer\Tests\Fixtures\Doctrine\SingleTableInheritance\School;
+use SignNow\Serializer\Tests\Fixtures\Doctrine\SingleTableInheritance\Student;
+use SignNow\Serializer\Tests\Fixtures\Doctrine\SingleTableInheritance\Teacher;
 
 class IntegrationTest extends \PHPUnit\Framework\TestCase
 {
@@ -137,7 +137,7 @@ class IntegrationTest extends \PHPUnit\Framework\TestCase
             __DIR__ . '/../../Fixtures/Doctrine/SingleTableInheritance',
         )));
         $cfg->setAutoGenerateProxyClasses(true);
-        $cfg->setProxyNamespace('Signnow\Serializer\DoctrineProxy');
+        $cfg->setProxyNamespace('SignNow\Serializer\DoctrineProxy');
         $cfg->setProxyDir(sys_get_temp_dir() . '/serializer-test-proxies');
 
         $em = EntityManager::create($con, $cfg);

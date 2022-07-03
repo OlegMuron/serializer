@@ -1,14 +1,14 @@
 <?php
 
-namespace Signnow\Serializer\Handler;
+namespace SignNow\Serializer\Handler;
 
-use Signnow\Serializer\Context;
-use Signnow\Serializer\Exception\RuntimeException;
-use Signnow\Serializer\GraphNavigator;
-use Signnow\Serializer\JsonDeserializationVisitor;
-use Signnow\Serializer\VisitorInterface;
-use Signnow\Serializer\XmlDeserializationVisitor;
-use Signnow\Serializer\XmlSerializationVisitor;
+use SignNow\Serializer\Context;
+use SignNow\Serializer\Exception\RuntimeException;
+use SignNow\Serializer\GraphNavigator;
+use SignNow\Serializer\JsonDeserializationVisitor;
+use SignNow\Serializer\VisitorInterface;
+use SignNow\Serializer\XmlDeserializationVisitor;
+use SignNow\Serializer\XmlSerializationVisitor;
 
 class DateHandler implements SubscribingHandlerInterface
 {

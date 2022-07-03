@@ -1,9 +1,9 @@
 <?php
 
-namespace Signnow\Serializer\Tests\Fixtures;
+namespace SignNow\Serializer\Tests\Fixtures;
 
-use Signnow\Serializer\Annotation\Type;
-use Signnow\Serializer\Annotation\XmlRoot;
+use SignNow\Serializer\Annotation\Type;
+use SignNow\Serializer\Annotation\XmlRoot;
 
 /**
  * @XmlRoot("person_location")
@@ -11,7 +11,7 @@ use Signnow\Serializer\Annotation\XmlRoot;
 class PersonLocation
 {
     /**
-     * @Type("Signnow\Serializer\Tests\Fixtures\Person")
+     * @Type("SignNow\Serializer\Tests\Fixtures\Person")
      */
     public $person;
 

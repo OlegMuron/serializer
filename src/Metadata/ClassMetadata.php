@@ -1,8 +1,8 @@
 <?php
 
-namespace Signnow\Serializer\Metadata;
+namespace SignNow\Serializer\Metadata;
 
-use Signnow\Serializer\Exception\InvalidArgumentException;
+use SignNow\Serializer\Exception\InvalidArgumentException;
 use Metadata\MergeableClassMetadata;
 use Metadata\MergeableInterface;
 use Metadata\MethodMetadata;

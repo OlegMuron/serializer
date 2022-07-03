@@ -1,12 +1,12 @@
 <?php
 
-namespace Signnow\Serializer\Tests\Fixtures;
+namespace SignNow\Serializer\Tests\Fixtures;
 
-use Signnow\Serializer\Annotation\Groups;
-use Signnow\Serializer\Annotation\SerializedName;
-use Signnow\Serializer\Annotation\Since;
-use Signnow\Serializer\Annotation\Until;
-use Signnow\Serializer\Annotation\VirtualProperty;
+use SignNow\Serializer\Annotation\Groups;
+use SignNow\Serializer\Annotation\SerializedName;
+use SignNow\Serializer\Annotation\Since;
+use SignNow\Serializer\Annotation\Until;
+use SignNow\Serializer\Annotation\VirtualProperty;
 
 /**
  * dummy comment

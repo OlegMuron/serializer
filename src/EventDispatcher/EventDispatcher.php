@@ -1,8 +1,8 @@
 <?php
 
-namespace Signnow\Serializer\EventDispatcher;
+namespace SignNow\Serializer\EventDispatcher;
 
-use Signnow\Serializer\Exception\InvalidArgumentException;
+use SignNow\Serializer\Exception\InvalidArgumentException;
 
 /**
  * Light-weight event dispatcher.

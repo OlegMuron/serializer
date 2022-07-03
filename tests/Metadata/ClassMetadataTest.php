@@ -1,9 +1,9 @@
 <?php
 
-namespace Signnow\Serializer\Tests\Metadata;
+namespace SignNow\Serializer\Tests\Metadata;
 
-use Signnow\Serializer\Metadata\ClassMetadata;
-use Signnow\Serializer\Metadata\PropertyMetadata;
+use SignNow\Serializer\Metadata\ClassMetadata;
+use SignNow\Serializer\Metadata\PropertyMetadata;
 
 class ClassMetadataTest extends \PHPUnit\Framework\TestCase
 {
@@ -20,7 +20,7 @@ class ClassMetadataTest extends \PHPUnit\Framework\TestCase
 
     public function testSerialization()
     {
-        $meta = new PropertyMetadata('Signnow\Serializer\Tests\Metadata\PropertyMetadataOrder', 'b');
+        $meta = new PropertyMetadata('SignNow\Serializer\Tests\Metadata\PropertyMetadataOrder', 'b');
         $restoredMeta = unserialize(serialize($meta));
         $this->assertEquals($meta, $restoredMeta);
     }
@@ -30,9 +30,9 @@ class ClassMetadataTest extends \PHPUnit\Framework\TestCase
      */
     public function testSetAccessorOrderCustom(array $order, array $expected)
     {
-        $metadata = new ClassMetadata('Signnow\Serializer\Tests\Metadata\PropertyMetadataOrder');
-        $metadata->addPropertyMetadata(new PropertyMetadata('Signnow\Serializer\Tests\Metadata\PropertyMetadataOrder', 'b'));
-        $metadata->addPropertyMetadata(new PropertyMetadata('Signnow\Serializer\Tests\Metadata\PropertyMetadataOrder', 'a'));
+        $metadata = new ClassMetadata('SignNow\Serializer\Tests\Metadata\PropertyMetadataOrder');
+        $metadata->addPropertyMetadata(new PropertyMetadata('SignNow\Serializer\Tests\Metadata\PropertyMetadataOrder', 'b'));
+        $metadata->addPropertyMetadata(new PropertyMetadata('SignNow\Serializer\Tests\Metadata\PropertyMetadataOrder', 'a'));
         $this->assertEquals(array('b', 'a'), array_keys($metadata->propertyMetadata));
 
         $metadata->setAccessorOrder(ClassMetadata::ACCESSOR_ORDER_CUSTOM, $order);
@@ -41,9 +41,9 @@ class ClassMetadataTest extends \PHPUnit\Framework\TestCase
 
     public function testSetAccessorOrderAlphabetical()
     {
-        $metadata = new ClassMetadata('Signnow\Serializer\Tests\Metadata\PropertyMetadataOrder');
-        $metadata->addPropertyMetadata(new PropertyMetadata('Signnow\Serializer\Tests\Metadata\PropertyMetadataOrder', 'b'));
-        $metadata->addPropertyMetadata(new PropertyMetadata('Signnow\Serializer\Tests\Metadata\PropertyMetadataOrder', 'a'));
+        $metadata = new ClassMetadata('SignNow\Serializer\Tests\Metadata\PropertyMetadataOrder');
+        $metadata->addPropertyMetadata(new PropertyMetadata('SignNow\Serializer\Tests\Metadata\PropertyMetadataOrder', 'b'));
+        $metadata->addPropertyMetadata(new PropertyMetadata('SignNow\Serializer\Tests\Metadata\PropertyMetadataOrder', 'a'));
         $this->assertEquals(array('b', 'a'), array_keys($metadata->propertyMetadata));
 
         $metadata->setAccessorOrder(ClassMetadata::ACCESSOR_ORDER_ALPHABETICAL);
@@ -73,7 +73,7 @@ class ClassMetadataTest extends \PHPUnit\Framework\TestCase
      */
     public function testAccessorTypePublicMethodException($getter, $setter, $message)
     {
-        $this->expectException('\Signnow\Serializer\Exception\RuntimeException');
+        $this->expectException('\SignNow\Serializer\Exception\RuntimeException');
         $this->expectExceptionMessage($message);
         
         $object = new PropertyMetadataPublicMethod();

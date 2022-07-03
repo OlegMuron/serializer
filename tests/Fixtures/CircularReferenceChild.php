@@ -1,15 +1,15 @@
 <?php
 
-namespace Signnow\Serializer\Tests\Fixtures;
+namespace SignNow\Serializer\Tests\Fixtures;
 
-use Signnow\Serializer\Annotation\Type;
+use SignNow\Serializer\Annotation\Type;
 
 class CircularReferenceChild
 {
     /** @Type("string") */
     private $name;
 
-    /** @Type("Signnow\Serializer\Tests\Fixtures\CircularReferenceParent") */
+    /** @Type("SignNow\Serializer\Tests\Fixtures\CircularReferenceParent") */
     private $parent;
 
     public function __construct($name, CircularReferenceParent $parent)

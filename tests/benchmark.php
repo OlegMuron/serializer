@@ -31,16 +31,16 @@ function createCollection()
 
 function createObject()
 {
-    $p = new \Signnow\Serializer\Tests\Fixtures\Publisher('bar');
-    $post = new \Signnow\Serializer\Tests\Fixtures\BlogPost('FooooooooooooooooooooooBAR', new \Signnow\Serializer\Tests\Fixtures\Author('Foo'), new \DateTime, $p);
+    $p = new \SignNow\Serializer\Tests\Fixtures\Publisher('bar');
+    $post = new \SignNow\Serializer\Tests\Fixtures\BlogPost('FooooooooooooooooooooooBAR', new \SignNow\Serializer\Tests\Fixtures\Author('Foo'), new \DateTime, $p);
     for ($i = 0; $i < 100; $i++) {
-        $post->addComment(new \Signnow\Serializer\Tests\Fixtures\Comment(new \Signnow\Serializer\Tests\Fixtures\Author('foo'), 'foobar'));
+        $post->addComment(new \SignNow\Serializer\Tests\Fixtures\Comment(new \SignNow\Serializer\Tests\Fixtures\Author('foo'), 'foobar'));
     }
 
     return $post;
 }
 
-$serializer = \Signnow\Serializer\SerializerBuilder::create()->build();
+$serializer = \SignNow\Serializer\SerializerBuilder::create()->build();
 $collection = createCollection();
 $metrics = array();
 $f = function () use ($serializer, $collection, $format) {

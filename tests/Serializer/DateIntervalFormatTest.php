@@ -1,8 +1,8 @@
 <?php
 
-namespace Signnow\Serializer\Tests\Serializer;
+namespace SignNow\Serializer\Tests\Serializer;
 
-use Signnow\Serializer\Handler\DateHandler;
+use SignNow\Serializer\Handler\DateHandler;
 
 class DateIntervalFormatTest extends \PHPUnit\Framework\TestCase
 {

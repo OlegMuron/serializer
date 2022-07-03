@@ -1,4 +1,4 @@
-Signnow\Serializer\Tests\Fixtures\ObjectWithVirtualProperties:
+SignNow\Serializer\Tests\Fixtures\ObjectWithVirtualProperties:
     properties:
         existField:
             type: string
